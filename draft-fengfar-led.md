@@ -8,7 +8,7 @@ date: 2026-07-27
 
 ipr: trust200902
 area: General
-stream: ietf
+stream: IETF
 wg: Network Working Group
 kw: Internet-Draft
 cat: info
@@ -30,7 +30,7 @@ author:
         email: stephen.farrell@cs.tcd.ie
       -
         ins: C. Feng
-        name: Chong FENG
+        name: Chong Feng
         email: fengchongllly@gmail.com
 
 normative:
@@ -360,7 +360,7 @@ This document makes no request of IANA.
 # Security Considerations
 
 TBD
-Many of the details below are provided via indirection, using the {{RPCTBD}}.
+This is just so I remember how to add a reference. {{RPCTBD}}.
 
 # Acknowledgements
 
@@ -370,7 +370,7 @@ TBD
 
 # Change Log
 
-## Draft-00 
+## Draft-00
 
 - This is based on email and github interactions between the authors.
 
