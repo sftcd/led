@@ -1,8 +1,8 @@
 <!-- regenerate: on (set to off if you edit this file) -->
 
-# Human-AI Collaboration in Technical Communities, Principles and Practice
+# Dealing with LLMs in Email Discussions
 
-This is the working area for the individual Internet-Draft, "Human-AI Collaboration in Technical Communities, Principles and Practice".
+This is the working area for the individual Internet-Draft, "Dealing with LLMs in Email Discussions"
 
 * [Editor's Copy](https://sftcd.github.io/led/#go.draft-fengfar-led.html)
 * [Datatracker Page](https://datatracker.ietf.org/doc/draft-fengfar-led)
