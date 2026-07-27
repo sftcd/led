@@ -1,0 +1,451 @@
+
+
+
+
+Network Working Group                                         S. Farrell
+Internet-Draft                                    Trinity College Dublin
+Intended status: Informational                                   C. Feng
+Expires: 28 January 2027                                    27 July 2026
+
+
+Human-AI Collaboration in Technical Communities, Principles and Practice
+                        draft-fengfar-led-latest
+
+Abstract
+
+   The rapid adoption of AI language tools has prompted concern across
+   professional and technical communities about authenticity,
+   accountability, and the integrity of human contribution.  This
+   document approaches the question from two directions: a critical
+   reader's concerns about what AI use means for technical discourse,
+   and a practitioner's account of how AI is actually used in standards
+   work.  From this tension, we derive a broader argument about the
+   complementary capabilities of humans and AI, and what genuine
+   collaboration between them looks like.  We conclude with an
+   assessment of the real risks and concrete recommendations for
+   authors, readers, and technical communities.
+
+Discussion Venues
+
+   This note is to be removed before publishing as an RFC.
+
+   Source for this draft and an issue tracker can be found at
+   https://github.com/sftcd/led.
+
+Status of This Memo
+
+   This Internet-Draft is submitted in full conformance with the
+   provisions of BCP 78 and BCP 79.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF).  Note that other groups may also distribute
+   working documents as Internet-Drafts.  The list of current Internet-
+   Drafts is at https://datatracker.ietf.org/drafts/current/.
+
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as "work in progress."
+
+   This Internet-Draft will expire on 28 January 2027.
+
+Copyright Notice
+
+   Copyright (c) 2026 IETF Trust and the persons identified as the
+   document authors.  All rights reserved.
+
+   This document is subject to BCP 78 and the IETF Trust's Legal
+   Provisions Relating to IETF Documents (https://trustee.ietf.org/
+   license-info) in effect on the date of publication of this document.
+   Please review these documents carefully, as they describe your rights
+   and restrictions with respect to this document.  Code Components
+   extracted from this document must include Revised BSD License text as
+   described in Section 4.e of the Trust Legal Provisions and are
+   provided without warranty as described in the Revised BSD License.
+
+Table of Contents
+
+   1.  Introduction
+   2.  A Reader's Concerns
+   3.  One Author's Workflow
+     3.1.  Monitoring and Triage
+     3.2.  Forming a Position
+     3.3.  Drafting in English
+     3.4.  Final Review and Send
+     3.5.  The Role of Odyssey
+   4.  Human and AI: Complementary Capabilities
+     4.1.  What AI Does Well
+     4.2.  What AI Does Poorly
+     4.3.  The Symmetry
+   5.  A Collaborative Paradigm
+     5.1.  The Core Principle
+     5.2.  Transparency as a Norm
+     5.3.  The Deepening Relationship
+     5.4.  What Becomes Possible
+   6.  Risks
+   7.  Recommendations
+     7.1.  For Authors Using AI Assistance
+     7.2.  For Readers and List Participants
+     7.3.  For the IETF and Technical Communities
+   8.  Conclusion
+   9.  IANA Considerations
+   10. Security Considerations
+   11. Acknowledgements
+   12. Normative References
+   Appendix A.  Change Log
+     A.1.  Draft-00
+   Authors' Addresses
+
+1.  Introduction
+
+   AI language tools are now widely used in professional writing,
+   including in standards development communities such as the IETF.
+   This has produced two kinds of reaction: uncritical adoption, where
+   AI output is treated as equivalent to human thought, and wholesale
+   rejection, where any AI involvement is seen as inauthentic.
+
+   Both reactions miss the point.
+
+   This document takes a third position: that human-AI collaboration,
+   practiced with discipline and transparency, represents a genuine
+   expansion of human capability --- not a substitution for it.  The key
+   is understanding what AI does well, what it does poorly, and where
+   the boundary between them lies.
+
+   This document grew out of a specific exchange on an IETF mailing
+   list.  One author described using AI to help express ideas developed
+   independently; a reader flagged the output as LLM-generated and
+   disengaged.  Neither was wrong.  But the exchange exposed a gap: the
+   community lacks shared norms for how AI assistance should be used and
+   disclosed.  Rather than treat this as a local disagreement, the two
+   parties decided to think through it together --- and to write down
+   what they found.
+
+   If useful, comments/issues/PRs are welcome at:
+   https://github.com/sftcd/led/
+
+2.  A Reader's Concerns
+
+   This section is written by the first author.  Placeholder: Stephen
+   Farrell will contribute this section, covering the difficulty of
+   distinguishing AI-assisted expression from AI-replaced thinking; the
+   loss of epistemic texture in LLM-generated list mail; the risk that
+   readers cannot know whether the sender stands behind the words; and
+   the broader challenge this poses for mailing list culture.
+
+3.  One Author's Workflow
+
+   This section is written by the second author, who uses AI assistance
+   in IETF participation.
+
+   The second author is a non-native English speaker who participates in
+   IETF standardization work across several working groups.  The
+   following describes current practice in detail, as a basis for the
+   discussion that follows.
+
+3.1.  Monitoring and Triage
+
+   Incoming mailing list traffic is large and often spans multiple
+   simultaneous threads.  An AI assistant is used to scan the mailbox
+   and identify threads or messages that appear relevant, including
+   those that may warrant a reply.  The author then reads the original
+   messages directly.  The AI provides a signal; the reading and
+   judgment are the author's.
+
+3.2.  Forming a Position
+
+   After reading, the author thinks about the issue independently.  This
+   step is not delegated.  The AI may be used at this stage to stress-
+   test an argument --- to articulate the strongest counterposition, or
+   to explore whether an alternative interpretation holds --- but it
+   does not originate the position.  The author decides what to think
+   before asking AI to help express it.
+
+3.3.  Drafting in English
+
+   Once the author has decided what to say, an AI assistant produces an
+   English draft.  English is not the author's first language, and
+   producing precise, idiomatic technical prose in a second language
+   carries a real cognitive cost.  AI removes that cost without changing
+   who is responsible for the ideas.
+
+   The author reviews this draft critically --- not for grammatical
+   correctness, but for fidelity.  If the output is too long, too
+   polished, too neutral, or does not accurately represent the intended
+   position, revisions are requested.  This can take several rounds.
+   The test is not "does this read well" but "does this say what I
+   meant."
+
+3.4.  Final Review and Send
+
+   The author personally reviews the final text before sending.  The AI
+   does not send mail autonomously.  The author takes full
+   responsibility for anything sent under their name.
+
+3.5.  The Role of Odyssey
+
+   The author has developed a personal AI agent called Odyssey (
+   https://github.com/meetodyssey).  Odyssey maintains long-term context
+   across conversations --- what subjects the author cares about, how
+   they normally reason, what positions they have taken over time.  The
+   long-term goal is for AI-assisted output to become increasingly
+   consistent with how the author would write independently, as the
+   system accumulates a genuine model of the author's thinking rather
+   than producing generic fluent prose.  This points toward something
+   important: the right relationship between a person and their AI tools
+   is one that deepens over time, becoming more accurate to the
+   individual rather than more generic.
+
+4.  Human and AI: Complementary Capabilities
+
+   The exchange described in Section 1 reflects a genuine tension.  To
+   resolve it, it helps to be precise about what AI systems actually do
+   well and what they do not.
+
+4.1.  What AI Does Well
+
+   AI language systems operate effectively within known boundaries.
+   Given a well-defined problem space --- an established body of
+   knowledge, a clear communication goal, a defined set of constraints
+   --- AI can draft, translate, and refine text with speed and
+   consistency no individual can match; identify relevant prior work
+   across large corpora; stress-test arguments by generating
+   counterpositions; and execute repetitive cognitive tasks without
+   fatigue.
+
+   For participants in international technical communities, the language
+   function alone is significant.  The ability to express a precise
+   technical idea in idiomatic English is not the same as having the
+   idea.  AI collapses the gap between the two, allowing non-native
+   speakers to participate on more equal terms.
+
+   More fundamentally, AI excels at operating within accumulated
+   knowledge.  The existing literature of a field, its terminology, its
+   conventions, its prior decisions --- this is exactly the kind of
+   material AI systems are built to handle.
+
+4.2.  What AI Does Poorly
+
+   AI systems have a structural limitation that is frequently
+   underestimated: they cannot originate.
+
+   They recombine, extrapolate, and interpolate within the space of what
+   they have been trained on.  This is not a temporary limitation
+   awaiting a better model.  It is a consequence of what these systems
+   are.  Genuine innovation --- the creation of new conceptual territory
+   rather than more efficient mapping of existing terrain --- remains a
+   human capacity.
+
+   The ideas that change a field do not emerge from pattern completion.
+   They emerge from the collision of lived experience, accumulated
+   frustration, specific domain knowledge, and the kind of lateral
+   connection that has no prior example to learn from.  The recognition
+   that the current framework is wrong, or that the question being asked
+   is the wrong question, is not available to a system trained to
+   operate within existing frameworks.
+
+4.3.  The Symmetry
+
+   Humans have the inverse limitation.  We are slow to acquire and
+   integrate knowledge within established boundaries.  Learning a field
+   takes years.  Staying current across adjacent areas is nearly
+   impossible for any individual.  Expressing ideas precisely in a
+   second language imposes a constant cognitive cost.
+
+   AI removes these constraints.  A researcher with AI assistance can
+   engage with a much larger body of prior work, express ideas more
+   precisely across language barriers, and iterate on arguments more
+   rapidly than was previously possible.
+
+   The symmetry is clean: humans originate, AI executes.  Humans open
+   new territory; AI operates efficiently within it.  Neither is
+   complete without the other.
+
+5.  A Collaborative Paradigm
+
+   From this symmetry, a working paradigm emerges.
+
+5.1.  The Core Principle
+
+   Humans originate.  AI executes.
+
+   The position, the argument, and the judgment are formed by the human
+   before AI involvement begins.  AI is used to express, refine,
+   translate, or stress-test what the human has already worked out.  The
+   human reviews AI output not for grammatical correctness but for
+   fidelity to their actual position.  The human takes full
+   responsibility for anything sent or published.
+
+   This boundary is not always clean in practice.  Using AI to stress-
+   test an argument can surface considerations the human had not thought
+   of, which then reshape the position.  This is legitimate --- the AI
+   is functioning as a thinking partner within a bounded space, not as
+   an originator.  The human remains the decision-maker about what to
+   accept and what to discard.  What falls outside this paradigm is
+   delegating the thinking itself: asking AI what position to take, what
+   arguments to make, or what conclusions to draw --- and signing the
+   output.
+
+5.2.  Transparency as a Norm
+
+   The workflow described in Section 3 was questioned.  The author
+   described it in detail.  This exchange --- uncomfortable at first ---
+   produced this document.  Transparency is not a concession to critics
+   of AI assistance.  It is what makes the collaboration legitimate.  An
+   author who can describe exactly how AI was used, and who can stand
+   behind the resulting text as an accurate representation of their
+   position, has nothing to hide.  An author who cannot answer those
+   questions has a different problem, and it is not the AI.
+
+5.3.  The Deepening Relationship
+
+   Generic AI assistance produces generic-sounding output.  A system
+   that accumulates genuine knowledge of an author's thinking,
+   positions, and style produces output that more accurately represents
+   them --- not because it is deceiving anyone, but because it has
+   become a better instrument.
+
+   This is the direction Odyssey points toward.  Over time, the gap
+   between "what the author would have written" and "what the AI-
+   assisted author sent" narrows.  The tool becomes more personal, more
+   accurate, and paradoxically more transparent: the output is more
+   genuinely the author's, not less.
+
+5.4.  What Becomes Possible
+
+   The significance of this paradigm is not merely defensive --- not
+   simply a justification for a practice that would otherwise be
+   suspect.  It is expansive.
+
+   Things that were previously impossible for one person to accomplish
+   --- engaging seriously with a large technical field while also
+   pushing its boundaries, participating in international discourse
+   while thinking in another language, tracking developments across
+   multiple working groups while developing original contributions ---
+   become achievable.
+
+   This is the door the current moment opens.  Not AI replacing human
+   contribution, but AI extending the reach of what any human can
+   contribute.  The combination of human originality and AI execution
+   capacity creates possibilities that neither possesses alone.
+
+6.  Risks
+
+   The risks of AI-assisted writing are real, but frequently
+   misdescribed.  Naming them precisely matters.
+
+   AI replacement of thought.  The primary risk is not AI assistance but
+   the delegation of thinking itself --- asking AI what to believe, not
+   just how to express it.  This produces output that is fluent but not
+   genuine, and over time it degrades the author's own capacity for
+   independent thought.
+
+   Drift from the author's position.  An author may form a genuine
+   position but accept an AI draft that misrepresents it --- more
+   confident, more agreeable, or more hedged than intended --- without
+   noticing.  Careful review of AI output exists to catch this.  It
+   requires the author to know their own position well enough to
+   recognize when it has been distorted.
+
+   Reader inability to distinguish.  AI-assisted expression and AI-
+   replaced thinking may produce similar surface output.  Readers cannot
+   easily tell them apart.  This erodes the trust that makes mailing
+   list discussion valuable, and it creates an asymmetry that
+   disadvantages responsible users alongside irresponsible ones.
+
+   Homogenization of discourse.  AI systems have characteristic
+   tendencies --- toward confidence, toward agreement, toward certain
+   rhetorical patterns.  Widely adopted without discipline, these
+   tendencies flatten the diversity of perspective that technical
+   communities depend on.  A list where everyone's prose sounds similar,
+   however polished, is a less productive list.
+
+   Writing what one does not believe.  Distinct from the above: an
+   author may knowingly send AI output that does not reflect their
+   actual position, using the tool as a shield against accountability.
+
+7.  Recommendations
+
+7.1.  For Authors Using AI Assistance
+
+   Form your position before engaging AI.  The argument should be yours
+   before the draft exists.
+
+   Review AI output for fidelity, not just correctness.  If the AI has
+   softened, generalized, or shifted your position, correct it before
+   sending.
+
+   Be transparent when asked.  Describing your workflow in detail builds
+   trust rather than eroding it.
+
+   Disclose proactively in high-stakes contexts --- formal I-D
+   authorship, attributed positions, official statements.
+
+   Invest in AI tools that learn your specific thinking over time,
+   rather than relying on generic assistance indefinitely.
+
+7.2.  For Readers and List Participants
+
+   (Stephen's primary contribution --- to be added)
+
+7.3.  For the IETF and Technical Communities
+
+   (To be developed jointly)
+
+8.  Conclusion
+
+   The anxiety surrounding AI-assisted writing reflects a real problem
+   but points toward the wrong solution.  Prohibition or stigma does not
+   address the underlying risk --- it drives practice underground,
+   removes transparency, and disadvantages those who would use AI
+   responsibly alongside those who would not.
+
+   The right response is clarity: about what AI does well, what it
+   cannot do, and where the human must remain in control.  With that
+   clarity, human-AI collaboration is not a threat to the integrity of
+   technical discourse.  It is an expansion of what human participants
+   can bring to it.
+
+   The exchange that motivated this document ended with a proposal to
+   write it together.  Two people with genuinely different perspectives
+   on the same problem agreed to think through it jointly.  That outcome
+   is itself an illustration of what the document argues for: not AI
+   replacing human judgment, but human judgment --- assisted, extended,
+   and made more reachable --- arriving somewhere neither party could
+   have reached alone.
+
+9.  IANA Considerations
+
+   This document makes no request of IANA.
+
+10.  Security Considerations
+
+   TBD This is just so I remember how to add a reference.  [RPCTBD].
+
+11.  Acknowledgements
+
+   TBD
+
+12.  Normative References
+
+   [RPCTBD]   RPC, "Something to which we refer", 2026.
+
+Appendix A.  Change Log
+
+A.1.  Draft-00
+
+   *  This is based on email and github interactions between the
+      authors.
+
+Authors' Addresses
+
+   Stephen Farrell
+   Trinity College Dublin
+   College Green
+   Dublin
+   Ireland
+   Email: stephen.farrell@cs.tcd.ie
+
+
+   Chong Feng
+   Email: fengchongllly@gmail.com
