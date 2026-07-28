@@ -1,0 +1,1769 @@
+<!DOCTYPE html>
+<html lang="en" class="Internet-Draft">
+<head>
+<meta charset="utf-8">
+<meta content="Common,Latin" name="scripts">
+<meta content="initial-scale=1.0" name="viewport">
+<title>Dealing with LLMs in IETF Discussions</title>
+<meta content="Stephen Farrell" name="author">
+<meta content="Chong Feng" name="author">
+<meta content="
+       The rapid adoption of AI language tools has prompted concern across
+professional and technical communities, including the IETF, about authenticity, accountability,
+and the integrity of human contribution. This document approaches the
+question from two directions: a critical reader's concerns about what AI
+use means for IETF discussion, and a practitioner's account of how AI
+is currently being used in IETF discussions.
+We aim to explore some of the issues arising, and perhaps make
+some tentative recommendations. 
+    " name="description">
+<meta content="xml2rfc 3.34.0" name="generator">
+<meta content="Internet-Draft" name="keyword">
+<meta content="draft-fengfar-led-latest" name="ietf.draft">
+<!-- Generator version information:
+  xml2rfc 3.34.0
+    Python 3.14.5
+    ConfigArgParse 1.7.5
+    google-i18n-address 3.1.1
+    intervaltree 3.2.1
+    Jinja2 3.1.6
+    lxml 6.1.1
+    natsort 8.4.0
+    platformdirs 4.10.1
+    pycountry 24.6.1
+    PyYAML 6.0.3
+    requests 2.33.1
+    wcwidth 0.8.2
+-->
+<link href="draft-fengfar-led.xml" rel="alternate" type="application/rfc+xml">
+<link href="#copyright" rel="license">
+<style type="text/css">@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Italic'), local('Lora-Italic'), url('https://martinthomson.github.io/rfc-css/fonts/lora-italic-cyrillic-ext.woff2') format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Italic'), local('Lora-Italic'), url('https://martinthomson.github.io/rfc-css/fonts/lora-italic-cyrillic-ext.woff2') format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Italic'), local('Lora-Italic'), url('https://martinthomson.github.io/rfc-css/fonts/lora-italic-vietnamese.woff2') format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Italic'), local('Lora-Italic'), url('https://martinthomson.github.io/rfc-css/fonts/lora-italic-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Italic'), local('Lora-Italic'), url('https://martinthomson.github.io/rfc-css/fonts/lora-italic-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Regular'), local('Lora-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/lora-regular-cyrillic-ext.woff2') format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Regular'), local('Lora-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/lora-regular-cyrillic.woff2') format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Regular'), local('Lora-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/lora-regular-vietnamese.woff2') format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Regular'), local('Lora-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/lora-regular-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Regular'), local('Lora-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/lora-regular-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Lora Bold'), local('Lora-Bold'), url('https://martinthomson.github.io/rfc-css/fonts/lora-bold-cyrillic-ext.woff2') format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Lora Bold'), local('Lora-Bold'), url('https://martinthomson.github.io/rfc-css/fonts/lora-bold-cyrillic.woff2') format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Lora Bold'), local('Lora-Bold'), url('https://martinthomson.github.io/rfc-css/fonts/lora-bold-vietnamese.woff2') format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Lora Bold'), local('Lora-Bold'), url('https://martinthomson.github.io/rfc-css/fonts/lora-bold-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Lora Bold'), local('Lora-Bold'), url('https://martinthomson.github.io/rfc-css/fonts/lora-bold-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local('Lora SemiBold'), local('Lora-SemiBold'), url('https://martinthomson.github.io/rfc-css/fonts/lora-semibold-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Oxygen Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Oxygen Mono'), local('OxygenMono-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/oxygenmono-regular-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Oxygen Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Oxygen Mono'), local('OxygenMono-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/oxygenmono-regular-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+}
+
+@font-face {
+  font-family: 'Sofia Sans Semi Condensed';
+  font-style: italic;
+  font-weight: 1 1000;
+  src: url('https://martinthomson.github.io/rfc-css/fonts/sofiasanssemicondensed-italic-cyrillic-ext.woff2') format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: 'Sofia Sans Semi Condensed';
+  font-style: italic;
+  font-weight: 1 1000;
+  src: url('https://martinthomson.github.io/rfc-css/fonts/sofiasanssemicondensed-italic-cyrillic.woff2') format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'Sofia Sans Semi Condensed';
+  font-style: italic;
+  font-weight: 1 1000;
+  src: url('https://martinthomson.github.io/rfc-css/fonts/sofiasanssemicondensed-italic-greek.woff2') format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+@font-face {
+  font-family: 'Sofia Sans Semi Condensed';
+  font-style: italic;
+  font-weight: 1 1000;
+  src: url('https://martinthomson.github.io/rfc-css/fonts/sofiasanssemicondensed-italic-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Sofia Sans Semi Condensed';
+  font-style: italic;
+  font-weight: 1 1000;
+  src: url('https://martinthomson.github.io/rfc-css/fonts/sofiasanssemicondensed-italic-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Sofia Sans Semi Condensed';
+  font-style: normal;
+  font-weight: 1 1000;
+  src: url('https://martinthomson.github.io/rfc-css/fonts/sofiasanssemicondensed-regular-cyrillic-ext.woff2') format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: 'Sofia Sans Semi Condensed';
+  font-style: normal;
+  font-weight: 1 1000;
+  src: url('https://martinthomson.github.io/rfc-css/fonts/sofiasanssemicondensed-regular-cyrillic.woff2') format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'Sofia Sans Semi Condensed';
+  font-style: normal;
+  font-weight: 1 1000;
+  src: url('https://martinthomson.github.io/rfc-css/fonts/sofiasanssemicondensed-regular-greek.woff2') format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+@font-face {
+  font-family: 'Sofia Sans Semi Condensed';
+  font-style: normal;
+  font-weight: 1 1000;
+  src: url('https://martinthomson.github.io/rfc-css/fonts/sofiasanssemicondensed-regular-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Sofia Sans Semi Condensed';
+  font-style: normal;
+  font-weight: 1 1000;
+  src: url('https://martinthomson.github.io/rfc-css/fonts/sofiasanssemicondensed-regular-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  color-scheme: light dark;
+  --background-color: #fff;
+  --text-color: #222;
+  --title-color: #191919;
+  --link-color: #2a6496;
+  --highlight-color: #f9f9f9;
+  --line-color: #eee;
+  --pilcrow-weak: #ddd;
+  --pilcrow-strong: #bbb;
+  --small-font-size: 14.5px;
+  --font-mono: 'Oxygen Mono', monospace;
+  --font-title: "Sofia Sans Semi Condensed", sans-serif;
+  scrollbar-color: #bbb #eee;
+}
+body {
+  max-width: 600px;
+  margin: 75px auto;
+  padding: 0 5px;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  font: 16px/22px "Lora", serif;
+  scroll-behavior: smooth;
+}
+
+.ears {
+  display: none;
+}
+
+/* headings */
+section {
+  clear: both;
+}
+.section-number {
+  padding-right: 0.5em;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-title);
+  font-weight: 680;
+  margin: 0.8em 0 0.3em;
+  font-size-adjust: 0.5;
+  color: var(--title-color);
+}
+h1 {
+  &#title {
+    font-size: 32px;
+    line-height: 40px;
+    clear: both;
+    margin: 1.5em 0 0.2em;
+  }
+  &#rfcnum {
+    margin: 1.5em 0 0.2em;
+    & + h1#title {
+      margin: 0.2em 0;
+    }
+  }
+}
+
+h1, h2, h3 {
+  font-size: 22px;
+  line-height: 27px;
+}
+h4, h5, h6 {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+/* general structure */
+.author {
+  padding-bottom: 0.3em;
+  vertical-align: top;
+}
+#abstract+p {
+  font-size: 18px;
+  line-height: 24px;
+  & code, & samp, & tt {
+    font-size: 16px;
+    line-height: 0;
+  }
+}
+
+p {
+  padding: 0;
+  margin: 0.5em 0;
+  text-align: left;
+}
+div {
+  margin: 0;
+}
+.alignRight {
+  margin: 1em 0;
+  &.art-text {
+    background-color: var(--highlight-color);
+    border: 1px solid var(--line-color);
+    border-radius: 3px;
+    padding: 0.5em 1em 0;
+    margin-bottom: 0.5em;
+    & pre {
+      padding: 0;
+      width: auto;
+    }
+  }
+  & > *:first-child {
+    border: none;
+    margin: 0;
+    float: right;
+    clear: both;
+  }
+  & > *:nth-child(2) {
+    clear: both;
+    display: block;
+    border: none;
+  }
+}
+svg {
+  display: block;
+  /* font-family isn't space-separated, but =~ will have to do */
+  &[font-family~="monospace" i], & [font-family~="monospace" i] {
+    font-family: var(--font-mono);
+  }
+}
+.alignCenter {
+  margin: 1em 0;
+  &.art-text {
+    background-color: var(--highlight-color);
+    border: 1px solid var(--line-color);
+    border-radius: 3px;
+    padding: 0.5em 1em 0;
+    margin-bottom: 0.5em;
+    & pre {
+      padding: 0;
+      width: auto;
+    }
+  }
+  & > *:first-child {
+    border: none;
+    /* this isn't optimal, but it's an existence proof.  PrinceXML doesn't
+       support flexbox yet.
+    */
+    display: table;
+    margin: 0 auto;
+  }
+}
+
+/* lists */
+ol, ul {
+  padding: 0;
+  margin: 0 0 0.5em 2em;
+  & :is(ol, ul) {
+    margin-left: 1em;
+  }
+}
+li {
+  margin: 0 0 0.25em 0;
+}
+ul.empty, .ulEmpty {
+  list-style-type: none;
+  & li {
+    margin-top: 0.5em;
+  }
+}
+:is(ul, ol).compact, .ulCompact, .olCompact {
+  margin: 0 0 0 2em;
+  & li {
+    margin: 0;
+    & :first-child { margin-top: 0; }
+    & :last-child { margin-bottom: 0; }
+  }
+}
+
+/* definition lists */
+dl {
+  clear: left;
+  --indent: 3ch;
+  /* --indent: attr(indent ch); not supported in any browser, but we can dream */
+  &.olPercent {
+    --indent: 5ch;
+    & > dt {
+      min-width: calc(var(--indent) - 2ch);
+      float: none;
+    }
+  }
+
+  dl > dd > & {
+    margin-top: 0.5em;
+    margin-bottom: 0;
+  }
+
+  &:not(.dlNewline) > dt {
+    float: left;
+    margin-right: 2ch;
+    min-width: 8ch;
+  }
+  & > dd {
+    margin-bottom: .8em;
+    margin-left: var(--indent) !important; /* stupid element overrides */
+    min-height: 2ex;
+  }
+}
+:is(dl.compact, .dlCompact) > dd {
+  margin-bottom: 0;
+  & > :is(:first-child, .break:first-child + *) {
+    margin-top: 0;
+  }
+  & > :is(:last-child) {
+    margin-bottom: 0;
+  }
+}
+:is(dd, span).break {
+  display: none;
+}
+
+/* links */
+a {
+  text-decoration: none;
+  &[href] {
+    color: var(--link-color);
+    &:hover { text-decoration: underline; }
+    &.selfRef {
+      color: var(--text-color);
+      &:hover {
+        text-decoration: none;
+        background-color: var(--highlight-color);
+      }
+    }
+  }
+}
+.iref + a[href].internal {
+  color: var(--text-color);
+}
+a.xref:is(.cite, .auto), :is(#status-of-memo, #copyright) a {
+  white-space: nowrap;
+}
+
+/* Figures */
+tt, code, pre {
+  background-color: var(--highlight-color);
+  font: 14px/22px var(--font-mono);
+}
+tt, code {
+  /* changing the font for inline elements leads to different ascender
+     and descender heights; as we want to retain baseline alignment,
+     remove leading to avoid altering the final height of lines
+     note: this fails if these blocks take an entire line,
+     a different solution would be great */
+  line-height: 0;
+}
+:is(h1, h2, h3, h4, h5, h6) :is(tt, code) {
+  font-size: 84%;
+}
+pre {
+  border: 1px solid var(--line-color);
+  font-size: 13.5px;
+  line-height: 16px;
+  letter-spacing: -0.2px;
+  margin: 5px;
+  padding: 5px;
+}
+img {
+  max-width: 100%;
+}
+figure {
+  margin: 0.5em 0;
+  padding: 0;
+  & blockquote {
+    margin: 0.8em 0.4em 0.4em;
+  }
+}
+figcaption, caption {
+  font-style: italic;
+  margin: 0.5em 1.5em;
+  text-align: left;
+  caption-side: bottom;
+}
+@media screen {
+  /* Auto-collapse boilerplate. */
+  :is(#status-of-memo, #copyright) {
+    & p {
+      margin: -2px 0;
+      max-height: 0;
+      transition: max-height 2s ease, margin 0.5s ease 0.5s;
+      overflow: hidden;
+    }
+    &:hover p,
+    & h2:target ~ p {
+      margin: 0.5em 0;
+      max-height: 500px;
+      overflow: auto;
+    }
+  }
+  pre, svg {
+    display: inline-block;
+    /* In the horizontal direction, sometimes people make over-sized figures.
+       Scrollbars for those is therefore necessary: auto adds them as necessary..
+       In the vertical direction, the line-height can combine with the font
+       asender/descender height to produce scrollbars: hidden avoids that. */
+    overflow: auto hidden;
+  }
+  pre {
+    max-width: 100%;
+    width: calc(100% - 22px - 1em);
+  }
+  svg {
+    max-width: calc(100% - 22px - 1em);
+  }
+  figure pre {
+    display: block;
+    width: calc(100% - 25px);
+  }
+  :is(pre, svg) + .pilcrow {
+    display: inline-block;
+    vertical-align: text-bottom;
+    padding-bottom: 8px;
+  }
+}
+
+/* aside, blockquote */
+aside, blockquote {
+  margin-left: 0;
+  padding: 0 2em;
+  font-style: italic;
+}
+blockquote {
+  margin: 1em 0;
+  border-left: 2px var(--pilcrow-strong) solid;
+}
+cite {
+  display: block;
+  text-align: right;
+  font-style: italic;
+}
+
+/* tables */
+table {
+  width: auto;
+  max-width: 100%;
+  margin: 0 0 1em;
+  border-collapse: collapse;
+  &.right { margin-left: auto; }
+  &.center { margin-left: auto; margin-right: auto; }
+  &.left { margin-right: auto; }
+  & .text-left { text-align: left; }
+  & .text-center { text-align: center; }
+  & .text-right { text-align: right; }
+  & caption {
+    margin: 0;
+    padding: 3px 0 3px 1em;
+  }
+  & p { margin: 0; }
+}
+
+thead, tbody {
+  border: 1px solid var(--line-color);
+}
+th, td {
+  text-align: left;
+  vertical-align: top;
+  padding: 5px 10px;
+}
+th {
+  background-color: var(--line-color);
+}
+:is(tr:nth-child(2n), thead+tbody > tr:nth-child(2n+1)) > td {
+  background-color: var(--background-color);
+}
+:is(tr:nth-child(2n+1), thead+tbody > tr:nth-child(2n)) > td {
+  background-color: var(--highlight-color);
+}
+
+/* pilcrow */
+a.pilcrow {
+  margin-left: 3px;
+  opacity: 0.2;
+  user-select: none;
+  &[href] {
+    color: var(--pilcrow-weak);
+    &:hover { text-decoration: none; }
+  }
+  @media not print {
+    :hover > &, &:focus {
+      opacity: 1;
+    }
+    &[href]:hover {
+      color: var(--pilcrow-strong);
+      background-color: transparent;
+    }
+  }
+  @media print {
+    display: none;
+  }
+}
+
+/* misc */
+hr {
+  border: 0;
+  border-top: 1px solid var(--line-color);
+}
+.bcp14 {
+  font-variant: small-caps;
+  font-weight: 600;
+  font-size: var(--small-font-size);
+}
+.role {
+  font-variant: all-small-caps;
+}
+sub, sup {
+  line-height: 1;
+  font-size: 80%;
+}
+
+/* info block */
+#identifiers {
+  margin: 0;
+  font-size: var(--small-font-size);
+  line-height: 18px;
+  --identifier-width: 15ch;
+  & dt {
+    width: var(--identifier-width);
+    min-width: var(--identifier-width);
+    clear: left;
+    float: left;
+    text-align: right;
+    margin-right: 1ch;
+  }
+  & dd {
+    margin: 0;
+    margin-left: calc(1em + var(--identifier-width)) !important;
+    min-width: 5em;
+  }
+  & .authors {
+    & .author {
+      display: inline-block;
+      margin-right: 1.5em;
+    }
+    & .org {
+      font-style: italic;
+    }
+  }
+}
+
+/* The prepared/rendered info at the very bottom of the page */
+.docInfo {
+  color: #999;
+  font-size: 0.9em;
+  font-style: italic;
+  margin-top: 2em;
+  & .prepared {
+    float: right;
+  }
+}
+
+/* table of contents */
+#toc {
+  padding: 0.75em 0 2em 0;
+  margin-bottom: 1em;
+
+  & nav {
+    & ul {
+      margin: 0 0.5em 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    & li {
+      line-height: 1.3em;
+      margin: 2px 0;
+      padding-left: 1.2em;
+      text-indent: -1.2em;
+    }
+  }
+  & a.xref {
+    white-space: normal;
+  }
+}
+
+.references {
+  & > dt {
+    text-align: right;
+    font-weight: bold;
+    min-width: 10ch;
+    margin-right: 1.5ch;
+    &:target::before {
+      content: "⇒";
+      margin: 0 10px 0 -25px;
+    }
+  }
+  & > dd {
+    margin-left: 12ch !important;
+    overflow: visible;
+    & .refInstance {
+      margin-bottom: 0.8em;
+    }
+    & .ascii {
+      margin-bottom: 0.25em;
+    }
+  }
+}
+
+#rfc\.index\.index + ul {
+  margin-left: 0;
+}
+
+/* authors */
+address.vcard {
+  font-style: normal;
+  max-width: 20em;
+  margin: 1em auto 1em 0;
+
+  & .nameRole {
+    font-weight: 700;
+    margin-left: 0;
+  }
+  & .label {
+    margin: 0.5em 0;
+  }
+  & .type {
+    display: none;
+  }
+  & .alternative-contact {
+    margin: 0.5em 0 0.25em 0;
+  }
+  & .non-ascii {
+    margin: 0 0 0 2em;
+  }
+  & div.left {
+    text-align: left;
+  }
+  & div.right {
+    text-align: right;
+  }
+}
+
+hr.addr {
+  border-top: 1px dashed;
+  margin: 0;
+  color: #ddd;
+  max-width: calc(100% - 16px);
+}
+@media (min-width: 500px) {
+  #authors-addresses {
+    & > section {
+      column-count: 2;
+      column-gap: 20px;
+    }
+    & > section > h2 {
+      column-span: all;
+    }
+    /* hack for break-inside: avoid-column */
+    & address {
+      display: inline-block;
+      break-inside: avoid-column;
+    }
+  }
+}
+
+/* Comments */
+.rfcEditorRemove {
+  & p:first-of-type {
+    font-style: italic;
+  }
+}
+.cref {
+  background-color: rgba(249, 232, 105, 0.3);
+  padding: 2px 4px;
+}
+.crefSource {
+  font-style: italic;
+}
+
+@media screen {
+  #toc {
+    & nav {
+      font-family: var(--font-title);
+      font-weight: 360;
+      & > ul { margin-bottom: 2em; }
+      & ul {
+        margin: 0 0 0 4px;
+        & :is(p, li) {
+          margin: 2px 0;
+        }
+      }
+    }
+    & a.toplink {
+      float: right;
+    }
+  }
+}
+@media not screen {
+  #toc a.toplink {
+    display: none;
+  }
+}
+
+
+/* TOC layout for smaller screens */
+@media screen and (max-width: 929px) {
+  #toc {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    padding: 1px 0 0 0;
+    margin: 0;
+    border-bottom: 1px solid #ccc;
+    opacity: 0.6;
+    & h2 {
+      margin: 0;
+      padding: 2px 0 2px 6px;
+      padding-right: 1em;
+      font-size: 18px;
+      line-height: 24px;
+      min-width: 190px;
+      text-align: right;
+      background-color: #444;
+      color: white;
+      cursor: pointer;
+      &::before { /* css hamburger */
+        float: right;
+        position: relative;
+        width: 1em;
+        height: 1px;
+        left: -164px;
+        margin: 8px 0 0 0;
+        background: white none repeat scroll 0 0;
+        box-shadow: 0 4px 0 0 white, 0 8px 0 0 white;
+        content: "";
+      }
+    }
+    & nav {
+      display: none;
+      background-color: var(--background-color);
+      padding: 0.5em 1em 1em;
+      overflow: auto;
+      overscroll-behavior: contain;
+      height: calc(100vh - 48px);
+      border-left: 1px solid #ddd;
+    }
+    &.active {
+      opacity: 1;
+      & nav { display: block; }
+    }
+    /* Make the collapsed ToC header render white on gray also when it's a link */
+    & h2 a,
+    & h2 a:is(:link, :focus, :hover),
+    & a.toplink,
+    & a.toplink:hover {
+      color: white;
+      background-color: #444;
+      text-decoration: none;
+    }
+    & a.toplink {
+      margin: 2px 0.5em 0;
+    }
+  }
+}
+
+/* TOC layout for wide screens */
+@media screen and (min-width: 930px) {
+  body {
+    padding-right: 360px;
+    padding-right: calc(min(180px + 20%, 500px));
+  }
+  #toc {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    right: calc(50vw - 480px);
+    width: 312px;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+    & h2 {
+      margin: 0;
+      padding: 0.25em 1em 1em 0;
+    }
+    & nav {
+      display: block;
+      height: calc(90vh - 84px);
+      bottom: 0;
+      padding: 0.5em 0 2em;
+      overflow: auto;
+      overscroll-behavior: contain;
+      scrollbar-width: thin;
+    }
+    & a.toplink {
+      margin: 8px 0.5em 0;
+    }
+  }
+  img { /* future proofing */
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* pagination */
+@media print {
+  body {
+    width: 100%;
+  }
+  p {
+    orphans: 3;
+    widows: 3;
+  }
+  #n-copyright-notice {
+    border-bottom: none;
+  }
+  #toc {
+    page-break-before: always;
+    border-top: none;
+    padding-top: 0;
+  }
+  #n-introduction {
+    page-break-before: always;
+  }
+  figure, pre, .vcard {
+    page-break-inside: avoid;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+  }
+  :is(h2, h3, h4, h5, h6)+*, dd {
+    page-break-before: avoid;
+  }
+  pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 10pt;
+  }
+  table {
+    border: 1px solid #ddd;
+  }
+  td {
+    border-top: 1px solid #ddd;
+  }
+}
+
+@page :first {
+  padding-top: 0;
+  @top-left {
+    content: normal;
+    border: none;
+  }
+  @top-center {
+    content: normal;
+    border: none;
+  }
+  @top-right {
+    content: normal;
+    border: none;
+  }
+}
+
+@page {
+  size: A4;
+  margin-bottom: 45mm;
+  padding-top: 20px;
+}
+
+/* Dark mode. */
+@media (prefers-color-scheme: dark) {
+:root {
+  --background-color: #121212;
+  --text-color: #f0f0f0;
+  --title-color: #fff;
+  --link-color: #4da4f0;
+  --highlight-color: #282828;
+  --line-color: #444;
+  --pilcrow-weak: #444;
+  --pilcrow-strong: #666;
+  scrollbar-color: #777 #333;
+}
+}
+
+/* SVG Trick: a prefix match works because only black and white are allowed */
+svg {
+  & :is([stroke="black"], [stroke^="#000"]) {
+    stroke: var(--text-color);
+  }
+  & :is([stroke="white"], [stroke^="#fff"]) {
+    stroke: var(--background-color);
+  }
+  & :is([fill="black"], [fill^="#000"], :not([fill])) {
+    fill: var(--text-color);
+  }
+  & :is([fill="white"], [fill^="#fff"]) {
+    fill: var(--background-color);
+  }
+}
+</style>
+
+</head>
+<body class="xml2rfc">
+<table class="ears">
+<thead><tr>
+<td class="left">Internet-Draft</td>
+<td class="center">LLM Email Discussions</td>
+<td class="right">July 2026</td>
+</tr></thead>
+<tfoot><tr>
+<td class="left">Farrell &amp; Feng</td>
+<td class="center">Expires 28 January 2027</td>
+<td class="right">[Page]</td>
+</tr></tfoot>
+</table>
+<div id="external-metadata" class="document-information"></div>
+<div id="internal-metadata" class="document-information">
+<dl id="identifiers">
+<dt class="label-workgroup">Workgroup:</dt>
+<dd class="workgroup">Network Working Group</dd>
+<dt class="label-internet-draft">Internet-Draft:</dt>
+<dd class="internet-draft">draft-fengfar-led-latest</dd>
+<dt class="label-published">Published:</dt>
+<dd class="published">
+<time datetime="2026-07-27" class="published">27 July 2026</time>
+    </dd>
+<dt class="label-intended-status">Intended Status:</dt>
+<dd class="intended-status">Informational</dd>
+<dt class="label-expires">Expires:</dt>
+<dd class="expires"><time datetime="2027-01-28">28 January 2027</time></dd>
+<dt class="label-authors">Authors:</dt>
+<dd class="authors">
+<div class="author">
+      <div class="author-name">S. Farrell</div>
+<div class="org">Trinity College Dublin</div>
+</div>
+<div class="author">
+      <div class="author-name">C. Feng</div>
+</div>
+</dd>
+</dl>
+</div>
+<h1 id="title">Dealing with LLMs in IETF Discussions</h1>
+<section id="section-abstract">
+      <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
+<p id="section-abstract-1">The rapid adoption of AI language tools has prompted concern across
+professional and technical communities, including the IETF, about authenticity, accountability,
+and the integrity of human contribution. This document approaches the
+question from two directions: a critical reader's concerns about what AI
+use means for IETF discussion, and a practitioner's account of how AI
+is currently being used in IETF discussions.
+We aim to explore some of the issues arising, and perhaps make
+some tentative recommendations.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
+</section>
+<section class="note rfcEditorRemove" id="section-note.1">
+      <h2 id="name-discussion-venues">
+<a href="#name-discussion-venues" class="section-name selfRef">Discussion Venues</a>
+      </h2>
+<p id="section-note.1-1">This note is to be removed before publishing as an RFC.<a href="#section-note.1-1" class="pilcrow">¶</a></p>
+<p id="section-note.1-2">Source for this draft and an issue tracker can be found at
+    <span><a href="https://github.com/sftcd/led">https://github.com/sftcd/led</a></span>.<a href="#section-note.1-2" class="pilcrow">¶</a></p>
+</section>
+<div id="status-of-memo">
+<section id="section-boilerplate.1">
+        <h2 id="name-status-of-this-memo">
+<a href="#name-status-of-this-memo" class="section-name selfRef">Status of This Memo</a>
+        </h2>
+<p id="section-boilerplate.1-1">
+        This Internet-Draft is submitted in full conformance with the
+        provisions of BCP 78 and BCP 79.<a href="#section-boilerplate.1-1" class="pilcrow">¶</a></p>
+<p id="section-boilerplate.1-2">
+        Internet-Drafts are working documents of the Internet Engineering Task
+        Force (IETF). Note that other groups may also distribute working
+        documents as Internet-Drafts. The list of current Internet-Drafts is
+        at <span><a href="https://datatracker.ietf.org/drafts/current/">https://datatracker.ietf.org/drafts/current/</a></span>.<a href="#section-boilerplate.1-2" class="pilcrow">¶</a></p>
+<p id="section-boilerplate.1-3">
+        Internet-Drafts are draft documents valid for a maximum of six months
+        and may be updated, replaced, or obsoleted by other documents at any
+        time. It is inappropriate to use Internet-Drafts as reference
+        material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
+<p id="section-boilerplate.1-4">
+        This Internet-Draft will expire on 28 January 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="copyright">
+<section id="section-boilerplate.2">
+        <h2 id="name-copyright-notice">
+<a href="#name-copyright-notice" class="section-name selfRef">Copyright Notice</a>
+        </h2>
+<p id="section-boilerplate.2-1">
+            Copyright (c) 2026 IETF Trust and the persons identified as the
+            document authors. All rights reserved.<a href="#section-boilerplate.2-1" class="pilcrow">¶</a></p>
+<p id="section-boilerplate.2-2">
+            This document is subject to BCP 78 and the IETF Trust's Legal
+            Provisions Relating to IETF Documents
+            (<span><a href="https://trustee.ietf.org/license-info">https://trustee.ietf.org/license-info</a></span>) in effect on the date of
+            publication of this document. Please review these documents
+            carefully, as they describe your rights and restrictions with
+            respect to this document. Code Components extracted from this
+            document must include Revised BSD License text as described in
+            Section 4.e of the Trust Legal Provisions and are provided without
+            warranty as described in the Revised BSD License.<a href="#section-boilerplate.2-2" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="toc">
+<section id="section-toc.1">
+        <a href="#" onclick="scroll(0,0)" class="toplink">▲</a><h2 id="name-table-of-contents">
+<a href="#name-table-of-contents" class="section-name selfRef">Table of Contents</a>
+        </h2>
+<nav class="toc"><ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.1">
+            <p id="section-toc.1-1.1.1" class="keepWithNext"><a href="#section-1" class="auto internal xref">1</a>.  <a href="#name-introduction" class="internal xref">Introduction</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.2">
+            <p id="section-toc.1-1.2.1" class="keepWithNext"><a href="#section-2" class="auto internal xref">2</a>.  <a href="#name-a-readers-concerns" class="internal xref">A Reader's Concerns</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3">
+            <p id="section-toc.1-1.3.1"><a href="#section-3" class="auto internal xref">3</a>.  <a href="#name-one-authors-workflow" class="internal xref">One Author's Workflow</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.1">
+                <p id="section-toc.1-1.3.2.1.1" class="keepWithNext"><a href="#section-3.1" class="auto internal xref">3.1</a>.  <a href="#name-monitoring-and-triage" class="internal xref">Monitoring and Triage</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.2">
+                <p id="section-toc.1-1.3.2.2.1"><a href="#section-3.2" class="auto internal xref">3.2</a>.  <a href="#name-forming-a-position" class="internal xref">Forming a Position</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.3">
+                <p id="section-toc.1-1.3.2.3.1"><a href="#section-3.3" class="auto internal xref">3.3</a>.  <a href="#name-drafting-in-english" class="internal xref">Drafting in English</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.4">
+                <p id="section-toc.1-1.3.2.4.1"><a href="#section-3.4" class="auto internal xref">3.4</a>.  <a href="#name-final-review-and-send" class="internal xref">Final Review and Send</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.5">
+                <p id="section-toc.1-1.3.2.5.1"><a href="#section-3.5" class="auto internal xref">3.5</a>.  <a href="#name-the-role-of-odyssey" class="internal xref">The Role of Odyssey</a></p>
+</li>
+            </ul>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4">
+            <p id="section-toc.1-1.4.1"><a href="#section-4" class="auto internal xref">4</a>.  <a href="#name-human-and-ai-complementary-" class="internal xref">Human and AI: Complementary Capabilities</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.1">
+                <p id="section-toc.1-1.4.2.1.1"><a href="#section-4.1" class="auto internal xref">4.1</a>.  <a href="#name-what-ai-does-well" class="internal xref">What AI Does Well</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.2">
+                <p id="section-toc.1-1.4.2.2.1"><a href="#section-4.2" class="auto internal xref">4.2</a>.  <a href="#name-what-ai-does-poorly" class="internal xref">What AI Does Poorly</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.3">
+                <p id="section-toc.1-1.4.2.3.1"><a href="#section-4.3" class="auto internal xref">4.3</a>.  <a href="#name-the-symmetry" class="internal xref">The Symmetry</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.4">
+                <p id="section-toc.1-1.4.2.4.1"><a href="#section-4.4" class="auto internal xref">4.4</a>.  <a href="#name-a-collaborative-paradigm" class="internal xref">A Collaborative Paradigm</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.4.2.1">
+                    <p id="section-toc.1-1.4.2.4.2.1.1"><a href="#section-4.4.1" class="auto internal xref">4.4.1</a>.  <a href="#name-the-core-principle" class="internal xref">The Core Principle</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.4.2.2">
+                    <p id="section-toc.1-1.4.2.4.2.2.1"><a href="#section-4.4.2" class="auto internal xref">4.4.2</a>.  <a href="#name-transparency-as-a-norm" class="internal xref">Transparency as a Norm</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.4.2.3">
+                    <p id="section-toc.1-1.4.2.4.2.3.1"><a href="#section-4.4.3" class="auto internal xref">4.4.3</a>.  <a href="#name-the-deepening-relationship" class="internal xref">The Deepening Relationship</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.4.2.4">
+                    <p id="section-toc.1-1.4.2.4.2.4.1"><a href="#section-4.4.4" class="auto internal xref">4.4.4</a>.  <a href="#name-what-becomes-possible" class="internal xref">What Becomes Possible</a></p>
+</li>
+                </ul>
+</li>
+            </ul>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5">
+            <p id="section-toc.1-1.5.1"><a href="#section-5" class="auto internal xref">5</a>.  <a href="#name-risks" class="internal xref">Risks</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6">
+            <p id="section-toc.1-1.6.1"><a href="#section-6" class="auto internal xref">6</a>.  <a href="#name-recommendations" class="internal xref">Recommendations</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7">
+            <p id="section-toc.1-1.7.1"><a href="#section-7" class="auto internal xref">7</a>.  <a href="#name-conclusion" class="internal xref">Conclusion</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8">
+            <p id="section-toc.1-1.8.1"><a href="#section-8" class="auto internal xref">8</a>.  <a href="#name-iana-considerations" class="internal xref">IANA Considerations</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9">
+            <p id="section-toc.1-1.9.1"><a href="#section-9" class="auto internal xref">9</a>.  <a href="#name-security-considerations" class="internal xref">Security Considerations</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.10">
+            <p id="section-toc.1-1.10.1"><a href="#section-10" class="auto internal xref">10</a>. <a href="#name-acknowledgements" class="internal xref">Acknowledgements</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.11">
+            <p id="section-toc.1-1.11.1"><a href="#section-11" class="auto internal xref">11</a>. <a href="#name-normative-references" class="internal xref">Normative References</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.12">
+            <p id="section-toc.1-1.12.1"><a href="#appendix-A" class="auto internal xref">Appendix A</a>.  <a href="#name-change-log" class="internal xref">Change Log</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.12.2.1">
+                <p id="section-toc.1-1.12.2.1.1"><a href="#appendix-A.1" class="auto internal xref">A.1</a>.  <a href="#name-draft-00" class="internal xref">Draft-00</a></p>
+</li>
+            </ul>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.13">
+            <p id="section-toc.1-1.13.1"><a href="#appendix-B" class="auto internal xref"></a><a href="#name-authors-addresses" class="internal xref">Authors' Addresses</a></p>
+</li>
+        </ul>
+</nav>
+</section>
+</div>
+<div id="intro">
+<section id="section-1">
+      <h2 id="name-introduction">
+<a href="#section-1" class="section-number selfRef">1. </a><a href="#name-introduction" class="section-name selfRef">Introduction</a>
+      </h2>
+<p id="section-1-1">"IETF discussions" here includes emails sent to IETF lists, presentations
+(slides) used at meetings, text input during e.g. github issue or PR
+discussions, and potentially messages sent using IM tools. Text included within
+Internet-drafts and RFCs is not included in scope here, even though some of the
+same issues will arise, as Internet-drafts and RFCs are also covered by BCP 78
+<span>[<a href="#RFC5378" class="cite xref">RFC5378</a>]</span> and BCP 79 <span>[<a href="#RFC8179" class="cite xref">RFC8179</a>]</span> so additional considerations apply for such
+text.<a href="#section-1-1" class="pilcrow">¶</a></p>
+<p id="section-1-2">AI language tools are now widely used in professional writing, including
+by some participants in
+standards development communities such as the IETF. This has produced
+at least two kinds of reaction: uncritical adoption, where AI output is used
+where previously a person would have written an email,
+and skepticism, where messages bearing the appearance
+of AI involvement are seen as problematic, on the basis
+that a reader cannot tell whether it is the person sending the email
+or just the AI tool, or some mixture.<a href="#section-1-2" class="pilcrow">¶</a></p>
+<p id="section-1-3">In order to explore these positions, it should be helpful to outline them in
+more detail, with the goal of better understanding what AI does well, what it
+does poorly, and where the boundary between them lies.<a href="#section-1-3" class="pilcrow">¶</a></p>
+<p id="section-1-4">This document grew out of a specific exchange on an IETF mailing list. One
+author described using AI to help express ideas developed independently; a
+reader flagged the output as LLM-generated and disengaged. Neither was wrong.
+But the exchange exposed a gap: the community lacks shared norms for how AI
+assistance should be used and disclosed in email discussions.  Rather than
+treat this as a local disagreement, the two parties decided to try think
+through it together --- and to document that discussion.<a href="#section-1-4" class="pilcrow">¶</a></p>
+<p id="section-1-5">Comments/issues/PRs are welcome at https://github.com/sftcd/led/<a href="#section-1-5" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="a-readers-concerns">
+<section id="section-2">
+      <h2 id="name-a-readers-concerns">
+<a href="#section-2" class="section-number selfRef">2. </a><a href="#name-a-readers-concerns" class="section-name selfRef">A Reader's Concerns</a>
+      </h2>
+<p id="section-2-1">This section is written by the first author. But readers would
+likely have guessed that anyway:-)<a href="#section-2-1" class="pilcrow">¶</a></p>
+<p id="section-2-2">Current AI tooling tends to emit text that can be readily seen
+to have involved that tooling. The following seem to be current
+"tells" for AI having been used when one considers the stream
+of email messages arriving from a sender:<a href="#section-2-2" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-2-3.1">
+          <p id="section-2-3.1.1">Frequently being overly positive about a message to which this message
+is a reaction, e.g. "You've asked exactly the right question..."<a href="#section-2-3.1.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-2-3.2">
+          <p id="section-2-3.2.1">Unexpected/over-use of geometric terms, e.g. "The seam is..." or
+"There are 17 dimensions..."<a href="#section-2-3.2.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-2-3.3">
+          <p id="section-2-3.3.1">Specific phrasing patterns, e.g. "Fifteen wibbles: two designs."<a href="#section-2-3.3.1" class="pilcrow">¶</a></p>
+</li>
+      </ul>
+<p id="section-2-4">However, a perhaps more disturbing pattern is the lack of uncertainty. It seems
+that people using AI tooling don't ask others what they mean, perhaps as AI
+tools make a statistical choice as to the meaning of earlier messages,
+then react as if that is a given. It's hard to see how that cannot lead to
+radical misunderstandings and, given AI tooling imperfections, senders
+emitting relative gibberish.<a href="#section-2-4" class="pilcrow">¶</a></p>
+<p id="section-2-5">Use of AI tooling also seems to correlate with "walls of text" that
+are very difficult to parse, both due to length (or seeming completeness),
+and complex sentence structures.<a href="#section-2-5" class="pilcrow">¶</a></p>
+<p id="section-2-6">Readers of such messages also generally have no insight into the tools used by
+senders, nor the level (if any) of human pre- or post-processing of AI inputs
+and outputs.<a href="#section-2-6" class="pilcrow">¶</a></p>
+<p id="section-2-7">In some cases, such messages may be sent in a time-frame that would
+seem impossible for a purely human-generated message, which also decreases
+confidence in the level of human input involved.<a href="#section-2-7" class="pilcrow">¶</a></p>
+<p id="section-2-8">All of the above means that a reader who considers that a message (or stream of
+messages) is largely the output from AI tools can have no confidence that they
+are discussing a topic with the person who seemingly sent the email. At that
+point, the only rational action seems to be to ignore such messages as being
+equivalent to spam.<a href="#section-2-8" class="pilcrow">¶</a></p>
+<p id="section-2-9">Note that the above issues are not the same as the sock-puppet problem, or a
+sybil attack. These issues remain problems even when the sender of messages is
+known to be a real person engaged in IETF work.<a href="#section-2-9" class="pilcrow">¶</a></p>
+<p id="section-2-10">Despite all the above, readers do know that AI tools are being used and
+have to be dealt with, and that ignoring messages won't scale if use of
+those tools becomes more common, nor if the tools get better to the point
+where messages no longer expose use of such tools. And it has to be
+acknowledged that the translation capabilities of AI tools could be
+beneficial to the Internet community, in terms of opening up participation
+to many more capable engineers for whom communicating in English is a
+challenge.<a href="#section-2-10" class="pilcrow">¶</a></p>
+<p id="section-2-11">It therefore seems possibly useful to explore these issues in more
+detail, hence this draft. (This author does not expect this draft to
+eventually become an RFC.)<a href="#section-2-11" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="one-authors-workflow">
+<section id="section-3">
+      <h2 id="name-one-authors-workflow">
+<a href="#section-3" class="section-number selfRef">3. </a><a href="#name-one-authors-workflow" class="section-name selfRef">One Author's Workflow</a>
+      </h2>
+<p id="section-3-1">This section is written by the second author, who uses AI assistance in
+IETF participation. While this author's workflow does envisage use of
+AI tooling for Internet-draft and RFC text preparation, dealing with
+that aspect of tool-use isn't really part of this draft.<a href="#section-3-1" class="pilcrow">¶</a></p>
+<p id="section-3-2">The second author is a non-native English speaker who participates in IETF
+standardization work across several working groups. The following describes
+current practice in detail, as a basis for the discussion that follows.<a href="#section-3-2" class="pilcrow">¶</a></p>
+<div id="monitoring-and-triage">
+<section id="section-3.1">
+        <h3 id="name-monitoring-and-triage">
+<a href="#section-3.1" class="section-number selfRef">3.1. </a><a href="#name-monitoring-and-triage" class="section-name selfRef">Monitoring and Triage</a>
+        </h3>
+<p id="section-3.1-1">Incoming mailing list traffic is large and often spans multiple
+simultaneous threads. An AI assistant is used to scan the mailbox and
+identify threads or messages that appear relevant, including those that may
+warrant a reply. The author then reads the original messages directly. The
+AI provides a signal; the reading and judgment are the author's.<a href="#section-3.1-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="forming-a-position">
+<section id="section-3.2">
+        <h3 id="name-forming-a-position">
+<a href="#section-3.2" class="section-number selfRef">3.2. </a><a href="#name-forming-a-position" class="section-name selfRef">Forming a Position</a>
+        </h3>
+<p id="section-3.2-1">After reading, the author thinks about the issue independently. This step
+is not delegated. The AI may be used at this stage to stress-test an
+argument --- to articulate the strongest counterposition, or to explore
+whether an alternative interpretation holds --- but it does not originate the
+position. The author decides what to think before asking AI to help express
+it.<a href="#section-3.2-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="drafting-in-english">
+<section id="section-3.3">
+        <h3 id="name-drafting-in-english">
+<a href="#section-3.3" class="section-number selfRef">3.3. </a><a href="#name-drafting-in-english" class="section-name selfRef">Drafting in English</a>
+        </h3>
+<p id="section-3.3-1">Once the author has decided what to say, an AI assistant produces an
+English draft. English is not the author's first language, and producing
+precise, idiomatic technical prose in a second language carries a real
+cognitive cost. AI removes that cost without changing who is responsible
+for the ideas.<a href="#section-3.3-1" class="pilcrow">¶</a></p>
+<p id="section-3.3-2">The author reviews this draft critically --- not for grammatical correctness,
+but for fidelity. If the output is too long, too polished, too neutral, or
+does not accurately represent the intended position, revisions are
+requested. This can take several rounds. The test is not "does this read
+well" but "does this say what I meant."<a href="#section-3.3-2" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="final-review-and-send">
+<section id="section-3.4">
+        <h3 id="name-final-review-and-send">
+<a href="#section-3.4" class="section-number selfRef">3.4. </a><a href="#name-final-review-and-send" class="section-name selfRef">Final Review and Send</a>
+        </h3>
+<p id="section-3.4-1">The author personally reviews the final text before sending. The AI does
+not send mail autonomously. The author takes full responsibility for
+anything sent under their name.<a href="#section-3.4-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="the-role-of-odyssey">
+<section id="section-3.5">
+        <h3 id="name-the-role-of-odyssey">
+<a href="#section-3.5" class="section-number selfRef">3.5. </a><a href="#name-the-role-of-odyssey" class="section-name selfRef">The Role of Odyssey</a>
+        </h3>
+<p id="section-3.5-1">The author has developed a personal AI agent called Odyssey
+(https://github.com/meetodyssey). Odyssey maintains long-term context across
+conversations --- what subjects the author cares about, how they normally
+reason, what positions they have taken over time. The long-term goal is for
+AI-assisted output to become increasingly consistent with how the author
+would write independently, as the system accumulates a genuine model of the
+author's thinking rather than producing generic fluent prose.
+This points toward something important: the right relationship between a
+person and their AI tools is one that deepens over time, becoming more
+accurate to the individual rather than more generic.<a href="#section-3.5-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+</section>
+</div>
+<div id="human-and-ai-complementary-capabilities">
+<section id="section-4">
+      <h2 id="name-human-and-ai-complementary-">
+<a href="#section-4" class="section-number selfRef">4. </a><a href="#name-human-and-ai-complementary-" class="section-name selfRef">Human and AI: Complementary Capabilities</a>
+      </h2>
+<p id="section-4-1">This section is also written by the second author.<a href="#section-4-1" class="pilcrow">¶</a></p>
+<p id="section-4-2">The issues described above reflect a genuine tension. To resolve
+it, it helps to be precise about what AI systems actually do well and what
+they do not.<a href="#section-4-2" class="pilcrow">¶</a></p>
+<div id="what-ai-does-well">
+<section id="section-4.1">
+        <h3 id="name-what-ai-does-well">
+<a href="#section-4.1" class="section-number selfRef">4.1. </a><a href="#name-what-ai-does-well" class="section-name selfRef">What AI Does Well</a>
+        </h3>
+<p id="section-4.1-1">AI language systems operate effectively within known boundaries. Given a
+well-defined problem space --- an established body of knowledge, a clear
+communication goal, a defined set of constraints --- AI can draft, translate,
+and refine text with speed and consistency no individual can match;
+identify relevant prior work across large corpora; stress-test arguments by
+generating counterpositions; and execute repetitive cognitive tasks without
+fatigue.<a href="#section-4.1-1" class="pilcrow">¶</a></p>
+<p id="section-4.1-2">For participants in international technical communities, the language
+function alone is significant. The ability to express a precise technical
+idea in idiomatic English is not the same as having the idea. AI collapses
+the gap between the two, allowing non-native speakers to participate on
+more equal terms.<a href="#section-4.1-2" class="pilcrow">¶</a></p>
+<p id="section-4.1-3">More fundamentally, AI excels at operating within accumulated knowledge.
+The existing literature of a field, its terminology, its conventions, its
+prior decisions --- this is exactly the kind of material AI systems are built
+to handle.<a href="#section-4.1-3" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="what-ai-does-poorly">
+<section id="section-4.2">
+        <h3 id="name-what-ai-does-poorly">
+<a href="#section-4.2" class="section-number selfRef">4.2. </a><a href="#name-what-ai-does-poorly" class="section-name selfRef">What AI Does Poorly</a>
+        </h3>
+<p id="section-4.2-1">AI systems have a structural limitation that is frequently underestimated:
+they cannot originate.<a href="#section-4.2-1" class="pilcrow">¶</a></p>
+<p id="section-4.2-2">They recombine, extrapolate, and interpolate within the space of what they
+have been trained on. This is not a temporary limitation awaiting a better
+model. It is a consequence of what these systems are. Genuine innovation ---
+the creation of new conceptual territory rather than more efficient mapping
+of existing terrain --- remains a human capacity.<a href="#section-4.2-2" class="pilcrow">¶</a></p>
+<p id="section-4.2-3">The ideas that change a field do not emerge from pattern completion. They
+emerge from the collision of lived experience, accumulated frustration,
+specific domain knowledge, and the kind of lateral connection that has no
+prior example to learn from. The recognition that the current framework is
+wrong, or that the question being asked is the wrong question, is not
+available to a system trained to operate within existing frameworks.<a href="#section-4.2-3" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="the-symmetry">
+<section id="section-4.3">
+        <h3 id="name-the-symmetry">
+<a href="#section-4.3" class="section-number selfRef">4.3. </a><a href="#name-the-symmetry" class="section-name selfRef">The Symmetry</a>
+        </h3>
+<p id="section-4.3-1">Humans have the inverse limitation. We are slow to acquire and integrate
+knowledge within established boundaries. Learning a field takes years.
+Staying current across adjacent areas is nearly impossible for any
+individual. Expressing ideas precisely in a second language imposes a
+constant cognitive cost.<a href="#section-4.3-1" class="pilcrow">¶</a></p>
+<p id="section-4.3-2">AI removes these constraints. A researcher with AI assistance can engage
+with a much larger body of prior work, express ideas more precisely across
+language barriers, and iterate on arguments more rapidly than was
+previously possible.<a href="#section-4.3-2" class="pilcrow">¶</a></p>
+<p id="section-4.3-3">The symmetry is clean: humans originate, AI executes. Humans open new
+territory; AI operates efficiently within it. Neither is complete without
+the other.<a href="#section-4.3-3" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="a-collaborative-paradigm">
+<section id="section-4.4">
+        <h3 id="name-a-collaborative-paradigm">
+<a href="#section-4.4" class="section-number selfRef">4.4. </a><a href="#name-a-collaborative-paradigm" class="section-name selfRef">A Collaborative Paradigm</a>
+        </h3>
+<p id="section-4.4-1">From this symmetry, a working paradigm emerges.<a href="#section-4.4-1" class="pilcrow">¶</a></p>
+<div id="the-core-principle">
+<section id="section-4.4.1">
+          <h4 id="name-the-core-principle">
+<a href="#section-4.4.1" class="section-number selfRef">4.4.1. </a><a href="#name-the-core-principle" class="section-name selfRef">The Core Principle</a>
+          </h4>
+<p id="section-4.4.1-1">Humans originate. AI executes.<a href="#section-4.4.1-1" class="pilcrow">¶</a></p>
+<p id="section-4.4.1-2">The position, the argument, and the judgment are formed by the human before
+AI involvement begins. AI is used to express, refine, translate, or
+stress-test what the human has already worked out. The human reviews AI
+output not for grammatical correctness but for fidelity to their actual
+position. The human takes full responsibility for anything sent or
+published.<a href="#section-4.4.1-2" class="pilcrow">¶</a></p>
+<p id="section-4.4.1-3">This boundary is not always clean in practice. Using AI to stress-test an
+argument can surface considerations the human had not thought of, which
+then reshape the position. This is legitimate --- the AI is functioning as a
+thinking partner within a bounded space, not as an originator. The human
+remains the decision-maker about what to accept and what to discard.
+What falls outside this paradigm is delegating the thinking itself: asking
+AI what position to take, what arguments to make, or what conclusions to
+draw --- and signing the output.<a href="#section-4.4.1-3" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="transparency-as-a-norm">
+<section id="section-4.4.2">
+          <h4 id="name-transparency-as-a-norm">
+<a href="#section-4.4.2" class="section-number selfRef">4.4.2. </a><a href="#name-transparency-as-a-norm" class="section-name selfRef">Transparency as a Norm</a>
+          </h4>
+<p id="section-4.4.2-1">The workflow described in Section 3 was questioned. The author described it
+in detail. This exchange --- uncomfortable at first --- produced this document.
+Transparency is not a concession to critics of AI assistance. It is what
+makes the collaboration legitimate. An author who can describe exactly how
+AI was used, and who can stand behind the resulting text as an accurate
+representation of their position, has nothing to hide. An author who cannot
+answer those questions has a different problem, and it is not the AI.<a href="#section-4.4.2-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="the-deepening-relationship">
+<section id="section-4.4.3">
+          <h4 id="name-the-deepening-relationship">
+<a href="#section-4.4.3" class="section-number selfRef">4.4.3. </a><a href="#name-the-deepening-relationship" class="section-name selfRef">The Deepening Relationship</a>
+          </h4>
+<p id="section-4.4.3-1">Generic AI assistance produces generic-sounding output. A system that
+accumulates genuine knowledge of an author's thinking, positions, and style
+produces output that more accurately represents them --- not because it is
+deceiving anyone, but because it has become a better instrument.<a href="#section-4.4.3-1" class="pilcrow">¶</a></p>
+<p id="section-4.4.3-2">This is the direction Odyssey points toward. Over time, the gap between
+"what the author would have written" and "what the AI-assisted author sent"
+narrows. The tool becomes more personal, more accurate, and paradoxically
+more transparent: the output is more genuinely the author's, not less.<a href="#section-4.4.3-2" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="what-becomes-possible">
+<section id="section-4.4.4">
+          <h4 id="name-what-becomes-possible">
+<a href="#section-4.4.4" class="section-number selfRef">4.4.4. </a><a href="#name-what-becomes-possible" class="section-name selfRef">What Becomes Possible</a>
+          </h4>
+<p id="section-4.4.4-1">The significance of this paradigm is not merely defensive --- not simply a
+justification for a practice that would otherwise be suspect. It is
+expansive.<a href="#section-4.4.4-1" class="pilcrow">¶</a></p>
+<p id="section-4.4.4-2">Things that were previously impossible for one person to accomplish ---
+engaging seriously with a large technical field while also pushing its
+boundaries, participating in international discourse while thinking in
+another language, tracking developments across multiple working groups
+while developing original contributions --- become achievable.<a href="#section-4.4.4-2" class="pilcrow">¶</a></p>
+<p id="section-4.4.4-3">This is the door the current moment opens. Not AI replacing human
+contribution, but AI extending the reach of what any human can contribute.
+The combination of human originality and AI execution capacity creates
+possibilities that neither possesses alone.<a href="#section-4.4.4-3" class="pilcrow">¶</a></p>
+</section>
+</div>
+</section>
+</div>
+</section>
+</div>
+<div id="risks">
+<section id="section-5">
+      <h2 id="name-risks">
+<a href="#section-5" class="section-number selfRef">5. </a><a href="#name-risks" class="section-name selfRef">Risks</a>
+      </h2>
+<p id="section-5-1">The risks of AI-assisted writing are real, but frequently misdescribed.
+Attempting to describe them precisely should help.<a href="#section-5-1" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-5-2.1">
+          <p id="section-5-2.1.1">AI replacement of thought.
+A primary risk is not AI assistance but the
+delegation of thinking itself --- asking AI what to believe, not just how to
+express a belief. This produces output that is fluent but not genuine, and over
+time it degrades the author's own capacity for independent thought, as
+well as putting the reader in an impossible position.<a href="#section-5-2.1.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-5-2.2">
+          <p id="section-5-2.2.1">Drift from the author's position.
+An author may form a genuine position but
+accept an AI draft that misrepresents it --- more confident, more agreeable,
+or more hedged than intended --- without noticing. Careful review of AI
+output exists to catch this. It requires the author to know their own
+position well enough to recognize when it has been distorted.<a href="#section-5-2.2.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-5-2.3">
+          <p id="section-5-2.3.1">Reader inability to distinguish.
+AI-assisted expression and AI-replaced
+thinking may produce similar surface output. Readers cannot easily tell
+them apart. This erodes the trust that makes mailing list discussion
+valuable, and it creates an asymmetry that disadvantages responsible users
+alongside irresponsible ones.<a href="#section-5-2.3.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-5-2.4">
+          <p id="section-5-2.4.1">Homogenization of discourse.
+AI systems have characteristic tendencies ---
+toward confidence, toward agreement, toward certain rhetorical patterns.
+Widely adopted without discipline, these tendencies flatten the diversity
+of perspective that technical communities depend on. A list where
+everyone's prose sounds similar, however polished, is a less productive
+list.<a href="#section-5-2.4.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-5-2.5">
+          <p id="section-5-2.5.1">Writing what one does not believe.
+Distinct from the above, an author may
+knowingly send AI output that does not reflect their actual position, using
+the tool as a shield against accountability.<a href="#section-5-2.5.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-5-2.6">
+          <p id="section-5-2.6.1">Emitting gibberish.
+AI tooling is imperfect, if we end up with multiple senders using AI tools
+and so essentially have AI tools running a substantive discussion, we are
+more likely to end up with gibberish.<a href="#section-5-2.6.1" class="pilcrow">¶</a></p>
+</li>
+      </ul>
+</section>
+</div>
+<div id="recommendations">
+<section id="section-6">
+      <h2 id="name-recommendations">
+<a href="#section-6" class="section-number selfRef">6. </a><a href="#name-recommendations" class="section-name selfRef">Recommendations</a>
+      </h2>
+<p id="section-6-1">These are extremely tentative recommendations, that may be wrong, but
+that seem worth considering:<a href="#section-6-1" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-6-2.1">
+          <p id="section-6-2.1.1">Form your position before engaging AI. The argument should be yours before
+the draft exists.<a href="#section-6-2.1.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-6-2.2">
+          <p id="section-6-2.2.1">Review AI output for fidelity, not just correctness. If the AI has
+softened, generalized, or shifted your position, correct it before sending.<a href="#section-6-2.2.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-6-2.3">
+          <p id="section-6-2.3.1">Always be transparent. Describing your workflow in detail builds trust
+rather than eroding it.<a href="#section-6-2.3.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-6-2.4">
+          <p id="section-6-2.4.1">Question senders if you think they are using AI tooling as to what
+they are doing. Doing that on-list should be considered acceptable, if
+it is not done in an accusatory manner.<a href="#section-6-2.4.1" class="pilcrow">¶</a></p>
+</li>
+      </ul>
+<p id="section-6-3">Less tentatively, the IETF should develop guidelines for use of AI tooling when
+sending messages (esp email) in IETF discussions. That won't be easy and will
+be a moving target, but absent such guidance, confidence in email discussions
+may evaporate, which would cause significant damage to the IETF.<a href="#section-6-3" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="conclusion">
+<section id="section-7">
+      <h2 id="name-conclusion">
+<a href="#section-7" class="section-number selfRef">7. </a><a href="#name-conclusion" class="section-name selfRef">Conclusion</a>
+      </h2>
+<p id="section-7-1">It's too early to say really.<a href="#section-7-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="iana-considerations">
+<section id="section-8">
+      <h2 id="name-iana-considerations">
+<a href="#section-8" class="section-number selfRef">8. </a><a href="#name-iana-considerations" class="section-name selfRef">IANA Considerations</a>
+      </h2>
+<p id="section-8-1">This document makes no request of IANA.<a href="#section-8-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="security-considerations">
+<section id="section-9">
+      <h2 id="name-security-considerations">
+<a href="#section-9" class="section-number selfRef">9. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
+      </h2>
+<p id="section-9-1">TBD<a href="#section-9-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="acknowledgements">
+<section id="section-10">
+      <h2 id="name-acknowledgements">
+<a href="#section-10" class="section-number selfRef">10. </a><a href="#name-acknowledgements" class="section-name selfRef">Acknowledgements</a>
+      </h2>
+<p id="section-10-1">TBD<a href="#section-10-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="sec-normative-references">
+<section id="section-11">
+      <h2 id="name-normative-references">
+<a href="#section-11" class="section-number selfRef">11. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
+      </h2>
+<dl class="references">
+<dt id="RFC5378">[RFC5378]</dt>
+      <dd>
+<span class="refAuthor">Bradner, S., Ed.</span> and <span class="refAuthor">J. Contreras, Ed.</span>, <span class="refTitle">"Rights Contributors Provide to the IETF Trust"</span>, <span class="seriesInfo">BCP 78</span>, <span class="seriesInfo">RFC 5378</span>, <span class="seriesInfo">DOI 10.17487/RFC5378</span>, <time datetime="2008-11" class="refDate">November 2008</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc5378">https://www.rfc-editor.org/info/rfc5378</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC8179">[RFC8179]</dt>
+    <dd>
+<span class="refAuthor">Bradner, S.</span> and <span class="refAuthor">J. Contreras</span>, <span class="refTitle">"Intellectual Property Rights in IETF Technology"</span>, <span class="seriesInfo">BCP 79</span>, <span class="seriesInfo">RFC 8179</span>, <span class="seriesInfo">DOI 10.17487/RFC8179</span>, <time datetime="2017-05" class="refDate">May 2017</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc8179">https://www.rfc-editor.org/info/rfc8179</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+</dl>
+</section>
+</div>
+<div id="change-log">
+<section id="appendix-A">
+      <h2 id="name-change-log">
+<a href="#appendix-A" class="section-number selfRef">Appendix A. </a><a href="#name-change-log" class="section-name selfRef">Change Log</a>
+      </h2>
+<div id="draft-00">
+<section id="appendix-A.1">
+        <h3 id="name-draft-00">
+<a href="#appendix-A.1" class="section-number selfRef">A.1. </a><a href="#name-draft-00" class="section-name selfRef">Draft-00</a>
+        </h3>
+<ul class="normal">
+<li class="normal" id="appendix-A.1-1.1">
+            <p id="appendix-A.1-1.1.1">This is based on email and github interactions between the authors.<a href="#appendix-A.1-1.1.1" class="pilcrow">¶</a></p>
+</li>
+        </ul>
+</section>
+</div>
+</section>
+</div>
+<div id="authors-addresses">
+<section id="appendix-B">
+      <h2 id="name-authors-addresses">
+<a href="#name-authors-addresses" class="section-name selfRef">Authors' Addresses</a>
+      </h2>
+<address class="vcard">
+        <div dir="auto" class="left"><span class="fn nameRole">Stephen Farrell</span></div>
+<div dir="auto" class="left"><span class="org">Trinity College Dublin</span></div>
+<div dir="auto" class="left"><span class="street-address">College Green</span></div>
+<div dir="auto" class="left"><span class="locality">Dublin</span></div>
+<div dir="auto" class="left"><span class="country-name">Ireland</span></div>
+<div class="email">
+<span>Email:</span>
+<a href="mailto:stephen.farrell@cs.tcd.ie" class="email">stephen.farrell@cs.tcd.ie</a>
+</div>
+</address>
+<address class="vcard">
+        <div dir="auto" class="left"><span class="fn nameRole">Chong Feng</span></div>
+<div class="email">
+<span>Email:</span>
+<a href="mailto:fengchongllly@gmail.com" class="email">fengchongllly@gmail.com</a>
+</div>
+</address>
+</section>
+</div>
+<script>const toc = document.getElementById("toc");
+toc.querySelector("h2").addEventListener("click", e => {
+  toc.classList.toggle("active");
+});
+toc.querySelector("nav").addEventListener("click", e => {
+  toc.classList.remove("active");
+});
+</script>
+</body>
+</html>
