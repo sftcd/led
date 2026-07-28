@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta content="Common,Latin" name="scripts">
 <meta content="initial-scale=1.0" name="viewport">
-<title>Human-AI Collaboration in Technical Communities, Principles and Practice</title>
+<title>Dealing with LLMs in Email Discussions</title>
 <meta content="Stephen Farrell" name="author">
 <meta content="Chong Feng" name="author">
 <meta content="
@@ -13,11 +13,9 @@ professional and technical communities about authenticity, accountability,
 and the integrity of human contribution. This document approaches the
 question from two directions: a critical reader's concerns about what AI
 use means for technical discourse, and a practitioner's account of how AI
-is actually used in standards work. From this tension, we derive a broader
-argument about the complementary capabilities of humans and AI, and what
-genuine collaboration between them looks like. We conclude with an
-assessment of the real risks and concrete recommendations for authors,
-readers, and technical communities. 
+is currently being used in IETF work.
+We aim to explore some of the issues arising, and perhaps make
+some tentative recommendations. 
     " name="description">
 <meta content="xml2rfc 3.34.0" name="generator">
 <meta content="Internet-Draft" name="keyword">
@@ -1089,7 +1087,7 @@ svg {
 </dd>
 </dl>
 </div>
-<h1 id="title">Human-AI Collaboration in Technical Communities, Principles and Practice</h1>
+<h1 id="title">Dealing with LLMs in Email Discussions</h1>
 <section id="section-abstract">
       <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
 <p id="section-abstract-1">The rapid adoption of AI language tools has prompted concern across
@@ -1097,11 +1095,9 @@ professional and technical communities about authenticity, accountability,
 and the integrity of human contribution. This document approaches the
 question from two directions: a critical reader's concerns about what AI
 use means for technical discourse, and a practitioner's account of how AI
-is actually used in standards work. From this tension, we derive a broader
-argument about the complementary capabilities of humans and AI, and what
-genuine collaboration between them looks like. We conclude with an
-assessment of the real risks and concrete recommendations for authors,
-readers, and technical communities.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
+is currently being used in IETF work.
+We aim to explore some of the issues arising, and perhaps make
+some tentative recommendations.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
 </section>
 <section class="note rfcEditorRemove" id="section-note.1">
       <h2 id="name-discussion-venues">
@@ -1197,67 +1193,56 @@ readers, and technical communities.<a href="#section-abstract-1" class="pilcrow"
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.3">
                 <p id="section-toc.1-1.4.2.3.1"><a href="#section-4.3" class="auto internal xref">4.3</a>.  <a href="#name-the-symmetry" class="internal xref">The Symmetry</a></p>
 </li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.4">
+                <p id="section-toc.1-1.4.2.4.1"><a href="#section-4.4" class="auto internal xref">4.4</a>.  <a href="#name-a-collaborative-paradigm" class="internal xref">A Collaborative Paradigm</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.4.2.1">
+                    <p id="section-toc.1-1.4.2.4.2.1.1"><a href="#section-4.4.1" class="auto internal xref">4.4.1</a>.  <a href="#name-the-core-principle" class="internal xref">The Core Principle</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.4.2.2">
+                    <p id="section-toc.1-1.4.2.4.2.2.1"><a href="#section-4.4.2" class="auto internal xref">4.4.2</a>.  <a href="#name-transparency-as-a-norm" class="internal xref">Transparency as a Norm</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.4.2.3">
+                    <p id="section-toc.1-1.4.2.4.2.3.1"><a href="#section-4.4.3" class="auto internal xref">4.4.3</a>.  <a href="#name-the-deepening-relationship" class="internal xref">The Deepening Relationship</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.4.2.4">
+                    <p id="section-toc.1-1.4.2.4.2.4.1"><a href="#section-4.4.4" class="auto internal xref">4.4.4</a>.  <a href="#name-what-becomes-possible" class="internal xref">What Becomes Possible</a></p>
+</li>
+                </ul>
+</li>
             </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5">
-            <p id="section-toc.1-1.5.1"><a href="#section-5" class="auto internal xref">5</a>.  <a href="#name-a-collaborative-paradigm" class="internal xref">A Collaborative Paradigm</a></p>
-<ul class="compact toc ulBare ulEmpty">
-<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.1">
-                <p id="section-toc.1-1.5.2.1.1"><a href="#section-5.1" class="auto internal xref">5.1</a>.  <a href="#name-the-core-principle" class="internal xref">The Core Principle</a></p>
-</li>
-              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.2">
-                <p id="section-toc.1-1.5.2.2.1"><a href="#section-5.2" class="auto internal xref">5.2</a>.  <a href="#name-transparency-as-a-norm" class="internal xref">Transparency as a Norm</a></p>
-</li>
-              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.3">
-                <p id="section-toc.1-1.5.2.3.1"><a href="#section-5.3" class="auto internal xref">5.3</a>.  <a href="#name-the-deepening-relationship" class="internal xref">The Deepening Relationship</a></p>
-</li>
-              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.4">
-                <p id="section-toc.1-1.5.2.4.1"><a href="#section-5.4" class="auto internal xref">5.4</a>.  <a href="#name-what-becomes-possible" class="internal xref">What Becomes Possible</a></p>
-</li>
-            </ul>
+            <p id="section-toc.1-1.5.1"><a href="#section-5" class="auto internal xref">5</a>.  <a href="#name-risks" class="internal xref">Risks</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6">
-            <p id="section-toc.1-1.6.1"><a href="#section-6" class="auto internal xref">6</a>.  <a href="#name-risks" class="internal xref">Risks</a></p>
+            <p id="section-toc.1-1.6.1"><a href="#section-6" class="auto internal xref">6</a>.  <a href="#name-recommendations" class="internal xref">Recommendations</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7">
-            <p id="section-toc.1-1.7.1"><a href="#section-7" class="auto internal xref">7</a>.  <a href="#name-recommendations" class="internal xref">Recommendations</a></p>
-<ul class="compact toc ulBare ulEmpty">
-<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.1">
-                <p id="section-toc.1-1.7.2.1.1"><a href="#section-7.1" class="auto internal xref">7.1</a>.  <a href="#name-for-authors-using-ai-assist" class="internal xref">For Authors Using AI Assistance</a></p>
-</li>
-              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.2">
-                <p id="section-toc.1-1.7.2.2.1"><a href="#section-7.2" class="auto internal xref">7.2</a>.  <a href="#name-for-readers-and-list-partic" class="internal xref">For Readers and List Participants</a></p>
-</li>
-              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.3">
-                <p id="section-toc.1-1.7.2.3.1"><a href="#section-7.3" class="auto internal xref">7.3</a>.  <a href="#name-for-the-ietf-and-technical-" class="internal xref">For the IETF and Technical Communities</a></p>
-</li>
-            </ul>
+            <p id="section-toc.1-1.7.1"><a href="#section-7" class="auto internal xref">7</a>.  <a href="#name-conclusion" class="internal xref">Conclusion</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8">
-            <p id="section-toc.1-1.8.1"><a href="#section-8" class="auto internal xref">8</a>.  <a href="#name-conclusion" class="internal xref">Conclusion</a></p>
+            <p id="section-toc.1-1.8.1"><a href="#section-8" class="auto internal xref">8</a>.  <a href="#name-iana-considerations" class="internal xref">IANA Considerations</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9">
-            <p id="section-toc.1-1.9.1"><a href="#section-9" class="auto internal xref">9</a>.  <a href="#name-iana-considerations" class="internal xref">IANA Considerations</a></p>
+            <p id="section-toc.1-1.9.1"><a href="#section-9" class="auto internal xref">9</a>.  <a href="#name-security-considerations" class="internal xref">Security Considerations</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.10">
-            <p id="section-toc.1-1.10.1"><a href="#section-10" class="auto internal xref">10</a>. <a href="#name-security-considerations" class="internal xref">Security Considerations</a></p>
+            <p id="section-toc.1-1.10.1"><a href="#section-10" class="auto internal xref">10</a>. <a href="#name-acknowledgements" class="internal xref">Acknowledgements</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.11">
-            <p id="section-toc.1-1.11.1"><a href="#section-11" class="auto internal xref">11</a>. <a href="#name-acknowledgements" class="internal xref">Acknowledgements</a></p>
+            <p id="section-toc.1-1.11.1"><a href="#section-11" class="auto internal xref">11</a>. <a href="#name-normative-references" class="internal xref">Normative References</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.12">
-            <p id="section-toc.1-1.12.1"><a href="#section-12" class="auto internal xref">12</a>. <a href="#name-normative-references" class="internal xref">Normative References</a></p>
-</li>
-          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.13">
-            <p id="section-toc.1-1.13.1"><a href="#appendix-A" class="auto internal xref">Appendix A</a>.  <a href="#name-change-log" class="internal xref">Change Log</a></p>
+            <p id="section-toc.1-1.12.1"><a href="#appendix-A" class="auto internal xref">Appendix A</a>.  <a href="#name-change-log" class="internal xref">Change Log</a></p>
 <ul class="compact toc ulBare ulEmpty">
-<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.13.2.1">
-                <p id="section-toc.1-1.13.2.1.1"><a href="#appendix-A.1" class="auto internal xref">A.1</a>.  <a href="#name-draft-00" class="internal xref">Draft-00</a></p>
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.12.2.1">
+                <p id="section-toc.1-1.12.2.1.1"><a href="#appendix-A.1" class="auto internal xref">A.1</a>.  <a href="#name-draft-00" class="internal xref">Draft-00</a></p>
 </li>
             </ul>
 </li>
-          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.14">
-            <p id="section-toc.1-1.14.1"><a href="#appendix-B" class="auto internal xref"></a><a href="#name-authors-addresses" class="internal xref">Authors' Addresses</a></p>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.13">
+            <p id="section-toc.1-1.13.1"><a href="#appendix-B" class="auto internal xref"></a><a href="#name-authors-addresses" class="internal xref">Authors' Addresses</a></p>
 </li>
         </ul>
 </nav>
@@ -1268,25 +1253,26 @@ readers, and technical communities.<a href="#section-abstract-1" class="pilcrow"
       <h2 id="name-introduction">
 <a href="#section-1" class="section-number selfRef">1. </a><a href="#name-introduction" class="section-name selfRef">Introduction</a>
       </h2>
-<p id="section-1-1">AI language tools are now widely used in professional writing, including in
-standards development communities such as the IETF. This has produced two
-kinds of reaction: uncritical adoption, where AI output is treated as
-equivalent to human thought, and wholesale rejection, where any AI
-involvement is seen as inauthentic.<a href="#section-1-1" class="pilcrow">¶</a></p>
-<p id="section-1-2">Both reactions miss the point.<a href="#section-1-2" class="pilcrow">¶</a></p>
-<p id="section-1-3">This document takes a third position: that human-AI collaboration,
-practiced with discipline and transparency, represents a genuine expansion
-of human capability --- not a substitution for it. The key is understanding
-what AI does well, what it does poorly, and where the boundary between them
-lies.<a href="#section-1-3" class="pilcrow">¶</a></p>
-<p id="section-1-4">This document grew out of a specific exchange on an IETF mailing list. One
+<p id="section-1-1">AI language tools are now widely used in professional writing, including
+by some participants in
+standards development communities such as the IETF. This has produced
+at least two kinds of reaction: uncritical adoption, where AI output is used
+where previously a person would have written an email,
+and skepticism, where messages bearing the appearance
+of AI involvement are seen as problematic, on the basis
+that a reader cannot tell whether it is the person sending the email
+or just the AI tool, or some mixture.<a href="#section-1-1" class="pilcrow">¶</a></p>
+<p id="section-1-2">In order to explore these positions, it should be helpful to outline them in
+more detail, with the goal of better understanding what AI does well, what it
+does poorly, and where the boundary between them lies.<a href="#section-1-2" class="pilcrow">¶</a></p>
+<p id="section-1-3">This document grew out of a specific exchange on an IETF mailing list. One
 author described using AI to help express ideas developed independently; a
-reader flagged the output as LLM-generated and disengaged. Neither was
-wrong. But the exchange exposed a gap: the community lacks shared norms for
-how AI assistance should be used and disclosed. Rather than treat this as a
-local disagreement, the two parties decided to think through it together ---
-and to write down what they found.<a href="#section-1-4" class="pilcrow">¶</a></p>
-<p id="section-1-5">If useful, comments/issues/PRs are welcome at: https://github.com/sftcd/led/<a href="#section-1-5" class="pilcrow">¶</a></p>
+reader flagged the output as LLM-generated and disengaged. Neither was wrong.
+But the exchange exposed a gap: the community lacks shared norms for how AI
+assistance should be used and disclosed in email discussions.  Rather than
+treat this as a local disagreement, the two parties decided to try think
+through it together --- and to document that discussion.<a href="#section-1-3" class="pilcrow">¶</a></p>
+<p id="section-1-4">Comments/issues/PRs are welcome at https://github.com/sftcd/led/<a href="#section-1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="a-readers-concerns">
@@ -1294,12 +1280,59 @@ and to write down what they found.<a href="#section-1-4" class="pilcrow">¶</a><
       <h2 id="name-a-readers-concerns">
 <a href="#section-2" class="section-number selfRef">2. </a><a href="#name-a-readers-concerns" class="section-name selfRef">A Reader's Concerns</a>
       </h2>
-<p id="section-2-1">This section is written by the first author.
-Placeholder: Stephen Farrell will contribute this section, covering the
-difficulty of distinguishing AI-assisted expression from AI-replaced
-thinking; the loss of epistemic texture in LLM-generated list mail; the
-risk that readers cannot know whether the sender stands behind the words;
-and the broader challenge this poses for mailing list culture.<a href="#section-2-1" class="pilcrow">¶</a></p>
+<p id="section-2-1">This section is written by the first author. But readers would
+likely have guessed that anyway:-)<a href="#section-2-1" class="pilcrow">¶</a></p>
+<p id="section-2-2">Current AI tooling tends to emit text that can be readily seen
+to have involved that tooling. The following seem to be current
+"tells" for AI having been used when one considers the stream
+of email messages arriving from a sender:<a href="#section-2-2" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-2-3.1">
+          <p id="section-2-3.1.1">Frequently being overly positive about a message to which this message
+is a reaction, e.g. "You've asked exactly the right question..."<a href="#section-2-3.1.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-2-3.2">
+          <p id="section-2-3.2.1">Unexpected/over-use of geometric terms, e.g. "The seam is..." or
+"There are 17 dimensions..."<a href="#section-2-3.2.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-2-3.3">
+          <p id="section-2-3.3.1">Specific phrasing patterns, e.g. "Fifteen wibbles: two designs."<a href="#section-2-3.3.1" class="pilcrow">¶</a></p>
+</li>
+      </ul>
+<p id="section-2-4">However, a perhaps more disturbing pattern is the lack of uncertainty. It seems
+that people using AI tooling don't ask others what they mean, perhaps as AI
+tools make a statistical choice as to the meaning of earlier messages,
+then react as if that is a given. It's hard to see how that cannot lead to
+radical misunderstandings and, given AI tooling imperfections, senders
+emitting relative gibberish.<a href="#section-2-4" class="pilcrow">¶</a></p>
+<p id="section-2-5">Use of AI tooling also seems to correlate with "walls of text" that
+are very difficult to parse, both due to length (or seeming completeness),
+and complex sentence structures.<a href="#section-2-5" class="pilcrow">¶</a></p>
+<p id="section-2-6">Readers of such messages also generally have no insight into the tools used by
+senders, nor the level (if any) of human pre- or post-processing of AI inputs
+and outputs.<a href="#section-2-6" class="pilcrow">¶</a></p>
+<p id="section-2-7">In some cases, such messages may be sent in a time-frame that would
+seem impossible for a purely human-generated message, which also decreases
+confidence in the level of human input involved.<a href="#section-2-7" class="pilcrow">¶</a></p>
+<p id="section-2-8">All of the above means that a reader who considers that a message (or stream of
+messages) is largely the output from AI tools can have no confidence that they
+are discussing a topic with the person who seemingly sent the email. At that
+point, the only rational action seems to be to ignore such messages as being
+equivalent to spam.<a href="#section-2-8" class="pilcrow">¶</a></p>
+<p id="section-2-9">Note that the above issues are not the same as the sock-puppet problem, or a
+sybil attack. These issues remain problems even when the sender of messages is
+known to be a real person engaged in IETF work.<a href="#section-2-9" class="pilcrow">¶</a></p>
+<p id="section-2-10">Despite all the above, readers do know that AI tools are being used and
+have to be dealt with, and that ignoring messages won't scale if use of
+those tools becomes more common, nor if the tools get better to the point
+where messages no longer expose use of such tools. And it has to be
+acknowledged that the translation capabilities of AI tools could be
+beneficial to the Internet community, in terms of opening up participation
+to many more capable engineers for whom communicating in English is a
+challenge.<a href="#section-2-10" class="pilcrow">¶</a></p>
+<p id="section-2-11">It therefore seems possibly useful to explore these issues in more
+detail, hence this draft. (This author does not expect this draft to
+eventually become an RFC.)<a href="#section-2-11" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="one-authors-workflow">
@@ -1369,8 +1402,8 @@ anything sent under their name.<a href="#section-3.4-1" class="pilcrow">¶</a></
         <h3 id="name-the-role-of-odyssey">
 <a href="#section-3.5" class="section-number selfRef">3.5. </a><a href="#name-the-role-of-odyssey" class="section-name selfRef">The Role of Odyssey</a>
         </h3>
-<p id="section-3.5-1">The author has developed a personal AI agent called Odyssey (
-https://github.com/meetodyssey). Odyssey maintains long-term context across
+<p id="section-3.5-1">The author has developed a personal AI agent called Odyssey
+(https://github.com/meetodyssey). Odyssey maintains long-term context across
 conversations --- what subjects the author cares about, how they normally
 reason, what positions they have taken over time. The long-term goal is for
 AI-assisted output to become increasingly consistent with how the author
@@ -1388,9 +1421,10 @@ accurate to the individual rather than more generic.<a href="#section-3.5-1" cla
       <h2 id="name-human-and-ai-complementary-">
 <a href="#section-4" class="section-number selfRef">4. </a><a href="#name-human-and-ai-complementary-" class="section-name selfRef">Human and AI: Complementary Capabilities</a>
       </h2>
-<p id="section-4-1">The exchange described in Section 1 reflects a genuine tension. To resolve
+<p id="section-4-1">This section is also written by the second author.<a href="#section-4-1" class="pilcrow">¶</a></p>
+<p id="section-4-2">The issues described above reflect a genuine tension. To resolve
 it, it helps to be precise about what AI systems actually do well and what
-they do not.<a href="#section-4-1" class="pilcrow">¶</a></p>
+they do not.<a href="#section-4-2" class="pilcrow">¶</a></p>
 <div id="what-ai-does-well">
 <section id="section-4.1">
         <h3 id="name-what-ai-does-well">
@@ -1453,209 +1487,211 @@ territory; AI operates efficiently within it. Neither is complete without
 the other.<a href="#section-4.3-3" class="pilcrow">¶</a></p>
 </section>
 </div>
-</section>
-</div>
 <div id="a-collaborative-paradigm">
-<section id="section-5">
-      <h2 id="name-a-collaborative-paradigm">
-<a href="#section-5" class="section-number selfRef">5. </a><a href="#name-a-collaborative-paradigm" class="section-name selfRef">A Collaborative Paradigm</a>
-      </h2>
-<p id="section-5-1">From this symmetry, a working paradigm emerges.<a href="#section-5-1" class="pilcrow">¶</a></p>
-<div id="the-core-principle">
-<section id="section-5.1">
-        <h3 id="name-the-core-principle">
-<a href="#section-5.1" class="section-number selfRef">5.1. </a><a href="#name-the-core-principle" class="section-name selfRef">The Core Principle</a>
+<section id="section-4.4">
+        <h3 id="name-a-collaborative-paradigm">
+<a href="#section-4.4" class="section-number selfRef">4.4. </a><a href="#name-a-collaborative-paradigm" class="section-name selfRef">A Collaborative Paradigm</a>
         </h3>
-<p id="section-5.1-1">Humans originate. AI executes.<a href="#section-5.1-1" class="pilcrow">¶</a></p>
-<p id="section-5.1-2">The position, the argument, and the judgment are formed by the human before
+<p id="section-4.4-1">From this symmetry, a working paradigm emerges.<a href="#section-4.4-1" class="pilcrow">¶</a></p>
+<div id="the-core-principle">
+<section id="section-4.4.1">
+          <h4 id="name-the-core-principle">
+<a href="#section-4.4.1" class="section-number selfRef">4.4.1. </a><a href="#name-the-core-principle" class="section-name selfRef">The Core Principle</a>
+          </h4>
+<p id="section-4.4.1-1">Humans originate. AI executes.<a href="#section-4.4.1-1" class="pilcrow">¶</a></p>
+<p id="section-4.4.1-2">The position, the argument, and the judgment are formed by the human before
 AI involvement begins. AI is used to express, refine, translate, or
 stress-test what the human has already worked out. The human reviews AI
 output not for grammatical correctness but for fidelity to their actual
 position. The human takes full responsibility for anything sent or
-published.<a href="#section-5.1-2" class="pilcrow">¶</a></p>
-<p id="section-5.1-3">This boundary is not always clean in practice. Using AI to stress-test an
+published.<a href="#section-4.4.1-2" class="pilcrow">¶</a></p>
+<p id="section-4.4.1-3">This boundary is not always clean in practice. Using AI to stress-test an
 argument can surface considerations the human had not thought of, which
 then reshape the position. This is legitimate --- the AI is functioning as a
 thinking partner within a bounded space, not as an originator. The human
 remains the decision-maker about what to accept and what to discard.
 What falls outside this paradigm is delegating the thinking itself: asking
 AI what position to take, what arguments to make, or what conclusions to
-draw --- and signing the output.<a href="#section-5.1-3" class="pilcrow">¶</a></p>
+draw --- and signing the output.<a href="#section-4.4.1-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="transparency-as-a-norm">
-<section id="section-5.2">
-        <h3 id="name-transparency-as-a-norm">
-<a href="#section-5.2" class="section-number selfRef">5.2. </a><a href="#name-transparency-as-a-norm" class="section-name selfRef">Transparency as a Norm</a>
-        </h3>
-<p id="section-5.2-1">The workflow described in Section 3 was questioned. The author described it
+<section id="section-4.4.2">
+          <h4 id="name-transparency-as-a-norm">
+<a href="#section-4.4.2" class="section-number selfRef">4.4.2. </a><a href="#name-transparency-as-a-norm" class="section-name selfRef">Transparency as a Norm</a>
+          </h4>
+<p id="section-4.4.2-1">The workflow described in Section 3 was questioned. The author described it
 in detail. This exchange --- uncomfortable at first --- produced this document.
 Transparency is not a concession to critics of AI assistance. It is what
 makes the collaboration legitimate. An author who can describe exactly how
 AI was used, and who can stand behind the resulting text as an accurate
 representation of their position, has nothing to hide. An author who cannot
-answer those questions has a different problem, and it is not the AI.<a href="#section-5.2-1" class="pilcrow">¶</a></p>
+answer those questions has a different problem, and it is not the AI.<a href="#section-4.4.2-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="the-deepening-relationship">
-<section id="section-5.3">
-        <h3 id="name-the-deepening-relationship">
-<a href="#section-5.3" class="section-number selfRef">5.3. </a><a href="#name-the-deepening-relationship" class="section-name selfRef">The Deepening Relationship</a>
-        </h3>
-<p id="section-5.3-1">Generic AI assistance produces generic-sounding output. A system that
+<section id="section-4.4.3">
+          <h4 id="name-the-deepening-relationship">
+<a href="#section-4.4.3" class="section-number selfRef">4.4.3. </a><a href="#name-the-deepening-relationship" class="section-name selfRef">The Deepening Relationship</a>
+          </h4>
+<p id="section-4.4.3-1">Generic AI assistance produces generic-sounding output. A system that
 accumulates genuine knowledge of an author's thinking, positions, and style
 produces output that more accurately represents them --- not because it is
-deceiving anyone, but because it has become a better instrument.<a href="#section-5.3-1" class="pilcrow">¶</a></p>
-<p id="section-5.3-2">This is the direction Odyssey points toward. Over time, the gap between
+deceiving anyone, but because it has become a better instrument.<a href="#section-4.4.3-1" class="pilcrow">¶</a></p>
+<p id="section-4.4.3-2">This is the direction Odyssey points toward. Over time, the gap between
 "what the author would have written" and "what the AI-assisted author sent"
 narrows. The tool becomes more personal, more accurate, and paradoxically
-more transparent: the output is more genuinely the author's, not less.<a href="#section-5.3-2" class="pilcrow">¶</a></p>
+more transparent: the output is more genuinely the author's, not less.<a href="#section-4.4.3-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="what-becomes-possible">
-<section id="section-5.4">
-        <h3 id="name-what-becomes-possible">
-<a href="#section-5.4" class="section-number selfRef">5.4. </a><a href="#name-what-becomes-possible" class="section-name selfRef">What Becomes Possible</a>
-        </h3>
-<p id="section-5.4-1">The significance of this paradigm is not merely defensive --- not simply a
+<section id="section-4.4.4">
+          <h4 id="name-what-becomes-possible">
+<a href="#section-4.4.4" class="section-number selfRef">4.4.4. </a><a href="#name-what-becomes-possible" class="section-name selfRef">What Becomes Possible</a>
+          </h4>
+<p id="section-4.4.4-1">The significance of this paradigm is not merely defensive --- not simply a
 justification for a practice that would otherwise be suspect. It is
-expansive.<a href="#section-5.4-1" class="pilcrow">¶</a></p>
-<p id="section-5.4-2">Things that were previously impossible for one person to accomplish ---
+expansive.<a href="#section-4.4.4-1" class="pilcrow">¶</a></p>
+<p id="section-4.4.4-2">Things that were previously impossible for one person to accomplish ---
 engaging seriously with a large technical field while also pushing its
 boundaries, participating in international discourse while thinking in
 another language, tracking developments across multiple working groups
-while developing original contributions --- become achievable.<a href="#section-5.4-2" class="pilcrow">¶</a></p>
-<p id="section-5.4-3">This is the door the current moment opens. Not AI replacing human
+while developing original contributions --- become achievable.<a href="#section-4.4.4-2" class="pilcrow">¶</a></p>
+<p id="section-4.4.4-3">This is the door the current moment opens. Not AI replacing human
 contribution, but AI extending the reach of what any human can contribute.
 The combination of human originality and AI execution capacity creates
-possibilities that neither possesses alone.<a href="#section-5.4-3" class="pilcrow">¶</a></p>
+possibilities that neither possesses alone.<a href="#section-4.4.4-3" class="pilcrow">¶</a></p>
+</section>
+</div>
 </section>
 </div>
 </section>
 </div>
 <div id="risks">
-<section id="section-6">
+<section id="section-5">
       <h2 id="name-risks">
-<a href="#section-6" class="section-number selfRef">6. </a><a href="#name-risks" class="section-name selfRef">Risks</a>
+<a href="#section-5" class="section-number selfRef">5. </a><a href="#name-risks" class="section-name selfRef">Risks</a>
       </h2>
-<p id="section-6-1">The risks of AI-assisted writing are real, but frequently misdescribed.
-Naming them precisely matters.<a href="#section-6-1" class="pilcrow">¶</a></p>
-<p id="section-6-2">AI replacement of thought. The primary risk is not AI assistance but the
+<p id="section-5-1">The risks of AI-assisted writing are real, but frequently misdescribed.
+Attempting to describe them precisely should help.<a href="#section-5-1" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-5-2.1">
+          <p id="section-5-2.1.1">AI replacement of thought.
+A primary risk is not AI assistance but the
 delegation of thinking itself --- asking AI what to believe, not just how to
-express it. This produces output that is fluent but not genuine, and over
-time it degrades the author's own capacity for independent thought.<a href="#section-6-2" class="pilcrow">¶</a></p>
-<p id="section-6-3">Drift from the author's position. An author may form a genuine position but
+express a belief. This produces output that is fluent but not genuine, and over
+time it degrades the author's own capacity for independent thought, as
+well as putting the reader in an impossible position.<a href="#section-5-2.1.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-5-2.2">
+          <p id="section-5-2.2.1">Drift from the author's position.
+An author may form a genuine position but
 accept an AI draft that misrepresents it --- more confident, more agreeable,
 or more hedged than intended --- without noticing. Careful review of AI
 output exists to catch this. It requires the author to know their own
-position well enough to recognize when it has been distorted.<a href="#section-6-3" class="pilcrow">¶</a></p>
-<p id="section-6-4">Reader inability to distinguish. AI-assisted expression and AI-replaced
+position well enough to recognize when it has been distorted.<a href="#section-5-2.2.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-5-2.3">
+          <p id="section-5-2.3.1">Reader inability to distinguish.
+AI-assisted expression and AI-replaced
 thinking may produce similar surface output. Readers cannot easily tell
 them apart. This erodes the trust that makes mailing list discussion
 valuable, and it creates an asymmetry that disadvantages responsible users
-alongside irresponsible ones.<a href="#section-6-4" class="pilcrow">¶</a></p>
-<p id="section-6-5">Homogenization of discourse. AI systems have characteristic tendencies ---
+alongside irresponsible ones.<a href="#section-5-2.3.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-5-2.4">
+          <p id="section-5-2.4.1">Homogenization of discourse.
+AI systems have characteristic tendencies ---
 toward confidence, toward agreement, toward certain rhetorical patterns.
 Widely adopted without discipline, these tendencies flatten the diversity
 of perspective that technical communities depend on. A list where
 everyone's prose sounds similar, however polished, is a less productive
-list.<a href="#section-6-5" class="pilcrow">¶</a></p>
-<p id="section-6-6">Writing what one does not believe. Distinct from the above: an author may
+list.<a href="#section-5-2.4.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-5-2.5">
+          <p id="section-5-2.5.1">Writing what one does not believe.
+Distinct from the above, an author may
 knowingly send AI output that does not reflect their actual position, using
-the tool as a shield against accountability.<a href="#section-6-6" class="pilcrow">¶</a></p>
+the tool as a shield against accountability.<a href="#section-5-2.5.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-5-2.6">
+          <p id="section-5-2.6.1">Emitting gibberish.
+AI tooling is imperfect, if we end up with multiple senders using AI tools
+and so essentially have AI tools running a substantive discussion, we are
+more likely to end up with gibberish.<a href="#section-5-2.6.1" class="pilcrow">¶</a></p>
+</li>
+      </ul>
 </section>
 </div>
 <div id="recommendations">
-<section id="section-7">
+<section id="section-6">
       <h2 id="name-recommendations">
-<a href="#section-7" class="section-number selfRef">7. </a><a href="#name-recommendations" class="section-name selfRef">Recommendations</a>
+<a href="#section-6" class="section-number selfRef">6. </a><a href="#name-recommendations" class="section-name selfRef">Recommendations</a>
       </h2>
-<div id="for-authors-using-ai-assistance">
-<section id="section-7.1">
-        <h3 id="name-for-authors-using-ai-assist">
-<a href="#section-7.1" class="section-number selfRef">7.1. </a><a href="#name-for-authors-using-ai-assist" class="section-name selfRef">For Authors Using AI Assistance</a>
-        </h3>
-<p id="section-7.1-1">Form your position before engaging AI. The argument should be yours before
-the draft exists.<a href="#section-7.1-1" class="pilcrow">¶</a></p>
-<p id="section-7.1-2">Review AI output for fidelity, not just correctness. If the AI has
-softened, generalized, or shifted your position, correct it before sending.<a href="#section-7.1-2" class="pilcrow">¶</a></p>
-<p id="section-7.1-3">Be transparent when asked. Describing your workflow in detail builds trust
-rather than eroding it.<a href="#section-7.1-3" class="pilcrow">¶</a></p>
-<p id="section-7.1-4">Disclose proactively in high-stakes contexts --- formal I-D authorship,
-attributed positions, official statements.<a href="#section-7.1-4" class="pilcrow">¶</a></p>
-<p id="section-7.1-5">Invest in AI tools that learn your specific thinking over time, rather than
-relying on generic assistance indefinitely.<a href="#section-7.1-5" class="pilcrow">¶</a></p>
-</section>
-</div>
-<div id="for-readers-and-list-participants">
-<section id="section-7.2">
-        <h3 id="name-for-readers-and-list-partic">
-<a href="#section-7.2" class="section-number selfRef">7.2. </a><a href="#name-for-readers-and-list-partic" class="section-name selfRef">For Readers and List Participants</a>
-        </h3>
-<p id="section-7.2-1">(Stephen's primary contribution --- to be added)<a href="#section-7.2-1" class="pilcrow">¶</a></p>
-</section>
-</div>
-<div id="for-the-ietf-and-technical-communities">
-<section id="section-7.3">
-        <h3 id="name-for-the-ietf-and-technical-">
-<a href="#section-7.3" class="section-number selfRef">7.3. </a><a href="#name-for-the-ietf-and-technical-" class="section-name selfRef">For the IETF and Technical Communities</a>
-        </h3>
-<p id="section-7.3-1">(To be developed jointly)<a href="#section-7.3-1" class="pilcrow">¶</a></p>
-</section>
-</div>
+<p id="section-6-1">These are extremely tentative recommendations, that may be wrong, but
+that seem worth considering:<a href="#section-6-1" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-6-2.1">
+          <p id="section-6-2.1.1">Form your position before engaging AI. The argument should be yours before
+the draft exists.<a href="#section-6-2.1.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-6-2.2">
+          <p id="section-6-2.2.1">Review AI output for fidelity, not just correctness. If the AI has
+softened, generalized, or shifted your position, correct it before sending.<a href="#section-6-2.2.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-6-2.3">
+          <p id="section-6-2.3.1">Always be transparent. Describing your workflow in detail builds trust
+rather than eroding it.<a href="#section-6-2.3.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-6-2.4">
+          <p id="section-6-2.4.1">Question senders if you think they are using AI tooling as to what
+they are doing. Doing that on-list should be considered acceptable, if
+it is not done in an accusatory manner.<a href="#section-6-2.4.1" class="pilcrow">¶</a></p>
+</li>
+      </ul>
+<p id="section-6-3">Less tentatively, the IETF should develop guidelines for use of AI tooling when
+sending messages (esp email) in IETF discussions. That won't be easy and will
+be a moving target, but absent such guidance, confidence in email discussions
+may evaporate, which would cause significant damage to the IETF.<a href="#section-6-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="conclusion">
-<section id="section-8">
+<section id="section-7">
       <h2 id="name-conclusion">
-<a href="#section-8" class="section-number selfRef">8. </a><a href="#name-conclusion" class="section-name selfRef">Conclusion</a>
+<a href="#section-7" class="section-number selfRef">7. </a><a href="#name-conclusion" class="section-name selfRef">Conclusion</a>
       </h2>
-<p id="section-8-1">The anxiety surrounding AI-assisted writing reflects a real problem but
-points toward the wrong solution. Prohibition or stigma does not address
-the underlying risk --- it drives practice underground, removes transparency,
-and disadvantages those who would use AI responsibly alongside those who
-would not.<a href="#section-8-1" class="pilcrow">¶</a></p>
-<p id="section-8-2">The right response is clarity: about what AI does well, what it cannot do,
-and where the human must remain in control. With that clarity, human-AI
-collaboration is not a threat to the integrity of technical discourse. It
-is an expansion of what human participants can bring to it.<a href="#section-8-2" class="pilcrow">¶</a></p>
-<p id="section-8-3">The exchange that motivated this document ended with a proposal to write it
-together. Two people with genuinely different perspectives on the same
-problem agreed to think through it jointly. That outcome is itself an
-illustration of what the document argues for: not AI replacing human
-judgment, but human judgment --- assisted, extended, and made more reachable
---- arriving somewhere neither party could have reached alone.<a href="#section-8-3" class="pilcrow">¶</a></p>
+<p id="section-7-1">It's too early to say really.<a href="#section-7-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="iana-considerations">
-<section id="section-9">
+<section id="section-8">
       <h2 id="name-iana-considerations">
-<a href="#section-9" class="section-number selfRef">9. </a><a href="#name-iana-considerations" class="section-name selfRef">IANA Considerations</a>
+<a href="#section-8" class="section-number selfRef">8. </a><a href="#name-iana-considerations" class="section-name selfRef">IANA Considerations</a>
       </h2>
-<p id="section-9-1">This document makes no request of IANA.<a href="#section-9-1" class="pilcrow">¶</a></p>
+<p id="section-8-1">This document makes no request of IANA.<a href="#section-8-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="security-considerations">
-<section id="section-10">
+<section id="section-9">
       <h2 id="name-security-considerations">
-<a href="#section-10" class="section-number selfRef">10. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
+<a href="#section-9" class="section-number selfRef">9. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
       </h2>
-<p id="section-10-1">TBD
-This is just so I remember how to add a reference. <span>[<a href="#RPCTBD" class="cite xref">RPCTBD</a>]</span>.<a href="#section-10-1" class="pilcrow">¶</a></p>
+<p id="section-9-1">TBD
+This is just so I remember how to add a reference. <span>[<a href="#RPCTBD" class="cite xref">RPCTBD</a>]</span>.<a href="#section-9-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="acknowledgements">
-<section id="section-11">
+<section id="section-10">
       <h2 id="name-acknowledgements">
-<a href="#section-11" class="section-number selfRef">11. </a><a href="#name-acknowledgements" class="section-name selfRef">Acknowledgements</a>
+<a href="#section-10" class="section-number selfRef">10. </a><a href="#name-acknowledgements" class="section-name selfRef">Acknowledgements</a>
       </h2>
-<p id="section-11-1">TBD<a href="#section-11-1" class="pilcrow">¶</a></p>
+<p id="section-10-1">TBD<a href="#section-10-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="sec-normative-references">
-<section id="section-12">
+<section id="section-11">
       <h2 id="name-normative-references">
-<a href="#section-12" class="section-number selfRef">12. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
+<a href="#section-11" class="section-number selfRef">11. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
       </h2>
 <dl class="references">
 <dt id="RPCTBD">[RPCTBD]</dt>
