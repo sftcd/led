@@ -1,6 +1,6 @@
 <!-- regenerate: on (set to off if you edit this file) -->
 
-# Dealing with LLMs in Email Discussions
+# Dealing with LLMs in IETF Discussions
 
 This is the working area for the individual Internet-Draft, "Dealing with LLMs in Email Discussions"
 
