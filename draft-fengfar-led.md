@@ -1,5 +1,5 @@
 ---
-title: Human-AI Collaboration in Technical Communities, Principles and Practice
+title: Dealing with LLMs in Email Discussions
 abbrev: LLM Email Discussions
 docname: draft-fengfar-led-latest
 date: 2026-07-27
@@ -47,48 +47,97 @@ professional and technical communities about authenticity, accountability,
 and the integrity of human contribution. This document approaches the
 question from two directions: a critical reader's concerns about what AI
 use means for technical discourse, and a practitioner's account of how AI
-is actually used in standards work. From this tension, we derive a broader
-argument about the complementary capabilities of humans and AI, and what
-genuine collaboration between them looks like. We conclude with an
-assessment of the real risks and concrete recommendations for authors,
-readers, and technical communities.
+is currently being used in IETF work.
+We aim to explore some of the issues arising, and perhaps make
+some tentative recommendations.
 
 --- middle
 
 # Introduction        {#intro}
 
-AI language tools are now widely used in professional writing, including in
-standards development communities such as the IETF. This has produced two
-kinds of reaction: uncritical adoption, where AI output is treated as
-equivalent to human thought, and wholesale rejection, where any AI
-involvement is seen as inauthentic.
+AI language tools are now widely used in professional writing, including
+by some participants in
+standards development communities such as the IETF. This has produced
+at least two kinds of reaction: uncritical adoption, where AI output is used
+where previously a person would have written an email,
+and skepticism, where messages bearing the appearance
+of AI involvement are seen as problematic, on the basis
+that a reader cannot tell whether it is the person sending the email
+or just the AI tool, or some mixture.
 
-Both reactions miss the point.
-
-This document takes a third position: that human-AI collaboration,
-practiced with discipline and transparency, represents a genuine expansion
-of human capability — not a substitution for it. The key is understanding
-what AI does well, what it does poorly, and where the boundary between them
-lies.
+In order to explore these positions, it should be helpful to outline them in
+more detail, with the goal of better understanding what AI does well, what it
+does poorly, and where the boundary between them lies.
 
 This document grew out of a specific exchange on an IETF mailing list. One
 author described using AI to help express ideas developed independently; a
-reader flagged the output as LLM-generated and disengaged. Neither was
-wrong. But the exchange exposed a gap: the community lacks shared norms for
-how AI assistance should be used and disclosed. Rather than treat this as a
-local disagreement, the two parties decided to think through it together —
-and to write down what they found.
+reader flagged the output as LLM-generated and disengaged. Neither was wrong.
+But the exchange exposed a gap: the community lacks shared norms for how AI
+assistance should be used and disclosed in email discussions.  Rather than
+treat this as a local disagreement, the two parties decided to try think
+through it together — and to document that discussion.
 
-If useful, comments/issues/PRs are welcome at: https://github.com/sftcd/led/
+Comments/issues/PRs are welcome at https://github.com/sftcd/led/
 
 #  A Reader's Concerns
 
-This section is written by the first author.
-Placeholder: Stephen Farrell will contribute this section, covering the
-difficulty of distinguishing AI-assisted expression from AI-replaced
-thinking; the loss of epistemic texture in LLM-generated list mail; the
-risk that readers cannot know whether the sender stands behind the words;
-and the broader challenge this poses for mailing list culture.
+This section is written by the first author. But readers would
+likely have guessed that anyway:-)
+
+Current AI tooling tends to emit text that can be readily seen
+to have involved that tooling. The following seem to be current
+"tells" for AI having been used when one considers the stream
+of email messages arriving from a sender:
+
+- Frequently being overly positive about a message to which this message
+is a reaction, e.g. "You've asked exactly the right question..."
+
+- Unexpected/over-use of geometric terms, e.g. "The seam is..." or
+"There are 17 dimensions..."
+
+- Specific phrasing patterns, e.g. "Fifteen wibbles: two designs."
+
+However, a perhaps more disturbing pattern is the lack of uncertainty. It seems
+that people using AI tooling don't ask others what they mean, perhaps as AI
+tools make a statistical choice as to the meaning of earlier messages,
+then react as if that is a given. It's hard to see how that cannot lead to
+radical misunderstandings and, given AI tooling imperfections, senders
+emitting relative gibberish.
+
+Use of AI tooling also seems to correlate with "walls of text" that
+are very difficult to parse, both due to length (or seeming completeness),
+and complex sentence structures.
+
+Readers of such messages also generally have no insight into the tools used by
+senders, nor the level (if any) of human pre- or post-processing of AI inputs
+and outputs.
+
+In some cases, such messages may be sent in a time-frame that would
+seem impossible for a purely human-generated message, which also decreases
+confidence in the level of human input involved.
+
+All of the above means that a reader who considers that a message (or stream of
+messages) is largely the output from AI tools can have no confidence that they
+are discussing a topic with the person who seemingly sent the email. At that
+point, the only rational action seems to be to ignore such messages as being
+equivalent to spam.
+
+Note that the above issues are not the same as the sock-puppet problem, or a
+sybil attack. These issues remain problems even when the sender of messages is
+known to be a real person engaged in IETF work.
+
+Despite all the above, readers do know that AI tools are being used and
+have to be dealt with, and that ignoring messages won't scale if use of
+those tools becomes more common, nor if the tools get better to the point
+where messages no longer expose use of such tools. And it has to be
+acknowledged that the translation capabilities of AI tools could be
+beneficial to the Internet community, in terms of opening up participation
+to many more capable engineers for whom communicating in English is a
+challenge.
+
+It therefore seems possibly useful to explore these issues in more
+detail, hence this draft. (This author does not expect this draft to
+eventually become an RFC.)
 
 # One Author's Workflow
 
@@ -138,8 +187,8 @@ anything sent under their name.
 
 ## The Role of Odyssey
 
-The author has developed a personal AI agent called Odyssey (
-https://github.com/meetodyssey). Odyssey maintains long-term context across
+The author has developed a personal AI agent called Odyssey
+(https://github.com/meetodyssey). Odyssey maintains long-term context across
 conversations — what subjects the author cares about, how they normally
 reason, what positions they have taken over time. The long-term goal is for
 AI-assisted output to become increasingly consistent with how the author
@@ -151,7 +200,9 @@ accurate to the individual rather than more generic.
 
 # Human and AI: Complementary Capabilities
 
-The exchange described in Section 1 reflects a genuine tension. To resolve
+This section is also written by the second author.
+
+The issues described above reflect a genuine tension. To resolve
 it, it helps to be precise about what AI systems actually do well and what
 they do not.
 
@@ -211,10 +262,10 @@ The symmetry is clean: humans originate, AI executes. Humans open new
 territory; AI operates efficiently within it. Neither is complete without
 the other.
 
-# A Collaborative Paradigm
+## A Collaborative Paradigm
 From this symmetry, a working paradigm emerges.
 
-## The Core Principle
+### The Core Principle
 
 Humans originate. AI executes.
 
@@ -234,7 +285,7 @@ What falls outside this paradigm is delegating the thinking itself: asking
 AI what position to take, what arguments to make, or what conclusions to
 draw — and signing the output.
 
-## Transparency as a Norm
+### Transparency as a Norm
 
 The workflow described in Section 3 was questioned. The author described it
 in detail. This exchange — uncomfortable at first — produced this document.
@@ -244,7 +295,7 @@ AI was used, and who can stand behind the resulting text as an accurate
 representation of their position, has nothing to hide. An author who cannot
 answer those questions has a different problem, and it is not the AI.
 
-## The Deepening Relationship
+### The Deepening Relationship
 
 Generic AI assistance produces generic-sounding output. A system that
 accumulates genuine knowledge of an author's thinking, positions, and style
@@ -256,7 +307,7 @@ This is the direction Odyssey points toward. Over time, the gap between
 narrows. The tool becomes more personal, more accurate, and paradoxically
 more transparent: the output is more genuinely the author's, not less.
 
-## What Becomes Possible
+### What Becomes Possible
 
 The significance of this paradigm is not merely defensive — not simply a
 justification for a practice that would otherwise be suspect. It is
@@ -276,82 +327,73 @@ possibilities that neither possesses alone.
 # Risks
 
 The risks of AI-assisted writing are real, but frequently misdescribed.
-Naming them precisely matters.
+Attempting to describe them precisely should help.
 
-AI replacement of thought. The primary risk is not AI assistance but the
+- AI replacement of thought.
+A primary risk is not AI assistance but the
 delegation of thinking itself — asking AI what to believe, not just how to
-express it. This produces output that is fluent but not genuine, and over
-time it degrades the author's own capacity for independent thought.
+express a belief. This produces output that is fluent but not genuine, and over
+time it degrades the author's own capacity for independent thought, as
+well as putting the reader in an impossible position.
 
-Drift from the author's position. An author may form a genuine position but
+- Drift from the author's position.
+An author may form a genuine position but
 accept an AI draft that misrepresents it — more confident, more agreeable,
 or more hedged than intended — without noticing. Careful review of AI
 output exists to catch this. It requires the author to know their own
 position well enough to recognize when it has been distorted.
 
-Reader inability to distinguish. AI-assisted expression and AI-replaced
+- Reader inability to distinguish.
+AI-assisted expression and AI-replaced
 thinking may produce similar surface output. Readers cannot easily tell
 them apart. This erodes the trust that makes mailing list discussion
 valuable, and it creates an asymmetry that disadvantages responsible users
 alongside irresponsible ones.
 
-Homogenization of discourse. AI systems have characteristic tendencies —
+- Homogenization of discourse.
+AI systems have characteristic tendencies —
 toward confidence, toward agreement, toward certain rhetorical patterns.
 Widely adopted without discipline, these tendencies flatten the diversity
 of perspective that technical communities depend on. A list where
 everyone's prose sounds similar, however polished, is a less productive
 list.
 
-Writing what one does not believe. Distinct from the above: an author may
+- Writing what one does not believe.
+Distinct from the above, an author may
 knowingly send AI output that does not reflect their actual position, using
 the tool as a shield against accountability.
 
+- Emitting gibberish.
+AI tooling is imperfect, if we end up with multiple senders using AI tools
+and so essentially have AI tools running a substantive discussion, we are
+more likely to end up with gibberish.
+
 # Recommendations
 
-## For Authors Using AI Assistance
+These are extremely tentative recommendations, that may be wrong, but
+that seem worth considering:
 
-Form your position before engaging AI. The argument should be yours before
+- Form your position before engaging AI. The argument should be yours before
 the draft exists.
 
-Review AI output for fidelity, not just correctness. If the AI has
+- Review AI output for fidelity, not just correctness. If the AI has
 softened, generalized, or shifted your position, correct it before sending.
 
-Be transparent when asked. Describing your workflow in detail builds trust
+- Always be transparent. Describing your workflow in detail builds trust
 rather than eroding it.
 
-Disclose proactively in high-stakes contexts — formal I-D authorship,
-attributed positions, official statements.
+- Question senders if you think they are using AI tooling as to what
+they are doing. Doing that on-list should be considered acceptable, if
+it is not done in an accusatory manner.
 
-Invest in AI tools that learn your specific thinking over time, rather than
-relying on generic assistance indefinitely.
-
-## For Readers and List Participants
-
-(Stephen's primary contribution — to be added)
-
-## For the IETF and Technical Communities
-
-(To be developed jointly)
+Less tentatively, the IETF should develop guidelines for use of AI tooling when
+sending messages (esp email) in IETF discussions. That won't be easy and will
+be a moving target, but absent such guidance, confidence in email discussions
+may evaporate, which would cause significant damage to the IETF.
 
 # Conclusion
 
-The anxiety surrounding AI-assisted writing reflects a real problem but
-points toward the wrong solution. Prohibition or stigma does not address
-the underlying risk — it drives practice underground, removes transparency,
-and disadvantages those who would use AI responsibly alongside those who
-would not.
-
-The right response is clarity: about what AI does well, what it cannot do,
-and where the human must remain in control. With that clarity, human-AI
-collaboration is not a threat to the integrity of technical discourse. It
-is an expansion of what human participants can bring to it.
-
-The exchange that motivated this document ended with a proposal to write it
-together. Two people with genuinely different perspectives on the same
-problem agreed to think through it jointly. That outcome is itself an
-illustration of what the document argues for: not AI replacing human
-judgment, but human judgment — assisted, extended, and made more reachable
-— arriving somewhere neither party could have reached alone.
+It's too early to say really.
 
 # IANA Considerations
 
