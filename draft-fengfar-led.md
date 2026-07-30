@@ -170,7 +170,7 @@ AI provides a signal; the reading and judgment are the author's.
 
 After reading, the author thinks about the issue independently. This step
 is not delegated. The AI may be used at this stage to stress-test an
-argument — to articulate the strongest counterposition, or to explore
+argument — to articulate the strongest counter-position, or to explore
 whether an alternative interpretation holds — but it does not originate the
 position. The author decides what to think before asking AI to help express
 it.
@@ -229,7 +229,7 @@ well-defined problem space — an established body of knowledge, a clear
 communication goal, a defined set of constraints — AI can draft, translate,
 and refine text with speed and consistency no individual can match;
 identify relevant prior work across large corpora; stress-test arguments by
-generating counterpositions; and execute repetitive cognitive tasks without
+generating counter-positions; and execute repetitive cognitive tasks without
 fatigue.
 
 For participants in international technical communities, the language
@@ -387,8 +387,8 @@ more likely to end up with gibberish.
 
 - Discussion based on bad information.
 AI tooling might emit text that is based on outdated information or even
-hallunicated material. Senders need to check messages they send, and
-may need to be very familliar with the topic(s) being discussed, to
+hallucinated material. Senders need to check messages they send, and
+may need to be very familiar with the topic(s) being discussed, to
 ensure this does not occur.
 
 While not properly described as a risk, the two authors of this
@@ -430,7 +430,7 @@ This document makes no request of IANA.
 
 # Security Considerations
 
-Mischeivous IETF participants could include AI prompts inside messages used in
+Mischievous IETF participants could include AI prompts inside messages used in
 IETF discussions that could form part of an attack on participants who use AI
 tooling. Such text could, for example, only be present in the text/html part of
 a multipart/mixed email and so might not be rendered in a presentation of a
@@ -440,7 +440,7 @@ archives as the distribution medium for AI prompt attacks.
 
 Otherwise, see the section on risks.
 
-# Acknowledgements
+# Acknowledgments
 
 The second author used https://github.com/meetodyssey in preparing
 and discussing the above text.
