@@ -46,7 +46,9 @@ question from two directions: a critical reader's concerns about what AI
 use means for IETF discussion, and a practitioner's account of how AI
 is currently being used in IETF discussions.
 We aim to explore some of the issues arising, and perhaps make
-some tentative recommendations.
+some specific (but tentative) recommendations,
+but the main recommendation is that the IETF should develop guidelines for use of AI tooling when
+engaging in IETF discussions.
 
 --- middle
 
@@ -56,7 +58,7 @@ some tentative recommendations.
 (slides) used at meetings, text input during e.g. github issue or PR
 discussions, and potentially messages sent using IM tools. Text included within
 Internet-drafts and RFCs is not included in scope here, even though some of the
-same issues will arise, as Internet-drafts and RFCs are also covered by BCP 78
+same issues will arise. We omit those as Internet-drafts and RFCs are also covered by BCP 78
 {{RFC5378}} and BCP 79 {{RFC8179}} so additional considerations apply for such
 text.
 
@@ -70,7 +72,7 @@ of AI involvement are seen as problematic, on the basis
 that a reader cannot tell whether it is the person sending the email
 or just the AI tool, or some mixture.
 
-In order to explore these positions, it should be helpful to outline them in
+In order to explore these positions, it may be helpful to outline them in
 more detail, with the goal of better understanding what AI does well, what it
 does poorly, and where the boundary between them lies.
 
@@ -80,17 +82,18 @@ reader flagged the output as LLM-generated and disengaged. Neither was wrong.
 But the exchange exposed a gap: the community lacks shared norms for how AI
 assistance should be used and disclosed in email discussions.  Rather than
 treat this as a local disagreement, the two parties decided to try think
-through it together — and to document that discussion.
+through it and to document that discussion.
 
 Comments/issues/PRs are welcome at https://github.com/sftcd/led/
 
 #  A Reader's Concerns
 
-This section is written by the first author. But readers would
+This section is written by the first author. But readers may
 likely have guessed that anyway:-)
 
 Current AI tooling tends to emit text that can be readily seen
-to have involved that tooling. The following seem to be current
+to have involved that tooling. The following seem to be some
+of the current
 "tells" for AI having been used when one considers the stream
 of email messages arriving from a sender:
 
@@ -123,7 +126,7 @@ confidence in the level of human input involved.
 
 All of the above means that a reader who considers that a message (or stream of
 messages) is largely the output from AI tools can have no confidence that they
-are discussing a topic with the person who seemingly sent the email. At that
+are really discussing a topic with the person who seemingly sent the email. At that
 point, the only rational action seems to be to ignore such messages as being
 equivalent to spam.
 
@@ -185,6 +188,12 @@ but for fidelity. If the output is too long, too polished, too neutral, or
 does not accurately represent the intended position, revisions are
 requested. This can take several rounds. The test is not "does this read
 well" but "does this say what I meant."
+
+One specific issue encountered is that AI output tends toward an artificially
+"balanced" stance — hedging between positions instead of committing to one.
+Draft outputs may under-commit when compared to the author's actual position.
+This effect may not show up as a "tell" visible to readers of the eventual
+message, but can be visible to the author as one.
 
 ## Final Review and Send
 
@@ -335,6 +344,7 @@ possibilities that neither possesses alone.
 
 The risks of AI-assisted writing are real, but frequently misdescribed.
 Attempting to describe them precisely should help.
+Both authors contributed to this section.
 
 - AI replacement of thought.
 A primary risk is not AI assistance but the
@@ -374,6 +384,18 @@ the tool as a shield against accountability.
 AI tooling is imperfect, if we end up with multiple senders using AI tools
 and so essentially have AI tools running a substantive discussion, we are
 more likely to end up with gibberish.
+
+- Discussion based on bad information.
+AI tooling might emit text that is based on outdated information or even
+hallunicated material. Senders need to check messages they send, and
+may need to be very familliar with the topic(s) being discussed, to
+ensure this does not occur.
+
+While not properly described as a risk, the two authors of this
+draft do not currently agree as to whether it would be an overall
+positive or negative were there to be no "tells" visible in
+messages emitted with the assistance of AI tooling. More discussion
+is needed on that:-)
 
 # Recommendations
 
