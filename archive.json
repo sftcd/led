@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-07-28T00:44:31.316672+00:00",
+  "timestamp": "2026-07-30T00:42:37.832802+00:00",
   "repo": "sftcd/led",
   "labels": [
     {
@@ -49,27 +49,202 @@
       "color": "ffffff"
     }
   ],
-  "issues": [],
+  "issues": [
+    {
+      "number": 2,
+      "id": "I_kwDOTk4Tfc8AAAABKes9ew",
+      "title": "Overall scope - what forms of IETF-related text are in/out of scope?",
+      "url": "https://github.com/sftcd/led/issues/2",
+      "state": "OPEN",
+      "author": "sftcd",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Issue raised in discussion of #1 \n\nWhat IETF communications should be in scope for the draft?\n\nSeems clear we do want to include emails sent to IETF lists, but what about:\n\n- IM chat messages\n- slides presented at f2f or online meetings\n- I-D and RFC text\n\nWe should decide which of the above are in/out of scope for this draft, make that clear and consider any changes/additions flowing from that.",
+      "createdAt": "2026-07-28T11:54:57Z",
+      "updatedAt": "2026-07-28T14:24:30Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "sftcd",
+          "authorAssociation": "OWNER",
+          "body": "I guess since we're here, we should add issue/PR discussion on github and the like as another possible type of text to consider as in/out of scope:-)",
+          "createdAt": "2026-07-28T12:01:28Z",
+          "updatedAt": "2026-07-28T12:01:28Z"
+        },
+        {
+          "author": "sftcd",
+          "authorAssociation": "OWNER",
+          "body": "We seem to agree to exclude I-D and RFC text - I'll make a PR for that",
+          "createdAt": "2026-07-28T14:24:30Z",
+          "updatedAt": "2026-07-28T14:24:30Z"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "id": "I_kwDOTk4Tfc8AAAABKetfnQ",
+      "title": "What kinds of \"tell\" do we want to note?",
+      "url": "https://github.com/sftcd/led/issues/3",
+      "state": "OPEN",
+      "author": "sftcd",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Raised in discussion of #1 \n\nWhat (additional) kinds of \"tell\" do we want to describe?\n\nDo we want to include real examples from IETF lists or not?",
+      "createdAt": "2026-07-28T11:55:57Z",
+      "updatedAt": "2026-07-28T14:23:52Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "sftcd",
+          "authorAssociation": "OWNER",
+          "body": "WRT whether or not to include real examples in the draft, I suspect it'd be better to invent synthetic examples, so as not to annoy people or de-rail subsequent discussion (from talking about our I-D to whatever is pointed-at). We'd also risk pointing at something and having the relevant author deny using AI-tools I guess:-) ",
+          "createdAt": "2026-07-28T12:03:46Z",
+          "updatedAt": "2026-07-28T12:03:46Z"
+        },
+        {
+          "author": "sftcd",
+          "authorAssociation": "OWNER",
+          "body": "The comment on #1 that triggered this issue was:\n\n> Worth adding one more \"tell\" alongside the current list (overly positive, geometric terms, phrasing patterns, lack of uncertainty, walls of text): AI output also tends toward an artificially \"balanced\" stance \u2014 hedging between positions instead of committing to one. Slightly different axis from \"lack of uncertainty\" as currently written (that's about overconfidence in interpreting what others meant) \u2014 this one is about under-committing when stating your own position.",
+          "createdAt": "2026-07-28T12:07:16Z",
+          "updatedAt": "2026-07-28T12:07:16Z"
+        },
+        {
+          "author": "sftcd",
+          "authorAssociation": "OWNER",
+          "body": "As noted by @lllyfeng in #1:\n\n>On the \"balanced stance\" tell: yes, it's real. My first post to the DAWN list had the argument but not the attitude \u2014 too flat to show where I actually stood. I asked Odyssey to revise it with an explicit instruction to take a clear stance and not worry about offending people. The tone changed noticeably.\n\n> The tell is correctable through prompting, but only if the author notices it first. Worth adding to the workflow section: reviewing AI output for fidelity includes checking whether the LLM's default tendency toward safe, balanced, non-committal prose has diluted what you actually meant to say.",
+          "createdAt": "2026-07-28T14:23:52Z",
+          "updatedAt": "2026-07-28T14:23:52Z"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "id": "I_kwDOTk4Tfc8AAAABKeuIlQ",
+      "title": "Emphasise \"IETF should develop guidance\" recommendation",
+      "url": "https://github.com/sftcd/led/issues/4",
+      "state": "OPEN",
+      "author": "sftcd",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Raised in discussion of #1 \n\nThe main, and probably only concrete, recommendation we have is that the IETF should develop guidance.\n\nWe should emphasise that, probably by adding it to the abstract/intro.",
+      "createdAt": "2026-07-28T11:57:10Z",
+      "updatedAt": "2026-07-28T12:04:32Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "sftcd",
+          "authorAssociation": "OWNER",
+          "body": "I think this is fairly easy to handle - we should do it. Happy to make a PR that adds such text to abstract/intro.",
+          "createdAt": "2026-07-28T12:04:32Z",
+          "updatedAt": "2026-07-28T12:04:32Z"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "id": "I_kwDOTk4Tfc8AAAABKeu9UQ",
+      "title": "Should we recommend AI tool users try make their messages more like human messages?",
+      "url": "https://github.com/sftcd/led/issues/5",
+      "state": "OPEN",
+      "author": "sftcd",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Raised in discussion on #1 \n\n> Also consider adding: authors should use AI tools/prompting aimed at natural, concise output rather than settling for the default verbose/over-hedged \"AI voice.\" Needs to be paired explicitly with \"and still disclose\" though \u2014 otherwise it reads as tension with \"always be transparent\" and risk #3 (\"reader inability to distinguish\"). The point is better writing, not fewer visible tells, so that should be said outright rather than left implicit.\n\nNot clear that the two authors here have the same opinion of that:-)\n\nWe should thrash it out.",
+      "createdAt": "2026-07-28T11:58:40Z",
+      "updatedAt": "2026-07-28T12:05:09Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "sftcd",
+          "authorAssociation": "OWNER",
+          "body": "I need to ponder this one for a bit before deciding what I think about it.",
+          "createdAt": "2026-07-28T12:05:09Z",
+          "updatedAt": "2026-07-28T12:05:09Z"
+        }
+      ]
+    }
+  ],
   "pulls": [
     {
       "number": 1,
       "id": "PR_kwDOTk4Tfc72-l5b",
       "title": "first set of SF suggestions",
       "url": "https://github.com/sftcd/led/pull/1",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "sftcd",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "Here's my initial suggested additions, with some structure change and changes to intro/recommendations. \r\n\r\nLet's discuss!",
       "createdAt": "2026-07-27T15:09:22Z",
-      "updatedAt": "2026-07-27T15:09:22Z",
+      "updatedAt": "2026-07-28T14:22:39Z",
       "baseRepository": "sftcd/led",
       "baseRefName": "main",
       "baseRefOid": "f8d4c545bd16ace592393c1fce23a3ec369f4dfd",
       "headRepository": "sftcd/led",
       "headRefName": "first-sftcd-suggestions",
       "headRefOid": "7fd76492ff7de7b9c87f5e7ade0429831fdc9f7b",
+      "closedAt": "2026-07-28T14:22:39Z",
+      "mergedAt": "2026-07-28T14:22:39Z",
+      "mergedBy": "sftcd",
+      "mergeCommit": {
+        "oid": "19a8e31f8fa356988adacfb06bdda58d5dbada5f"
+      },
+      "comments": [
+        {
+          "author": "lllyfeng",
+          "authorAssociation": "COLLABORATOR",
+          "body": "> Here's my initial suggested additions, with some structure change and changes to intro/recommendations.\r\n> \r\n> Let's discuss!\r\n\r\nstephen\uff0c\r\n I have some comments as below:\r\n\r\nTitle/scope: narrowing it was the right instinct \u2014 the old title (\"Human-AI Collaboration in Technical Communities, Principles and Practice\") was too broad to say anything concrete. But \"Dealing with LLMs in Email Discussions\" swings too far the other way \u2014 most of the Odyssey workflow section isn't about email at all, it's about drafting documents. I'd rather keep the scope at IETF document writing (I-Ds, slides, etc.) and list discussion, not just the latter. Something like \"Dealing with LLMs in IETF Contributions: Documents and List Discussions\" keeps it concrete without dropping the document side. Also worth flagging: drafts/slides are one-shot artifacts people can review at leisure, list mail is back-and-forth in near-real-time \u2014 the \"can a reader trust/tell\" argument probably plays out differently in each case, so we may need to treat them separately rather than one blanket claim.\r\n\r\nTone: fully on board with the shift from argumentative to exploratory/tentative \u2014 that's the right call, let's keep going that direction rather than walking it back.\r\n\r\nA Reader's Concerns: Worth adding one more \"tell\" alongside the current list (overly positive, geometric terms, phrasing patterns, lack of uncertainty, walls of text): AI output also tends toward an artificially \"balanced\" stance \u2014 hedging between positions instead of committing to one. Slightly different axis from \"lack of uncertainty\" as currently written (that's about overconfidence in interpreting what others meant) \u2014 this one is about under-committing when stating your own position.\r\n\r\nRecommendations: Strong agreement on the closing point \u2014 IETF should develop guidelines for AI/LLM tooling use in IETF discussions (drafts, slides, list mail). Would make this more prominent rather than tacked on after the bullet list, since it's arguably the most concrete recommendation in the whole draft.\r\n\r\nAlso consider adding: authors should use AI tools/prompting aimed at natural, concise output rather than settling for the default verbose/over-hedged \"AI voice.\" Needs to be paired explicitly with \"and still disclose\" though \u2014 otherwise it reads as tension with \"always be transparent\" and risk #3 (\"reader inability to distinguish\"). The point is better writing, not fewer visible tells, so that should be said outright rather than left implicit.\r\n\r\n",
+          "createdAt": "2026-07-28T08:25:57Z",
+          "updatedAt": "2026-07-28T08:25:57Z"
+        },
+        {
+          "author": "sftcd",
+          "authorAssociation": "OWNER",
+          "body": "> \r\n> Title/scope: narrowing it was the right instinct \u2014 the old title (\"Human-AI Collaboration in Technical Communities, Principles and Practice\") was too broad to say anything concrete. But \"Dealing with LLMs in Email Discussions\" swings too far the other way \u2014 most of the Odyssey workflow section isn't about email at all, it's about drafting documents. I'd rather keep the scope at IETF document writing (I-Ds, slides, etc.) and list discussion, not just the latter. Something like \"Dealing with LLMs in IETF Contributions: Documents and List Discussions\" keeps it concrete without dropping the document side. Also worth flagging: drafts/slides are one-shot artifacts people can review at leisure, list mail is back-and-forth in near-real-time \u2014 the \"can a reader trust/tell\" argument probably plays out differently in each case, so we may need to treat them separately rather than one blanket claim.\r\n> \r\n\r\nHmm. Partly agree - I'm fine with covering slides, IM chat etc. but I think I-Ds and RFC text will be handled separately as the boilerplate rules (BCP 78/79) apply to those, which changes the situation. So while there may be overlapping issues, I don't think this draft is a useful place to try address I-D or RFC text. It is fine if you say that your workflow/tooling and vision for the future encompass I-D and RFC text, but I don't think we should otherwise try address that.\r\n\r\n> Tone: fully on board with the shift from argumentative to exploratory/tentative \u2014 that's the right call, let's keep going that direction rather than walking it back.\r\n> \r\n> A Reader's Concerns: Worth adding one more \"tell\" alongside the current list (overly positive, geometric terms, phrasing patterns, lack of uncertainty, walls of text): AI output also tends toward an artificially \"balanced\" stance \u2014 hedging between positions instead of committing to one. Slightly different axis from \"lack of uncertainty\" as currently written (that's about overconfidence in interpreting what others meant) \u2014 this one is about under-committing when stating your own position.\r\n> \r\n\r\nInteresting. I don't see that as a \"tell\" - can you point me at some (on-list) examples or is that perhaps the kind of thing you clean up before you post using your workflow?\r\n\r\n> Recommendations: Strong agreement on the closing point \u2014 IETF should develop guidelines for AI/LLM tooling use in IETF discussions (drafts, slides, list mail). Would make this more prominent rather than tacked on after the bullet list, since it's arguably the most concrete recommendation in the whole draft.\r\n> \r\n\r\nWe could add a mention to the abstract/intro. \r\n\r\n> Also consider adding: authors should use AI tools/prompting aimed at natural, concise output rather than settling for the default verbose/over-hedged \"AI voice.\" Needs to be paired explicitly with \"and still disclose\" though \u2014 otherwise it reads as tension with \"always be transparent\" and risk #3 (\"reader inability to distinguish\"). The point is better writing, not fewer visible tells, so that should be said outright rather than left implicit.\r\n\r\nI'm not at all sure I agree with that though:-) I can see why you'd add that. Will think about it.\r\n\r\nAs for this PR - I'll make issues for the discussion points above and if that's ok suggest we merge this as-is, then work through those issues. Sound OK?",
+          "createdAt": "2026-07-28T11:52:20Z",
+          "updatedAt": "2026-07-28T11:52:20Z"
+        },
+        {
+          "author": "sftcd",
+          "authorAssociation": "OWNER",
+          "body": "Issues created as promised. Lemme know if you're ok to merge this then work on those or something else.",
+          "createdAt": "2026-07-28T11:59:21Z",
+          "updatedAt": "2026-07-28T11:59:21Z"
+        },
+        {
+          "author": "lllyfeng",
+          "authorAssociation": "COLLABORATOR",
+          "body": "\nMerging as-is works for me.\n\nOn the \"balanced stance\" tell: yes, it's real. My first post to the DAWN list had the argument but not the attitude \u2014 too flat to show where I actually stood. I asked Odyssey to revise it with an explicit instruction to take a clear stance and not worry about offending people. The tone changed noticeably.\n\nThe tell is correctable through prompting, but only if the author notices it first. Worth adding to the workflow section: reviewing AI output for fidelity includes checking whether the LLM's default tendency toward safe, balanced, non-committal prose has diluted what you actually meant to say.\n\nOn title/scope: your suggested title works. Happy to keep I-Ds and RFC text out of scope given BCP 78/79, and just note that the workflow naturally extends there.\n> > \n> > Title/scope: narrowing it was the right instinct \u2014 the old title (\"Human-AI Collaboration in Technical Communities, Principles and Practice\") was too broad to say anything concrete. But \"Dealing with LLMs in Email Discussions\" swings too far the other way \u2014 most of the Odyssey workflow section isn't about email at all, it's about drafting documents. I'd rather keep the scope at IETF document writing (I-Ds, slides, etc.) and list discussion, not just the latter. Something like \"Dealing with LLMs in IETF Contributions: Documents and List Discussions\" keeps it concrete without dropping the document side. Also worth flagging: drafts/slides are one-shot artifacts people can review at leisure, list mail is back-and-forth in near-real-time \u2014 the \"can a reader trust/tell\" argument probably plays out differently in each case, so we may need to treat them separately rather than one blanket claim.\n> > \n> \n> Hmm. Partly agree - I'm fine with covering slides, IM chat etc. but I think I-Ds and RFC text will be handled separately as the boilerplate rules (BCP 78/79) apply to those, which changes the situation. So while there may be overlapping issues, I don't think this draft is a useful place to try address I-D or RFC text. It is fine if you say that your workflow/tooling and vision for the future encompass I-D and RFC text, but I don't think we should otherwise try address that.\n> \n> > Tone: fully on board with the shift from argumentative to exploratory/tentative \u2014 that's the right call, let's keep going that direction rather than walking it back.\n> > \n> > A Reader's Concerns: Worth adding one more \"tell\" alongside the current list (overly positive, geometric terms, phrasing patterns, lack of uncertainty, walls of text): AI output also tends toward an artificially \"balanced\" stance \u2014 hedging between positions instead of committing to one. Slightly different axis from \"lack of uncertainty\" as currently written (that's about overconfidence in interpreting what others meant) \u2014 this one is about under-committing when stating your own position.\n> > \n> \n> Interesting. I don't see that as a \"tell\" - can you point me at some (on-list) examples or is that perhaps the kind of thing you clean up before you post using your workflow?\n> \n> > Recommendations: Strong agreement on the closing point \u2014 IETF should develop guidelines for AI/LLM tooling use in IETF discussions (drafts, slides, list mail). Would make this more prominent rather than tacked on after the bullet list, since it's arguably the most concrete recommendation in the whole draft.\n> > \n> \n> We could add a mention to the abstract/intro. \n> \n> > Also consider adding: authors should use AI tools/prompting aimed at natural, concise output rather than settling for the default verbose/over-hedged \"AI voice.\" Needs to be paired explicitly with \"and still disclose\" though \u2014 otherwise it reads as tension with \"always be transparent\" and risk #3 (\"reader inability to distinguish\"). The point is better writing, not fewer visible tells, so that should be said outright rather than left implicit.\n> \n> I'm not at all sure I agree with that though:-) I can see why you'd add that. Will think about it.\n> \n> As for this PR - I'll make issues for the discussion points above and if that's ok suggest we merge this as-is, then work through those issues. Sound OK?\n\n",
+          "createdAt": "2026-07-28T14:10:24Z",
+          "updatedAt": "2026-07-28T14:10:24Z"
+        }
+      ],
+      "reviews": []
+    },
+    {
+      "number": 6,
+      "id": "PR_kwDOTk4Tfc73gMjp",
+      "title": "scope text for issue #2",
+      "url": "https://github.com/sftcd/led/pull/6",
+      "state": "OPEN",
+      "author": "sftcd",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "an attempt to close #2",
+      "createdAt": "2026-07-28T14:42:10Z",
+      "updatedAt": "2026-07-28T14:42:11Z",
+      "baseRepository": "sftcd/led",
+      "baseRefName": "main",
+      "baseRefOid": "19a8e31f8fa356988adacfb06bdda58d5dbada5f",
+      "headRepository": "sftcd/led",
+      "headRefName": "scope",
+      "headRefOid": "b07e64fcccf1fad2717e144112888f1619299040",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
