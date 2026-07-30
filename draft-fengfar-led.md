@@ -430,11 +430,22 @@ This document makes no request of IANA.
 
 # Security Considerations
 
-TBD
+Mischeivous IETF participants could include AI prompts inside messages used in
+IETF discussions that could form part of an attack on participants who use AI
+tooling. Such text could, for example, only be present in the text/html part of
+a multipart/mixed email and so might not be rendered in a presentation of a
+mailing list archive. Presumably AI tool users will need to mitigate such
+threats in any case, so the new aspect here is perhaps only the use of IETF
+archives as the distribution medium for AI prompt attacks.
+
+Otherwise, see the section on risks.
 
 # Acknowledgements
 
-TBD
+The second author used https://github.com/meetodyssey in preparing
+and discussing the above text.
+
+The first author made no use of AI tooling.
 
 --- back
 
