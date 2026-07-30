@@ -84,8 +84,6 @@ assistance should be used and disclosed in email discussions.  Rather than
 treat this as a local disagreement, the two parties decided to try think
 through it and to document that discussion.
 
-Comments/issues/PRs are welcome at https://github.com/sftcd/led/
-
 #  A Reader's Concerns
 
 This section is written by the first author. But readers may
