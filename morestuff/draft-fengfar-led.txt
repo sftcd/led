@@ -127,8 +127,6 @@ Table of Contents
    disagreement, the two parties decided to try think through it and to
    document that discussion.
 
-   Comments/issues/PRs are welcome at https://github.com/sftcd/led/
-
 2.  A Reader's Concerns
 
    This section is written by the first author.  But readers may likely
