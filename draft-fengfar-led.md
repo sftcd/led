@@ -1,5 +1,5 @@
 ---
-title: Dealing with LLMs in Email Discussions
+title: Dealing with LLMs in IETF Discussions
 abbrev: LLM Email Discussions
 docname: draft-fengfar-led-latest
 date: 2026-07-27
@@ -34,26 +34,31 @@ author:
         email: fengchongllly@gmail.com
 
 normative:
-    RPCTBD:
-        title: Something to which we refer
-        date: 2026
-        author:
-            org: RPC
+    RFC5378:
+    RFC8179:
 
 --- abstract
 
 The rapid adoption of AI language tools has prompted concern across
-professional and technical communities about authenticity, accountability,
+professional and technical communities, including the IETF, about authenticity, accountability,
 and the integrity of human contribution. This document approaches the
 question from two directions: a critical reader's concerns about what AI
-use means for technical discourse, and a practitioner's account of how AI
-is currently being used in IETF work.
+use means for IETF discussion, and a practitioner's account of how AI
+is currently being used in IETF discussions.
 We aim to explore some of the issues arising, and perhaps make
 some tentative recommendations.
 
 --- middle
 
 # Introduction        {#intro}
+
+"IETF discussions" here includes emails sent to IETF lists, presentations
+(slides) used at meetings, text input during e.g. github issue or PR
+discussions, and potentially messages sent using IM tools. Text included within
+Internet-drafts and RFCs is not included in scope here, even though some of the
+same issues will arise, as Internet-drafts and RFCs are also covered by BCP 78
+{{RFC5378}} and BCP 79 {{RFC8179}} so additional considerations apply for such
+text.
 
 AI language tools are now widely used in professional writing, including
 by some participants in
@@ -142,7 +147,9 @@ eventually become an RFC.)
 # One Author's Workflow
 
 This section is written by the second author, who uses AI assistance in
-IETF participation.
+IETF participation. While this author's workflow does envisage use of
+AI tooling for Internet-draft and RFC text preparation, dealing with
+that aspect of tool-use isn't really part of this draft.
 
 The second author is a non-native English speaker who participates in IETF
 standardization work across several working groups. The following describes
@@ -402,7 +409,6 @@ This document makes no request of IANA.
 # Security Considerations
 
 TBD
-This is just so I remember how to add a reference. {{RPCTBD}}.
 
 # Acknowledgements
 
