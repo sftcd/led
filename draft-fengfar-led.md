@@ -2,7 +2,7 @@
 title: Dealing with LLMs in IETF Discussions
 abbrev: LLM Email Discussions
 docname: draft-fengfar-led-latest
-date: 2026-07-27
+date: 2026-07-30
 
 # stand_alone: true
 
