@@ -2,7 +2,7 @@
 title: Dealing with LLMs in IETF Discussions
 abbrev: LLM Email Discussions
 docname: draft-fengfar-led-latest
-date: 2026-07-27
+date: 2026-07-30
 
 # stand_alone: true
 
@@ -46,7 +46,9 @@ question from two directions: a critical reader's concerns about what AI
 use means for IETF discussion, and a practitioner's account of how AI
 is currently being used in IETF discussions.
 We aim to explore some of the issues arising, and perhaps make
-some tentative recommendations.
+some specific (but tentative) recommendations,
+but the main recommendation is that the IETF should develop guidelines for use of AI tooling when
+engaging in IETF discussions.
 
 --- middle
 
@@ -56,7 +58,7 @@ some tentative recommendations.
 (slides) used at meetings, text input during e.g. github issue or PR
 discussions, and potentially messages sent using IM tools. Text included within
 Internet-drafts and RFCs is not included in scope here, even though some of the
-same issues will arise, as Internet-drafts and RFCs are also covered by BCP 78
+same issues will arise. We omit those as Internet-drafts and RFCs are also covered by BCP 78
 {{RFC5378}} and BCP 79 {{RFC8179}} so additional considerations apply for such
 text.
 
@@ -70,7 +72,7 @@ of AI involvement are seen as problematic, on the basis
 that a reader cannot tell whether it is the person sending the email
 or just the AI tool, or some mixture.
 
-In order to explore these positions, it should be helpful to outline them in
+In order to explore these positions, it may be helpful to outline them in
 more detail, with the goal of better understanding what AI does well, what it
 does poorly, and where the boundary between them lies.
 
@@ -80,17 +82,16 @@ reader flagged the output as LLM-generated and disengaged. Neither was wrong.
 But the exchange exposed a gap: the community lacks shared norms for how AI
 assistance should be used and disclosed in email discussions.  Rather than
 treat this as a local disagreement, the two parties decided to try think
-through it together — and to document that discussion.
-
-Comments/issues/PRs are welcome at https://github.com/sftcd/led/
+through it and to document that discussion.
 
 #  A Reader's Concerns
 
-This section is written by the first author. But readers would
+This section is written by the first author. But readers may
 likely have guessed that anyway:-)
 
 Current AI tooling tends to emit text that can be readily seen
-to have involved that tooling. The following seem to be current
+to have involved that tooling. The following seem to be some
+of the current
 "tells" for AI having been used when one considers the stream
 of email messages arriving from a sender:
 
@@ -123,7 +124,7 @@ confidence in the level of human input involved.
 
 All of the above means that a reader who considers that a message (or stream of
 messages) is largely the output from AI tools can have no confidence that they
-are discussing a topic with the person who seemingly sent the email. At that
+are really discussing a topic with the person who seemingly sent the email. At that
 point, the only rational action seems to be to ignore such messages as being
 equivalent to spam.
 
@@ -167,7 +168,7 @@ AI provides a signal; the reading and judgment are the author's.
 
 After reading, the author thinks about the issue independently. This step
 is not delegated. The AI may be used at this stage to stress-test an
-argument — to articulate the strongest counterposition, or to explore
+argument — to articulate the strongest counter-position, or to explore
 whether an alternative interpretation holds — but it does not originate the
 position. The author decides what to think before asking AI to help express
 it.
@@ -185,6 +186,12 @@ but for fidelity. If the output is too long, too polished, too neutral, or
 does not accurately represent the intended position, revisions are
 requested. This can take several rounds. The test is not "does this read
 well" but "does this say what I meant."
+
+One specific issue encountered is that AI output tends toward an artificially
+"balanced" stance — hedging between positions instead of committing to one.
+Draft outputs may under-commit when compared to the author's actual position.
+This effect may not show up as a "tell" visible to readers of the eventual
+message, but can be visible to the author as one.
 
 ## Final Review and Send
 
@@ -220,7 +227,7 @@ well-defined problem space — an established body of knowledge, a clear
 communication goal, a defined set of constraints — AI can draft, translate,
 and refine text with speed and consistency no individual can match;
 identify relevant prior work across large corpora; stress-test arguments by
-generating counterpositions; and execute repetitive cognitive tasks without
+generating counter-positions; and execute repetitive cognitive tasks without
 fatigue.
 
 For participants in international technical communities, the language
@@ -335,6 +342,7 @@ possibilities that neither possesses alone.
 
 The risks of AI-assisted writing are real, but frequently misdescribed.
 Attempting to describe them precisely should help.
+Both authors contributed to this section.
 
 - AI replacement of thought.
 A primary risk is not AI assistance but the
@@ -375,6 +383,18 @@ AI tooling is imperfect, if we end up with multiple senders using AI tools
 and so essentially have AI tools running a substantive discussion, we are
 more likely to end up with gibberish.
 
+- Discussion based on bad information.
+AI tooling might emit text that is based on outdated information or even
+hallucinated material. Senders need to check messages they send, and
+may need to be very familiar with the topic(s) being discussed, to
+ensure this does not occur.
+
+While not properly described as a risk, the two authors of this
+draft do not currently agree as to whether it would be an overall
+positive or negative were there to be no "tells" visible in
+messages emitted with the assistance of AI tooling. More discussion
+is needed on that:-)
+
 # Recommendations
 
 These are extremely tentative recommendations, that may be wrong, but
@@ -408,11 +428,22 @@ This document makes no request of IANA.
 
 # Security Considerations
 
-TBD
+Mischievous IETF participants could include AI prompts inside messages used in
+IETF discussions that could form part of an attack on participants who use AI
+tooling. Such text could, for example, only be present in the text/html part of
+a multipart/alternative email and so might not be rendered in a presentation of a
+mailing list archive. Presumably AI tool users will need to mitigate such
+threats in any case, so the new aspect here is perhaps only the use of IETF
+archives as the distribution medium for AI prompt attacks.
 
-# Acknowledgements
+Otherwise, see the section on risks.
 
-TBD
+# Acknowledgments
+
+The second author used https://github.com/meetodyssey in preparing
+and discussing the above text.
+
+The first author made no use of AI tooling.
 
 --- back
 
