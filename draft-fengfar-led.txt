@@ -5,7 +5,7 @@
 Network Working Group                                         S. Farrell
 Internet-Draft                                    Trinity College Dublin
 Intended status: Informational                                   C. Feng
-Expires: 28 January 2027                                    27 July 2026
+Expires: 31 January 2027                                    30 July 2026
 
 
                  Dealing with LLMs in IETF Discussions
@@ -20,7 +20,10 @@ Abstract
    directions: a critical reader's concerns about what AI use means for
    IETF discussion, and a practitioner's account of how AI is currently
    being used in IETF discussions.  We aim to explore some of the issues
-   arising, and perhaps make some tentative recommendations.
+   arising, and perhaps make some specific (but tentative)
+   recommendations, but the main recommendation is that the IETF should
+   develop guidelines for use of AI tooling when engaging in IETF
+   discussions.
 
 Discussion Venues
 
@@ -44,7 +47,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 28 January 2027.
+   This Internet-Draft will expire on 31 January 2027.
 
 Copyright Notice
 
@@ -84,7 +87,7 @@ Table of Contents
    7.  Conclusion
    8.  IANA Considerations
    9.  Security Considerations
-   10. Acknowledgements
+   10. Acknowledgments
    11. Normative References
    Appendix A.  Change Log
      A.1.  Draft-00
@@ -97,9 +100,9 @@ Table of Contents
    github issue or PR discussions, and potentially messages sent using
    IM tools.  Text included within Internet-drafts and RFCs is not
    included in scope here, even though some of the same issues will
-   arise, as Internet-drafts and RFCs are also covered by BCP 78
-   [RFC5378] and BCP 79 [RFC8179] so additional considerations apply for
-   such text.
+   arise.  We omit those as Internet-drafts and RFCs are also covered by
+   BCP 78 [RFC5378] and BCP 79 [RFC8179] so additional considerations
+   apply for such text.
 
    AI language tools are now widely used in professional writing,
    including by some participants in standards development communities
@@ -110,7 +113,7 @@ Table of Contents
    the basis that a reader cannot tell whether it is the person sending
    the email or just the AI tool, or some mixture.
 
-   In order to explore these positions, it should be helpful to outline
+   In order to explore these positions, it may be helpful to outline
    them in more detail, with the goal of better understanding what AI
    does well, what it does poorly, and where the boundary between them
    lies.
@@ -121,20 +124,18 @@ Table of Contents
    disengaged.  Neither was wrong.  But the exchange exposed a gap: the
    community lacks shared norms for how AI assistance should be used and
    disclosed in email discussions.  Rather than treat this as a local
-   disagreement, the two parties decided to try think through it
-   together --- and to document that discussion.
-
-   Comments/issues/PRs are welcome at https://github.com/sftcd/led/
+   disagreement, the two parties decided to try think through it and to
+   document that discussion.
 
 2.  A Reader's Concerns
 
-   This section is written by the first author.  But readers would
-   likely have guessed that anyway:-)
+   This section is written by the first author.  But readers may likely
+   have guessed that anyway:-)
 
    Current AI tooling tends to emit text that can be readily seen to
-   have involved that tooling.  The following seem to be current "tells"
-   for AI having been used when one considers the stream of email
-   messages arriving from a sender:
+   have involved that tooling.  The following seem to be some of the
+   current "tells" for AI having been used when one considers the stream
+   of email messages arriving from a sender:
 
    *  Frequently being overly positive about a message to which this
       message is a reaction, e.g. "You've asked exactly the right
@@ -167,9 +168,10 @@ Table of Contents
 
    All of the above means that a reader who considers that a message (or
    stream of messages) is largely the output from AI tools can have no
-   confidence that they are discussing a topic with the person who
-   seemingly sent the email.  At that point, the only rational action
-   seems to be to ignore such messages as being equivalent to spam.
+   confidence that they are really discussing a topic with the person
+   who seemingly sent the email.  At that point, the only rational
+   action seems to be to ignore such messages as being equivalent to
+   spam.
 
    Note that the above issues are not the same as the sock-puppet
    problem, or a sybil attack.  These issues remain problems even when
@@ -214,7 +216,7 @@ Table of Contents
 
    After reading, the author thinks about the issue independently.  This
    step is not delegated.  The AI may be used at this stage to stress-
-   test an argument --- to articulate the strongest counterposition, or
+   test an argument --- to articulate the strongest counter-position, or
    to explore whether an alternative interpretation holds --- but it
    does not originate the position.  The author decides what to think
    before asking AI to help express it.
@@ -233,6 +235,13 @@ Table of Contents
    position, revisions are requested.  This can take several rounds.
    The test is not "does this read well" but "does this say what I
    meant."
+
+   One specific issue encountered is that AI output tends toward an
+   artificially "balanced" stance --- hedging between positions instead
+   of committing to one.  Draft outputs may under-commit when compared
+   to the author's actual position.  This effect may not show up as a
+   "tell" visible to readers of the eventual message, but can be visible
+   to the author as one.
 
 3.4.  Final Review and Send
 
@@ -269,9 +278,8 @@ Table of Contents
    knowledge, a clear communication goal, a defined set of constraints
    --- AI can draft, translate, and refine text with speed and
    consistency no individual can match; identify relevant prior work
-   across large corpora; stress-test arguments by generating
-   counterpositions; and execute repetitive cognitive tasks without
-   fatigue.
+   across large corpora; stress-test arguments by generating counter-
+   positions; and execute repetitive cognitive tasks without fatigue.
 
    For participants in international technical communities, the language
    function alone is significant.  The ability to express a precise
@@ -393,6 +401,7 @@ Table of Contents
 
    The risks of AI-assisted writing are real, but frequently
    misdescribed.  Attempting to describe them precisely should help.
+   Both authors contributed to this section.
 
    *  AI replacement of thought.  A primary risk is not AI assistance
       but the delegation of thinking itself --- asking AI what to
@@ -431,6 +440,18 @@ Table of Contents
       running a substantive discussion, we are more likely to end up
       with gibberish.
 
+   *  Discussion based on bad information.  AI tooling might emit text
+      that is based on outdated information or even hallucinated
+      material.  Senders need to check messages they send, and may need
+      to be very familiar with the topic(s) being discussed, to ensure
+      this does not occur.
+
+   While not properly described as a risk, the two authors of this draft
+   do not currently agree as to whether it would be an overall positive
+   or negative were there to be no "tells" visible in messages emitted
+   with the assistance of AI tooling.  More discussion is needed on
+   that:-)
+
 6.  Recommendations
 
    These are extremely tentative recommendations, that may be wrong, but
@@ -466,11 +487,23 @@ Table of Contents
 
 9.  Security Considerations
 
-   TBD
+   Mischievous IETF participants could include AI prompts inside
+   messages used in IETF discussions that could form part of an attack
+   on participants who use AI tooling.  Such text could, for example,
+   only be present in the text/html part of a multipart/alternative
+   email and so might not be rendered in a presentation of a mailing
+   list archive.  Presumably AI tool users will need to mitigate such
+   threats in any case, so the new aspect here is perhaps only the use
+   of IETF archives as the distribution medium for AI prompt attacks.
 
-10.  Acknowledgements
+   Otherwise, see the section on risks.
 
-   TBD
+10.  Acknowledgments
+
+   The second author used https://github.com/meetodyssey in preparing
+   and discussing the above text.
+
+   The first author made no use of AI tooling.
 
 11.  Normative References
 
