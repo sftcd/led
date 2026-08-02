@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-07-30T00:42:37.832802+00:00",
+  "timestamp": "2026-08-02T00:49:08.407176+00:00",
   "repo": "sftcd/led",
   "labels": [
     {
@@ -55,15 +55,15 @@
       "id": "I_kwDOTk4Tfc8AAAABKes9ew",
       "title": "Overall scope - what forms of IETF-related text are in/out of scope?",
       "url": "https://github.com/sftcd/led/issues/2",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "sftcd",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "Issue raised in discussion of #1 \n\nWhat IETF communications should be in scope for the draft?\n\nSeems clear we do want to include emails sent to IETF lists, but what about:\n\n- IM chat messages\n- slides presented at f2f or online meetings\n- I-D and RFC text\n\nWe should decide which of the above are in/out of scope for this draft, make that clear and consider any changes/additions flowing from that.",
       "createdAt": "2026-07-28T11:54:57Z",
-      "updatedAt": "2026-07-28T14:24:30Z",
-      "closedAt": null,
+      "updatedAt": "2026-07-30T01:54:15Z",
+      "closedAt": "2026-07-30T01:54:15Z",
       "comments": [
         {
           "author": "sftcd",
@@ -78,6 +78,13 @@
           "body": "We seem to agree to exclude I-D and RFC text - I'll make a PR for that",
           "createdAt": "2026-07-28T14:24:30Z",
           "updatedAt": "2026-07-28T14:24:30Z"
+        },
+        {
+          "author": "lllyfeng",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I think this issue should be closed.:)",
+          "createdAt": "2026-07-30T01:54:15Z",
+          "updatedAt": "2026-07-30T01:54:15Z"
         }
       ]
     },
@@ -86,15 +93,15 @@
       "id": "I_kwDOTk4Tfc8AAAABKetfnQ",
       "title": "What kinds of \"tell\" do we want to note?",
       "url": "https://github.com/sftcd/led/issues/3",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "sftcd",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "Raised in discussion of #1 \n\nWhat (additional) kinds of \"tell\" do we want to describe?\n\nDo we want to include real examples from IETF lists or not?",
       "createdAt": "2026-07-28T11:55:57Z",
-      "updatedAt": "2026-07-28T14:23:52Z",
-      "closedAt": null,
+      "updatedAt": "2026-07-31T01:54:16Z",
+      "closedAt": "2026-07-31T01:54:16Z",
       "comments": [
         {
           "author": "sftcd",
@@ -124,15 +131,15 @@
       "id": "I_kwDOTk4Tfc8AAAABKeuIlQ",
       "title": "Emphasise \"IETF should develop guidance\" recommendation",
       "url": "https://github.com/sftcd/led/issues/4",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "sftcd",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "Raised in discussion of #1 \n\nThe main, and probably only concrete, recommendation we have is that the IETF should develop guidance.\n\nWe should emphasise that, probably by adding it to the abstract/intro.",
       "createdAt": "2026-07-28T11:57:10Z",
-      "updatedAt": "2026-07-28T12:04:32Z",
-      "closedAt": null,
+      "updatedAt": "2026-07-30T01:56:40Z",
+      "closedAt": "2026-07-30T01:56:40Z",
       "comments": [
         {
           "author": "sftcd",
@@ -140,6 +147,13 @@
           "body": "I think this is fairly easy to handle - we should do it. Happy to make a PR that adds such text to abstract/intro.",
           "createdAt": "2026-07-28T12:04:32Z",
           "updatedAt": "2026-07-28T12:04:32Z"
+        },
+        {
+          "author": "lllyfeng",
+          "authorAssociation": "COLLABORATOR",
+          "body": "We all agree with it, so I think this issue can be closed.",
+          "createdAt": "2026-07-30T01:56:40Z",
+          "updatedAt": "2026-07-30T01:56:40Z"
         }
       ]
     },
@@ -148,15 +162,15 @@
       "id": "I_kwDOTk4Tfc8AAAABKeu9UQ",
       "title": "Should we recommend AI tool users try make their messages more like human messages?",
       "url": "https://github.com/sftcd/led/issues/5",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "sftcd",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "Raised in discussion on #1 \n\n> Also consider adding: authors should use AI tools/prompting aimed at natural, concise output rather than settling for the default verbose/over-hedged \"AI voice.\" Needs to be paired explicitly with \"and still disclose\" though \u2014 otherwise it reads as tension with \"always be transparent\" and risk #3 (\"reader inability to distinguish\"). The point is better writing, not fewer visible tells, so that should be said outright rather than left implicit.\n\nNot clear that the two authors here have the same opinion of that:-)\n\nWe should thrash it out.",
       "createdAt": "2026-07-28T11:58:40Z",
-      "updatedAt": "2026-07-28T12:05:09Z",
-      "closedAt": null,
+      "updatedAt": "2026-07-31T01:54:06Z",
+      "closedAt": "2026-07-31T01:54:06Z",
       "comments": [
         {
           "author": "sftcd",
@@ -166,6 +180,22 @@
           "updatedAt": "2026-07-28T12:05:09Z"
         }
       ]
+    },
+    {
+      "number": 7,
+      "id": "I_kwDOTk4Tfc8AAAABKu8UNw",
+      "title": "new risk: AI tools may output some analysis according to out of date information",
+      "url": "https://github.com/sftcd/led/issues/7",
+      "state": "CLOSED",
+      "author": "lllyfeng",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "I noticed my AI tool output the insight about my topic according to the information in 2025, because AI used to get information from it's world knowledge instead of getting the latest information by searching it from internet.",
+      "createdAt": "2026-07-30T02:00:57Z",
+      "updatedAt": "2026-07-31T01:53:58Z",
+      "closedAt": "2026-07-31T01:53:58Z",
+      "comments": []
     }
   ],
   "pulls": [
@@ -231,26 +261,78 @@
       "id": "PR_kwDOTk4Tfc73gMjp",
       "title": "scope text for issue #2",
       "url": "https://github.com/sftcd/led/pull/6",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "sftcd",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "an attempt to close #2",
       "createdAt": "2026-07-28T14:42:10Z",
-      "updatedAt": "2026-07-28T14:42:11Z",
+      "updatedAt": "2026-07-30T03:23:30Z",
       "baseRepository": "sftcd/led",
       "baseRefName": "main",
       "baseRefOid": "19a8e31f8fa356988adacfb06bdda58d5dbada5f",
       "headRepository": "sftcd/led",
       "headRefName": "scope",
       "headRefOid": "b07e64fcccf1fad2717e144112888f1619299040",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2026-07-30T03:23:30Z",
+      "mergedAt": "2026-07-30T03:23:30Z",
+      "mergedBy": "lllyfeng",
+      "mergeCommit": {
+        "oid": "699fb9c13497d402f1af0047c15da82026225f47"
+      },
       "comments": [],
       "reviews": []
+    },
+    {
+      "number": 8,
+      "id": "PR_kwDOTk4Tfc74oiil",
+      "title": "Changes that maybe get us to a -00 to publish?",
+      "url": "https://github.com/sftcd/led/pull/8",
+      "state": "MERGED",
+      "author": "sftcd",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "I made various tweaks (that also try to close out #3, #5 and #7) as well as fix a few wording things.\r\n\r\nThe only thing I can think that may be outstanding is whether you (@lllyfeng) want to add something to the acks section about the AI tooling you used when writing text? Might be no harm to do that. (In which case, please also add a sentence saying the other author didn't use any AI tooling at all:-)\r\n\r\nI think this might get us to a -00 we could publish.  Maybe aim to do that tomorrow (Friday 31st). If so, I can do the final crafting of text, making this repo public and posting to the datatracker.\r\n",
+      "createdAt": "2026-07-30T16:56:03Z",
+      "updatedAt": "2026-07-31T00:17:18Z",
+      "baseRepository": "sftcd/led",
+      "baseRefName": "main",
+      "baseRefOid": "699fb9c13497d402f1af0047c15da82026225f47",
+      "headRepository": "sftcd/led",
+      "headRefName": "morestuff",
+      "headRefOid": "56b159749d4d074b83c46ca1fd58cc02f15b2652",
+      "closedAt": "2026-07-31T00:17:18Z",
+      "mergedAt": "2026-07-31T00:17:18Z",
+      "mergedBy": "lllyfeng",
+      "mergeCommit": {
+        "oid": "e040fd019cd8708502753dbb779a279c13384ad3"
+      },
+      "comments": [
+        {
+          "author": "sftcd",
+          "authorAssociation": "OWNER",
+          "body": "I went ahead and suggested some text for the acks section - see what you think of it. I also did a spell-check and fixed a couple more things in the fixup commits. I figure this is good enough to publish a -00 to see if it's useful.",
+          "createdAt": "2026-07-30T18:11:33Z",
+          "updatedAt": "2026-07-30T18:11:33Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOTk4Tfc8AAAABH4ydkA",
+          "commit": {
+            "abbreviatedOid": "56b1597"
+          },
+          "author": "lllyfeng",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-07-31T00:16:59Z",
+          "updatedAt": "2026-07-31T00:17:00Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
