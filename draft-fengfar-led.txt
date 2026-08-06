@@ -5,7 +5,7 @@
 Network Working Group                                         S. Farrell
 Internet-Draft                                    Trinity College Dublin
 Intended status: Informational                                   C. Feng
-Expires: 31 January 2027                                    30 July 2026
+Expires: 7 February 2027                                   6 August 2026
 
 
                  Dealing with LLMs in IETF Discussions
@@ -47,7 +47,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 31 January 2027.
+   This Internet-Draft will expire on 7 February 2027.
 
 Copyright Notice
 
@@ -83,14 +83,20 @@ Table of Contents
        4.4.3.  The Deepening Relationship
        4.4.4.  What Becomes Possible
    5.  Risks
-   6.  Recommendations
-   7.  Conclusion
-   8.  IANA Considerations
-   9.  Security Considerations
-   10. Acknowledgments
-   11. Normative References
+   6.  Initial Discussions
+     6.1.  Possibly Relevant Policies Elsewhere
+     6.2.  Other points
+   7.  Recommendations
+   8.  Conclusion
+   9.  IANA Considerations
+   10. Security Considerations
+   11. Acknowledgments
+   12. References
+     12.1.  Normative References
+     12.2.  Informative References
    Appendix A.  Change Log
      A.1.  Draft-00
+     A.2.  Draft-01
    Authors' Addresses
 
 1.  Introduction
@@ -452,7 +458,137 @@ Table of Contents
    with the assistance of AI tooling.  More discussion is needed on
    that:-)
 
-6.  Recommendations
+6.  Initial Discussions
+
+   This draft was raised on the IETF "discuss" list with some discussion
+   ensuing. [ldref] This section aims to record points raised in a way
+   that may be more easily found than the list archive, as well as a few
+   points raised off-list.  Thus far, there has been no discussion
+   solely on the github repo for this draft.
+
+6.1.  Possibly Relevant Policies Elsewhere
+
+   Some other relevant policies and discussions were brought to the
+   authors' attention and could feed into discussion of an IETF policy:
+
+   *  one from W3C [w3cpol], which seems very relevant to this
+      discussion, but that also seems nearly as tentative as this draft
+
+   *  the EU AI act might contain some relevant clauses [euaiact50] that
+      might (or might not) call for disclosure of use of AI tooling in
+      contexts such as standards-development
+
+   *  the Irish courts have a very recent policy on the use of LLMs in
+      court documents [iecourt]
+
+   *  the IRTF's RASPRG discussed related topics at IETF-126 [rasprg]
+
+6.2.  Other points
+
+   *  one poster expressed that using LLMs during discussions seemed
+      less "honest" to them, whereas using LLMs for Internet-draft text,
+      tool development or testing/analysis seemed more acceptable
+
+   *  the IETF may have some "self-defense" mechansisms that help us
+      avoid some of the worst potential problems that could arise from
+      using LLMs in discussions, e.g., physical (or online synchronous)
+      meetings and slow progress making it easier to spot LLM usage over
+      extended durations
+
+   *  another risk is that people using LLMs might deliberately
+      manipulate LLM tools to produce outputs that aren't really
+      intended as part an IETF discussion, but rather to try to distort
+      or disturb that discussion
+
+   *  attempts to ban the use of LLMs as described here won't work
+
+   *  any policy in this space won't be known to new participants who
+      are therefore more likely to not conform to that policy (while
+      this could be argued generally about any policy, it's perhaps very
+      relevant here, given current trends)
+
+   *  the IETF could encourage doing better in this space rather than
+      simply denounce such uses
+
+   *  there's a risk that if we don't try tackle this issue IETF mailing
+      lists might end up like [moltbook]
+
+   *  a sender's use of LLMs may make it harder for a reader to
+      distinguish between a sender that is less well informed but who
+      will learn from discussion, versus a sender that is not actually
+      willing to learn from a discussion (and who perhaps doesn't
+      understand that the LLM output is gibberish)
+
+   *  over time, readers learn to expect and better interpret senders
+      who use their own "voice" - interposing an LLM risks changes to
+      that in ways that remove a tool IETF discussants have used for
+      decades, (and for senders, LLM version changes might totally
+      change the "voice" that readers perceive)
+
+   *  some people just skip message they consider "vacuous and wordy"
+      and believe many of those are LLM outputs
+
+   *  some consider the "voice" of known participants as helpful in
+      evaluating their inputs
+
+   *  messages largely based on LLM outputs may be "boring"
+
+   *  LLMs might be helpfule in discussions about the history of draft
+      and e.g. whether or not merging some drafts might be good or bad
+
+   *  "unfinished" LLM generated outputs seemingly describing something
+      may waste the time of the (possibly many) readers of a message
+
+   *  some code-of-conduct for use of LLMs might be useful, along with
+      bans for breaches
+
+   *  to the extent we assume "good faith" participation, use of LLMs
+      may change our threat model for participation
+
+   *  assuming that IETF participants have the resources and/or time to
+      engage with LLM tools could be yet another barrier to
+      participation
+
+   *  IETF discussions should be for humans, and respect the amount of
+      time readers have available to consider messages
+
+   *  one could use LLM tools to shorten the messages one sends
+
+   *  senders are 100% responsible for what they send - use any tooling
+      (or send any message) at the risk of your reputation
+
+   *  we are capable of bikeshedding on the name of a mailing list for
+      disucssion of this topic, but we should have such a list
+
+   *  perhaps the end result of this discussion should be a wiki page
+      that evolves and not a policy expressed in an RFC
+
+   *  well-connected people, with good English language skiils, have had
+      an easier time in the past, maybe these tools might change that
+
+   *  the IETF should actively take a position and declare requirements
+      (for discussion) that suit our needs
+
+   *  requiring declaration of LLM tool use might be like cookie-banners
+      and become so common as to not be useful
+
+   *  so far, someone's LLM output concluded "the discussion is
+      constructive rather than polarised" ;-)
+
+   *  LLM tools can help with translation, but increased acceleration
+      (in terms of producing output) may inevitably correlate with a
+      lack of understanding from the sender
+
+   *  LLM use may disrupt reader's evaluation of sender reputation over
+      time
+
+   *  one poster suggested publishing community-specific guidance that
+      participants could feed to their AI agents (e.g., bottom line up
+      front, avoiding walls of jargon, double-checking assertions before
+      posting) so that AI-assisted contributions start out closer to
+      community norms
+
+7.  Recommendations
 
    These are extremely tentative recommendations, that may be wrong, but
    that seem worth considering:
@@ -477,15 +613,15 @@ Table of Contents
    confidence in email discussions may evaporate, which would cause
    significant damage to the IETF.
 
-7.  Conclusion
+8.  Conclusion
 
    It's too early to say really.
 
-8.  IANA Considerations
+9.  IANA Considerations
 
    This document makes no request of IANA.
 
-9.  Security Considerations
+10.  Security Considerations
 
    Mischievous IETF participants could include AI prompts inside
    messages used in IETF discussions that could form part of an attack
@@ -498,14 +634,16 @@ Table of Contents
 
    Otherwise, see the section on risks.
 
-10.  Acknowledgments
+11.  Acknowledgments
 
    The second author used https://github.com/meetodyssey in preparing
    and discussing the above text.
 
    The first author made no use of AI tooling.
 
-11.  Normative References
+12.  References
+
+12.1.  Normative References
 
    [RFC5378]  Bradner, S., Ed. and J. Contreras, Ed., "Rights
               Contributors Provide to the IETF Trust", BCP 78, RFC 5378,
@@ -517,12 +655,42 @@ Table of Contents
               DOI 10.17487/RFC8179, May 2017,
               <https://www.rfc-editor.org/info/rfc8179>.
 
+12.2.  Informative References
+
+   [euaiact50]
+              "EU AI Act Explorer", n.d., <https://ai-act-service-
+              desk.ec.europa.eu/en/ai-act/article-50>.
+
+   [iecourt]  "Practice Direction on the Responsible Use of Generative
+              Artificial Intelligence in Court Documents", July 2026,
+              <https://www.courts.ie/practice-directions/full-practice-
+              direction?url=practice-direction-on-the-responsible-use-
+              of-generative-artificial-intelligence-in-court-documents>.
+
+   [ldref]    "Dealing with LLMs in IETF discussions draft", July 2026,
+              <https://mailarchive.ietf.org/arch/msg/
+              ietf/3VaBJ6pEdhtkpOtnZYA_HcVHejU/>.
+
+   [moltbook] "Moltbook wikipedia page", August 2026,
+              <https://en.wikipedia.org/wiki/Moltbook>.
+
+   [rasprg]   "RASPRG IETF-126 meeting", July 2026,
+              <https://datatracker.ietf.org/meeting/126/session/rasprg>.
+
+   [w3cpol]   "Use of Large Language Models in Standards Work", March
+              2026, <https://www.w3.org/TR/2026/NOTE-llms-standards-
+              20260324/>.
+
 Appendix A.  Change Log
 
 A.1.  Draft-00
 
    *  This is based on email and github interactions between the
       authors.
+
+A.2.  Draft-01
+
+   *  Reflect points raised on the IETF "discuss" list.
 
 Authors' Addresses
 

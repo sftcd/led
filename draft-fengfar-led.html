@@ -9,15 +9,14 @@
 <meta content="Chong Feng" name="author">
 <meta content="
        The rapid adoption of AI language tools has prompted concern across
-professional and technical communities, including the IETF, about authenticity, accountability,
-and the integrity of human contribution. This document approaches the
-question from two directions: a critical reader's concerns about what AI
-use means for IETF discussion, and a practitioner's account of how AI
-is currently being used in IETF discussions.
-We aim to explore some of the issues arising, and perhaps make
-some specific (but tentative) recommendations,
-but the main recommendation is that the IETF should develop guidelines for use of AI tooling when
-engaging in IETF discussions. 
+professional and technical communities, including the IETF, about authenticity,
+accountability, and the integrity of human contribution. This document
+approaches the question from two directions: a critical reader's concerns about
+what AI use means for IETF discussion, and a practitioner's account of how AI
+is currently being used in IETF discussions.  We aim to explore some of the
+issues arising, and perhaps make some specific (but tentative) recommendations,
+but the main recommendation is that the IETF should develop guidelines for use
+of AI tooling when engaging in IETF discussions. 
     " name="description">
 <meta content="xml2rfc 3.34.0" name="generator">
 <meta content="Internet-Draft" name="keyword">
@@ -31,7 +30,7 @@ engaging in IETF discussions.
     Jinja2 3.1.6
     lxml 6.1.1
     natsort 8.4.0
-    platformdirs 4.10.1
+    platformdirs 4.11.0
     pycountry 24.6.1
     PyYAML 6.0.3
     requests 2.33.1
@@ -1051,11 +1050,11 @@ svg {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">LLM Email Discussions</td>
-<td class="right">July 2026</td>
+<td class="right">August 2026</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Farrell &amp; Feng</td>
-<td class="center">Expires 31 January 2027</td>
+<td class="center">Expires 7 February 2027</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1068,12 +1067,12 @@ svg {
 <dd class="internet-draft">draft-fengfar-led-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2026-07-30" class="published">30 July 2026</time>
+<time datetime="2026-08-06" class="published">6 August 2026</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2027-01-31">31 January 2027</time></dd>
+<dd class="expires"><time datetime="2027-02-07">7 February 2027</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1090,15 +1089,14 @@ svg {
 <section id="section-abstract">
       <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
 <p id="section-abstract-1">The rapid adoption of AI language tools has prompted concern across
-professional and technical communities, including the IETF, about authenticity, accountability,
-and the integrity of human contribution. This document approaches the
-question from two directions: a critical reader's concerns about what AI
-use means for IETF discussion, and a practitioner's account of how AI
-is currently being used in IETF discussions.
-We aim to explore some of the issues arising, and perhaps make
-some specific (but tentative) recommendations,
-but the main recommendation is that the IETF should develop guidelines for use of AI tooling when
-engaging in IETF discussions.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
+professional and technical communities, including the IETF, about authenticity,
+accountability, and the integrity of human contribution. This document
+approaches the question from two directions: a critical reader's concerns about
+what AI use means for IETF discussion, and a practitioner's account of how AI
+is currently being used in IETF discussions.  We aim to explore some of the
+issues arising, and perhaps make some specific (but tentative) recommendations,
+but the main recommendation is that the IETF should develop guidelines for use
+of AI tooling when engaging in IETF discussions.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
 </section>
 <section class="note rfcEditorRemove" id="section-note.1">
       <h2 id="name-discussion-venues">
@@ -1127,7 +1125,7 @@ engaging in IETF discussions.<a href="#section-abstract-1" class="pilcrow">¶</a
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 31 January 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 7 February 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1217,33 +1215,55 @@ engaging in IETF discussions.<a href="#section-abstract-1" class="pilcrow">¶</a
             <p id="section-toc.1-1.5.1"><a href="#section-5" class="auto internal xref">5</a>.  <a href="#name-risks" class="internal xref">Risks</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6">
-            <p id="section-toc.1-1.6.1"><a href="#section-6" class="auto internal xref">6</a>.  <a href="#name-recommendations" class="internal xref">Recommendations</a></p>
+            <p id="section-toc.1-1.6.1"><a href="#section-6" class="auto internal xref">6</a>.  <a href="#name-initial-discussions" class="internal xref">Initial Discussions</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6.2.1">
+                <p id="section-toc.1-1.6.2.1.1"><a href="#section-6.1" class="auto internal xref">6.1</a>.  <a href="#name-possibly-relevant-policies-" class="internal xref">Possibly Relevant Policies Elsewhere</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6.2.2">
+                <p id="section-toc.1-1.6.2.2.1"><a href="#section-6.2" class="auto internal xref">6.2</a>.  <a href="#name-other-points" class="internal xref">Other points</a></p>
+</li>
+            </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7">
-            <p id="section-toc.1-1.7.1"><a href="#section-7" class="auto internal xref">7</a>.  <a href="#name-conclusion" class="internal xref">Conclusion</a></p>
+            <p id="section-toc.1-1.7.1"><a href="#section-7" class="auto internal xref">7</a>.  <a href="#name-recommendations" class="internal xref">Recommendations</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8">
-            <p id="section-toc.1-1.8.1"><a href="#section-8" class="auto internal xref">8</a>.  <a href="#name-iana-considerations" class="internal xref">IANA Considerations</a></p>
+            <p id="section-toc.1-1.8.1"><a href="#section-8" class="auto internal xref">8</a>.  <a href="#name-conclusion" class="internal xref">Conclusion</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9">
-            <p id="section-toc.1-1.9.1"><a href="#section-9" class="auto internal xref">9</a>.  <a href="#name-security-considerations" class="internal xref">Security Considerations</a></p>
+            <p id="section-toc.1-1.9.1"><a href="#section-9" class="auto internal xref">9</a>.  <a href="#name-iana-considerations" class="internal xref">IANA Considerations</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.10">
-            <p id="section-toc.1-1.10.1"><a href="#section-10" class="auto internal xref">10</a>. <a href="#name-acknowledgments" class="internal xref">Acknowledgments</a></p>
+            <p id="section-toc.1-1.10.1"><a href="#section-10" class="auto internal xref">10</a>. <a href="#name-security-considerations" class="internal xref">Security Considerations</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.11">
-            <p id="section-toc.1-1.11.1"><a href="#section-11" class="auto internal xref">11</a>. <a href="#name-normative-references" class="internal xref">Normative References</a></p>
+            <p id="section-toc.1-1.11.1"><a href="#section-11" class="auto internal xref">11</a>. <a href="#name-acknowledgments" class="internal xref">Acknowledgments</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.12">
-            <p id="section-toc.1-1.12.1"><a href="#appendix-A" class="auto internal xref">Appendix A</a>.  <a href="#name-change-log" class="internal xref">Change Log</a></p>
+            <p id="section-toc.1-1.12.1"><a href="#section-12" class="auto internal xref">12</a>. <a href="#name-references" class="internal xref">References</a></p>
 <ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.12.2.1">
-                <p id="section-toc.1-1.12.2.1.1"><a href="#appendix-A.1" class="auto internal xref">A.1</a>.  <a href="#name-draft-00" class="internal xref">Draft-00</a></p>
+                <p id="section-toc.1-1.12.2.1.1"><a href="#section-12.1" class="auto internal xref">12.1</a>.  <a href="#name-normative-references" class="internal xref">Normative References</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.12.2.2">
+                <p id="section-toc.1-1.12.2.2.1"><a href="#section-12.2" class="auto internal xref">12.2</a>.  <a href="#name-informative-references" class="internal xref">Informative References</a></p>
 </li>
             </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.13">
-            <p id="section-toc.1-1.13.1"><a href="#appendix-B" class="auto internal xref"></a><a href="#name-authors-addresses" class="internal xref">Authors' Addresses</a></p>
+            <p id="section-toc.1-1.13.1"><a href="#appendix-A" class="auto internal xref">Appendix A</a>.  <a href="#name-change-log" class="internal xref">Change Log</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.13.2.1">
+                <p id="section-toc.1-1.13.2.1.1"><a href="#appendix-A.1" class="auto internal xref">A.1</a>.  <a href="#name-draft-00" class="internal xref">Draft-00</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.13.2.2">
+                <p id="section-toc.1-1.13.2.2.1"><a href="#appendix-A.2" class="auto internal xref">A.2</a>.  <a href="#name-draft-01" class="internal xref">Draft-01</a></p>
+</li>
+            </ul>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.14">
+            <p id="section-toc.1-1.14.1"><a href="#appendix-B" class="auto internal xref"></a><a href="#name-authors-addresses" class="internal xref">Authors' Addresses</a></p>
 </li>
         </ul>
 </nav>
@@ -1258,21 +1278,19 @@ engaging in IETF discussions.<a href="#section-abstract-1" class="pilcrow">¶</a
 (slides) used at meetings, text input during e.g. github issue or PR
 discussions, and potentially messages sent using IM tools. Text included within
 Internet-drafts and RFCs is not included in scope here, even though some of the
-same issues will arise. We omit those as Internet-drafts and RFCs are also covered by BCP 78
-<span>[<a href="#RFC5378" class="cite xref">RFC5378</a>]</span> and BCP 79 <span>[<a href="#RFC8179" class="cite xref">RFC8179</a>]</span> so additional considerations apply for such
-text.<a href="#section-1-1" class="pilcrow">¶</a></p>
-<p id="section-1-2">AI language tools are now widely used in professional writing, including
-by some participants in
-standards development communities such as the IETF. This has produced
-at least two kinds of reaction: uncritical adoption, where AI output is used
-where previously a person would have written an email,
-and skepticism, where messages bearing the appearance
-of AI involvement are seen as problematic, on the basis
-that a reader cannot tell whether it is the person sending the email
-or just the AI tool, or some mixture.<a href="#section-1-2" class="pilcrow">¶</a></p>
-<p id="section-1-3">In order to explore these positions, it may be helpful to outline them in
-more detail, with the goal of better understanding what AI does well, what it
-does poorly, and where the boundary between them lies.<a href="#section-1-3" class="pilcrow">¶</a></p>
+same issues will arise. We omit those as Internet-drafts and RFCs are also
+covered by BCP 78 <span>[<a href="#RFC5378" class="cite xref">RFC5378</a>]</span> and BCP 79 <span>[<a href="#RFC8179" class="cite xref">RFC8179</a>]</span> so additional
+considerations apply for such text.<a href="#section-1-1" class="pilcrow">¶</a></p>
+<p id="section-1-2">AI language tools are now widely used in professional writing, including by
+some participants in standards development communities such as the IETF. This
+has produced at least two kinds of reaction: uncritical adoption, where AI
+output is used where previously a person would have written an email, and
+skepticism, where messages bearing the appearance of AI involvement are seen as
+problematic, on the basis that a reader cannot tell whether it is the person
+sending the email or just the AI tool, or some mixture.<a href="#section-1-2" class="pilcrow">¶</a></p>
+<p id="section-1-3">In order to explore these positions, it may be helpful to outline them in more
+detail, with the goal of better understanding what AI does well, what it does
+poorly, and where the boundary between them lies.<a href="#section-1-3" class="pilcrow">¶</a></p>
 <p id="section-1-4">This document grew out of a specific exchange on an IETF mailing list. One
 author described using AI to help express ideas developed independently; a
 reader flagged the output as LLM-generated and disengaged. Neither was wrong.
@@ -1651,94 +1669,310 @@ messages emitted with the assistance of AI tooling. More discussion
 is needed on that:-)<a href="#section-5-3" class="pilcrow">¶</a></p>
 </section>
 </div>
-<div id="recommendations">
+<div id="initial-discussions">
 <section id="section-6">
-      <h2 id="name-recommendations">
-<a href="#section-6" class="section-number selfRef">6. </a><a href="#name-recommendations" class="section-name selfRef">Recommendations</a>
+      <h2 id="name-initial-discussions">
+<a href="#section-6" class="section-number selfRef">6. </a><a href="#name-initial-discussions" class="section-name selfRef">Initial Discussions</a>
       </h2>
-<p id="section-6-1">These are extremely tentative recommendations, that may be wrong, but
-that seem worth considering:<a href="#section-6-1" class="pilcrow">¶</a></p>
+<p id="section-6-1">This draft was raised on the IETF "discuss" list with some discussion ensuing.
+<span>[<a href="#ldref" class="cite xref">ldref</a>]</span> This section aims to record points raised in a way that may be more
+easily found than the list archive, as well as a few points raised off-list.
+Thus far, there has been no discussion solely on the github repo for this
+draft.<a href="#section-6-1" class="pilcrow">¶</a></p>
+<div id="possibly-relevant-policies-elsewhere">
+<section id="section-6.1">
+        <h3 id="name-possibly-relevant-policies-">
+<a href="#section-6.1" class="section-number selfRef">6.1. </a><a href="#name-possibly-relevant-policies-" class="section-name selfRef">Possibly Relevant Policies Elsewhere</a>
+        </h3>
+<p id="section-6.1-1">Some other relevant policies and discussions were brought to the authors'
+attention and could feed into discussion of an IETF policy:<a href="#section-6.1-1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-6-2.1">
-          <p id="section-6-2.1.1">Form your position before engaging AI. The argument should be yours before
-the draft exists.<a href="#section-6-2.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-6.1-2.1">
+            <p id="section-6.1-2.1.1">one from W3C <span>[<a href="#w3cpol" class="cite xref">w3cpol</a>]</span>, which seems very relevant to this discussion, but
+that also seems nearly as tentative as this draft<a href="#section-6.1-2.1.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-6-2.2">
-          <p id="section-6-2.2.1">Review AI output for fidelity, not just correctness. If the AI has
-softened, generalized, or shifted your position, correct it before sending.<a href="#section-6-2.2.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-6.1-2.2">
+            <p id="section-6.1-2.2.1">the EU AI act might contain some relevant clauses <span>[<a href="#euaiact50" class="cite xref">euaiact50</a>]</span> that might
+(or might not) call for disclosure of use of AI tooling in contexts such as
+standards-development<a href="#section-6.1-2.2.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-6-2.3">
-          <p id="section-6-2.3.1">Always be transparent. Describing your workflow in detail builds trust
-rather than eroding it.<a href="#section-6-2.3.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-6.1-2.3">
+            <p id="section-6.1-2.3.1">the Irish courts have a very recent policy on the use of LLMs in court
+documents <span>[<a href="#iecourt" class="cite xref">iecourt</a>]</span><a href="#section-6.1-2.3.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-6-2.4">
-          <p id="section-6-2.4.1">Question senders if you think they are using AI tooling as to what
+          <li class="normal" id="section-6.1-2.4">
+            <p id="section-6.1-2.4.1">the IRTF's RASPRG discussed related topics at IETF-126 <span>[<a href="#rasprg" class="cite xref">rasprg</a>]</span><a href="#section-6.1-2.4.1" class="pilcrow">¶</a></p>
+</li>
+        </ul>
+</section>
+</div>
+<div id="other-points">
+<section id="section-6.2">
+        <h3 id="name-other-points">
+<a href="#section-6.2" class="section-number selfRef">6.2. </a><a href="#name-other-points" class="section-name selfRef">Other points</a>
+        </h3>
+<ul class="normal">
+<li class="normal" id="section-6.2-1.1">
+            <p id="section-6.2-1.1.1">one poster expressed that using LLMs during discussions seemed less "honest"
+to them, whereas using LLMs for Internet-draft text, tool development or
+testing/analysis seemed more acceptable<a href="#section-6.2-1.1.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-6.2-1.2">
+            <p id="section-6.2-1.2.1">the IETF may have some "self-defense" mechansisms that help us avoid some of
+the worst potential problems that could arise from using LLMs in discussions,
+e.g., physical (or online synchronous) meetings and slow progress making it
+easier to spot LLM usage over extended durations<a href="#section-6.2-1.2.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-6.2-1.3">
+            <p id="section-6.2-1.3.1">another risk is that people using LLMs might deliberately manipulate LLM
+tools to produce outputs that aren't really intended as part an IETF
+discussion, but rather to try to distort or disturb that discussion<a href="#section-6.2-1.3.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-6.2-1.4">
+            <p id="section-6.2-1.4.1">attempts to ban the use of LLMs as described here won't work<a href="#section-6.2-1.4.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-6.2-1.5">
+            <p id="section-6.2-1.5.1">any policy in this space won't be known to new participants who are therefore
+more likely to not conform to that policy (while this could be argued
+generally about any policy, it's perhaps very relevant here, given current
+trends)<a href="#section-6.2-1.5.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-6.2-1.6">
+            <p id="section-6.2-1.6.1">the IETF could encourage doing better in this space rather than simply
+denounce such uses<a href="#section-6.2-1.6.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-6.2-1.7">
+            <p id="section-6.2-1.7.1">there's a risk that if we don't try tackle this issue IETF mailing lists
+might end up like <span>[<a href="#moltbook" class="cite xref">moltbook</a>]</span><a href="#section-6.2-1.7.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-6.2-1.8">
+            <p id="section-6.2-1.8.1">a sender's use of LLMs may make it harder for a reader to distinguish between
+a sender that is less well informed but who will learn from discussion,
+versus a sender that is not actually willing to learn from a discussion (and
+who perhaps doesn't understand that the LLM output is gibberish)<a href="#section-6.2-1.8.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-6.2-1.9">
+            <p id="section-6.2-1.9.1">over time, readers learn to expect and better interpret senders who use their
+own "voice" - interposing an LLM risks changes to that in ways that remove a
+tool IETF discussants have used for decades, (and for senders, LLM version
+changes might totally change the "voice" that readers perceive)<a href="#section-6.2-1.9.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-6.2-1.10">
+            <p id="section-6.2-1.10.1">some people just skip message they consider "vacuous and wordy" and believe
+many of those are LLM outputs<a href="#section-6.2-1.10.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-6.2-1.11">
+            <p id="section-6.2-1.11.1">some consider the "voice" of known participants as helpful in evaluating
+their inputs<a href="#section-6.2-1.11.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-6.2-1.12">
+            <p id="section-6.2-1.12.1">messages largely based on LLM outputs may be "boring"<a href="#section-6.2-1.12.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-6.2-1.13">
+            <p id="section-6.2-1.13.1">LLMs might be helpfule in discussions about the history of draft and
+e.g. whether or not merging some drafts might be good or bad<a href="#section-6.2-1.13.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-6.2-1.14">
+            <p id="section-6.2-1.14.1">"unfinished" LLM generated outputs seemingly describing something
+may waste the time of the (possibly many) readers of a message<a href="#section-6.2-1.14.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-6.2-1.15">
+            <p id="section-6.2-1.15.1">some code-of-conduct for use of LLMs might be useful, along with
+bans for breaches<a href="#section-6.2-1.15.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-6.2-1.16">
+            <p id="section-6.2-1.16.1">to the extent we assume "good faith" participation, use of LLMs
+may change our threat model for participation<a href="#section-6.2-1.16.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-6.2-1.17">
+            <p id="section-6.2-1.17.1">assuming that IETF participants have the resources and/or
+time to engage with LLM tools could be yet another barrier to
+participation<a href="#section-6.2-1.17.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-6.2-1.18">
+            <p id="section-6.2-1.18.1">IETF discussions should be for humans, and respect the amount of
+time readers have available to consider messages<a href="#section-6.2-1.18.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-6.2-1.19">
+            <p id="section-6.2-1.19.1">one could use LLM tools to shorten the messages one sends<a href="#section-6.2-1.19.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-6.2-1.20">
+            <p id="section-6.2-1.20.1">senders are 100% responsible for what they send - use any tooling
+(or send any message) at the risk of your reputation<a href="#section-6.2-1.20.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-6.2-1.21">
+            <p id="section-6.2-1.21.1">we are capable of bikeshedding on the name of a mailing list for
+disucssion of this topic, but we should have such a list<a href="#section-6.2-1.21.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-6.2-1.22">
+            <p id="section-6.2-1.22.1">perhaps the end result of this discussion should be a wiki page
+that evolves and not a policy expressed in an RFC<a href="#section-6.2-1.22.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-6.2-1.23">
+            <p id="section-6.2-1.23.1">well-connected people, with good English language skiils, have
+had an easier time in the past, maybe these tools might change
+that<a href="#section-6.2-1.23.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-6.2-1.24">
+            <p id="section-6.2-1.24.1">the IETF should actively take a position and declare requirements
+(for discussion) that suit our needs<a href="#section-6.2-1.24.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-6.2-1.25">
+            <p id="section-6.2-1.25.1">requiring declaration of LLM tool use might be like cookie-banners
+and become so common as to not be useful<a href="#section-6.2-1.25.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-6.2-1.26">
+            <p id="section-6.2-1.26.1">so far, someone's LLM output concluded "the discussion is constructive rather
+than polarised" ;-)<a href="#section-6.2-1.26.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-6.2-1.27">
+            <p id="section-6.2-1.27.1">LLM tools can help with translation, but increased acceleration
+(in terms of producing output) may inevitably correlate with a lack of
+understanding from the sender<a href="#section-6.2-1.27.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-6.2-1.28">
+            <p id="section-6.2-1.28.1">LLM use may disrupt reader's evaluation of sender reputation over
+time<a href="#section-6.2-1.28.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-6.2-1.29">
+            <p id="section-6.2-1.29.1">one poster suggested publishing community-specific guidance that participants
+could feed to their AI agents (e.g., bottom line up front, avoiding walls of
+jargon, double-checking assertions before posting) so that AI-assisted
+contributions start out closer to community norms<a href="#section-6.2-1.29.1" class="pilcrow">¶</a></p>
+</li>
+        </ul>
+</section>
+</div>
+</section>
+</div>
+<div id="recommendations">
+<section id="section-7">
+      <h2 id="name-recommendations">
+<a href="#section-7" class="section-number selfRef">7. </a><a href="#name-recommendations" class="section-name selfRef">Recommendations</a>
+      </h2>
+<p id="section-7-1">These are extremely tentative recommendations, that may be wrong, but
+that seem worth considering:<a href="#section-7-1" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-7-2.1">
+          <p id="section-7-2.1.1">Form your position before engaging AI. The argument should be yours before
+the draft exists.<a href="#section-7-2.1.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-7-2.2">
+          <p id="section-7-2.2.1">Review AI output for fidelity, not just correctness. If the AI has
+softened, generalized, or shifted your position, correct it before sending.<a href="#section-7-2.2.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-7-2.3">
+          <p id="section-7-2.3.1">Always be transparent. Describing your workflow in detail builds trust
+rather than eroding it.<a href="#section-7-2.3.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-7-2.4">
+          <p id="section-7-2.4.1">Question senders if you think they are using AI tooling as to what
 they are doing. Doing that on-list should be considered acceptable, if
-it is not done in an accusatory manner.<a href="#section-6-2.4.1" class="pilcrow">¶</a></p>
+it is not done in an accusatory manner.<a href="#section-7-2.4.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
-<p id="section-6-3">Less tentatively, the IETF should develop guidelines for use of AI tooling when
+<p id="section-7-3">Less tentatively, the IETF should develop guidelines for use of AI tooling when
 sending messages (esp email) in IETF discussions. That won't be easy and will
 be a moving target, but absent such guidance, confidence in email discussions
-may evaporate, which would cause significant damage to the IETF.<a href="#section-6-3" class="pilcrow">¶</a></p>
+may evaporate, which would cause significant damage to the IETF.<a href="#section-7-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="conclusion">
-<section id="section-7">
+<section id="section-8">
       <h2 id="name-conclusion">
-<a href="#section-7" class="section-number selfRef">7. </a><a href="#name-conclusion" class="section-name selfRef">Conclusion</a>
+<a href="#section-8" class="section-number selfRef">8. </a><a href="#name-conclusion" class="section-name selfRef">Conclusion</a>
       </h2>
-<p id="section-7-1">It's too early to say really.<a href="#section-7-1" class="pilcrow">¶</a></p>
+<p id="section-8-1">It's too early to say really.<a href="#section-8-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="iana-considerations">
-<section id="section-8">
+<section id="section-9">
       <h2 id="name-iana-considerations">
-<a href="#section-8" class="section-number selfRef">8. </a><a href="#name-iana-considerations" class="section-name selfRef">IANA Considerations</a>
+<a href="#section-9" class="section-number selfRef">9. </a><a href="#name-iana-considerations" class="section-name selfRef">IANA Considerations</a>
       </h2>
-<p id="section-8-1">This document makes no request of IANA.<a href="#section-8-1" class="pilcrow">¶</a></p>
+<p id="section-9-1">This document makes no request of IANA.<a href="#section-9-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="security-considerations">
-<section id="section-9">
+<section id="section-10">
       <h2 id="name-security-considerations">
-<a href="#section-9" class="section-number selfRef">9. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
+<a href="#section-10" class="section-number selfRef">10. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
       </h2>
-<p id="section-9-1">Mischievous IETF participants could include AI prompts inside messages used in
+<p id="section-10-1">Mischievous IETF participants could include AI prompts inside messages used in
 IETF discussions that could form part of an attack on participants who use AI
 tooling. Such text could, for example, only be present in the text/html part of
 a multipart/alternative email and so might not be rendered in a presentation of a
 mailing list archive. Presumably AI tool users will need to mitigate such
 threats in any case, so the new aspect here is perhaps only the use of IETF
-archives as the distribution medium for AI prompt attacks.<a href="#section-9-1" class="pilcrow">¶</a></p>
-<p id="section-9-2">Otherwise, see the section on risks.<a href="#section-9-2" class="pilcrow">¶</a></p>
+archives as the distribution medium for AI prompt attacks.<a href="#section-10-1" class="pilcrow">¶</a></p>
+<p id="section-10-2">Otherwise, see the section on risks.<a href="#section-10-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="acknowledgments">
-<section id="section-10">
+<section id="section-11">
       <h2 id="name-acknowledgments">
-<a href="#section-10" class="section-number selfRef">10. </a><a href="#name-acknowledgments" class="section-name selfRef">Acknowledgments</a>
+<a href="#section-11" class="section-number selfRef">11. </a><a href="#name-acknowledgments" class="section-name selfRef">Acknowledgments</a>
       </h2>
-<p id="section-10-1">The second author used https://github.com/meetodyssey in preparing
-and discussing the above text.<a href="#section-10-1" class="pilcrow">¶</a></p>
-<p id="section-10-2">The first author made no use of AI tooling.<a href="#section-10-2" class="pilcrow">¶</a></p>
+<p id="section-11-1">The second author used https://github.com/meetodyssey in preparing
+and discussing the above text.<a href="#section-11-1" class="pilcrow">¶</a></p>
+<p id="section-11-2">The first author made no use of AI tooling.<a href="#section-11-2" class="pilcrow">¶</a></p>
 </section>
 </div>
-<div id="sec-normative-references">
-<section id="section-11">
-      <h2 id="name-normative-references">
-<a href="#section-11" class="section-number selfRef">11. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
+<div id="sec-combined-references">
+<section id="section-12">
+      <h2 id="name-references">
+<a href="#section-12" class="section-number selfRef">12. </a><a href="#name-references" class="section-name selfRef">References</a>
       </h2>
+<div id="sec-normative-references">
+<section id="section-12.1">
+        <h3 id="name-normative-references">
+<a href="#section-12.1" class="section-number selfRef">12.1. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
+        </h3>
 <dl class="references">
 <dt id="RFC5378">[RFC5378]</dt>
-      <dd>
+        <dd>
 <span class="refAuthor">Bradner, S., Ed.</span> and <span class="refAuthor">J. Contreras, Ed.</span>, <span class="refTitle">"Rights Contributors Provide to the IETF Trust"</span>, <span class="seriesInfo">BCP 78</span>, <span class="seriesInfo">RFC 5378</span>, <span class="seriesInfo">DOI 10.17487/RFC5378</span>, <time datetime="2008-11" class="refDate">November 2008</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc5378">https://www.rfc-editor.org/info/rfc5378</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC8179">[RFC8179]</dt>
-    <dd>
+      <dd>
 <span class="refAuthor">Bradner, S.</span> and <span class="refAuthor">J. Contreras</span>, <span class="refTitle">"Intellectual Property Rights in IETF Technology"</span>, <span class="seriesInfo">BCP 79</span>, <span class="seriesInfo">RFC 8179</span>, <span class="seriesInfo">DOI 10.17487/RFC8179</span>, <time datetime="2017-05" class="refDate">May 2017</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc8179">https://www.rfc-editor.org/info/rfc8179</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 </dl>
+</section>
+</div>
+<div id="sec-informative-references">
+<section id="section-12.2">
+        <h3 id="name-informative-references">
+<a href="#section-12.2" class="section-number selfRef">12.2. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
+        </h3>
+<dl class="references">
+<dt id="euaiact50">[euaiact50]</dt>
+        <dd>
+<span class="refTitle">"EU AI Act Explorer"</span>, <span>n.d.</span>, <span>&lt;<a href="https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-50">https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-50</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="iecourt">[iecourt]</dt>
+        <dd>
+<span class="refTitle">"Practice Direction on the Responsible Use of Generative Artificial Intelligence in Court Documents"</span>, <time datetime="2026-07" class="refDate">July 2026</time>, <span>&lt;<a href="https://www.courts.ie/practice-directions/full-practice-direction?url=practice-direction-on-the-responsible-use-of-generative-artificial-intelligence-in-court-documents">https://www.courts.ie/practice-directions/full-practice-direction?url=practice-direction-on-the-responsible-use-of-generative-artificial-intelligence-in-court-documents</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="ldref">[ldref]</dt>
+        <dd>
+<span class="refTitle">"Dealing with LLMs in IETF discussions draft"</span>, <time datetime="2026-07" class="refDate">July 2026</time>, <span>&lt;<a href="https://mailarchive.ietf.org/arch/msg/ietf/3VaBJ6pEdhtkpOtnZYA_HcVHejU/">https://mailarchive.ietf.org/arch/msg/ietf/3VaBJ6pEdhtkpOtnZYA_HcVHejU/</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="moltbook">[moltbook]</dt>
+        <dd>
+<span class="refTitle">"Moltbook wikipedia page"</span>, <time datetime="2026-08" class="refDate">August 2026</time>, <span>&lt;<a href="https://en.wikipedia.org/wiki/Moltbook">https://en.wikipedia.org/wiki/Moltbook</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="rasprg">[rasprg]</dt>
+        <dd>
+<span class="refTitle">"RASPRG IETF-126 meeting"</span>, <time datetime="2026-07" class="refDate">July 2026</time>, <span>&lt;<a href="https://datatracker.ietf.org/meeting/126/session/rasprg">https://datatracker.ietf.org/meeting/126/session/rasprg</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="w3cpol">[w3cpol]</dt>
+      <dd>
+<span class="refTitle">"Use of Large Language Models in Standards Work"</span>, <time datetime="2026-03" class="refDate">March 2026</time>, <span>&lt;<a href="https://www.w3.org/TR/2026/NOTE-llms-standards-20260324/">https://www.w3.org/TR/2026/NOTE-llms-standards-20260324/</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+</dl>
+</section>
+</div>
 </section>
 </div>
 <div id="change-log">
@@ -1754,6 +1988,18 @@ and discussing the above text.<a href="#section-10-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="appendix-A.1-1.1">
             <p id="appendix-A.1-1.1.1">This is based on email and github interactions between the authors.<a href="#appendix-A.1-1.1.1" class="pilcrow">¶</a></p>
+</li>
+        </ul>
+</section>
+</div>
+<div id="draft-01">
+<section id="appendix-A.2">
+        <h3 id="name-draft-01">
+<a href="#appendix-A.2" class="section-number selfRef">A.2. </a><a href="#name-draft-01" class="section-name selfRef">Draft-01</a>
+        </h3>
+<ul class="normal">
+<li class="normal" id="appendix-A.2-1.1">
+            <p id="appendix-A.2-1.1.1">Reflect points raised on the IETF "discuss" list.<a href="#appendix-A.2-1.1.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 </section>
