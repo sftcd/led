@@ -2,7 +2,7 @@
 title: Dealing with LLMs in IETF Discussions
 abbrev: LLM Email Discussions
 docname: draft-fengfar-led-latest
-date: 2026-07-30
+date: 2026-08-06
 
 # stand_alone: true
 
@@ -37,18 +37,47 @@ normative:
     RFC5378:
     RFC8179:
 
+informative:
+    ldref:
+        title: "Dealing with LLMs in IETF discussions draft"
+        target: https://mailarchive.ietf.org/arch/msg/ietf/3VaBJ6pEdhtkpOtnZYA_HcVHejU/
+        date: July 2026
+
+    w3cpol:
+        title: "Use of Large Language Models in Standards Work"
+        target: https://www.w3.org/TR/2026/NOTE-llms-standards-20260324/
+        date: March 2026
+
+    euaiact50:
+        title: "EU AI Act Explorer"
+        target: https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-50
+
+    iecourt:
+        title: " Practice Direction on the Responsible Use of Generative Artificial Intelligence in Court Documents"
+        target: https://www.courts.ie/practice-directions/full-practice-direction?url=practice-direction-on-the-responsible-use-of-generative-artificial-intelligence-in-court-documents
+        date: July 2026
+
+    moltbook:
+        title: Moltbook wikipedia page
+        target: https://en.wikipedia.org/wiki/Moltbook
+        date: accessed Aug 5th 2026
+
+    rasprg:
+        title: "RASPRG IETF-126 meeting"
+        target: https://datatracker.ietf.org/meeting/126/session/rasprg
+        date: July 2026
+
 --- abstract
 
 The rapid adoption of AI language tools has prompted concern across
-professional and technical communities, including the IETF, about authenticity, accountability,
-and the integrity of human contribution. This document approaches the
-question from two directions: a critical reader's concerns about what AI
-use means for IETF discussion, and a practitioner's account of how AI
-is currently being used in IETF discussions.
-We aim to explore some of the issues arising, and perhaps make
-some specific (but tentative) recommendations,
-but the main recommendation is that the IETF should develop guidelines for use of AI tooling when
-engaging in IETF discussions.
+professional and technical communities, including the IETF, about authenticity,
+accountability, and the integrity of human contribution. This document
+approaches the question from two directions: a critical reader's concerns about
+what AI use means for IETF discussion, and a practitioner's account of how AI
+is currently being used in IETF discussions.  We aim to explore some of the
+issues arising, and perhaps make some specific (but tentative) recommendations,
+but the main recommendation is that the IETF should develop guidelines for use
+of AI tooling when engaging in IETF discussions.
 
 --- middle
 
@@ -58,23 +87,21 @@ engaging in IETF discussions.
 (slides) used at meetings, text input during e.g. github issue or PR
 discussions, and potentially messages sent using IM tools. Text included within
 Internet-drafts and RFCs is not included in scope here, even though some of the
-same issues will arise. We omit those as Internet-drafts and RFCs are also covered by BCP 78
-{{RFC5378}} and BCP 79 {{RFC8179}} so additional considerations apply for such
-text.
+same issues will arise. We omit those as Internet-drafts and RFCs are also
+covered by BCP 78 {{RFC5378}} and BCP 79 {{RFC8179}} so additional
+considerations apply for such text.
 
-AI language tools are now widely used in professional writing, including
-by some participants in
-standards development communities such as the IETF. This has produced
-at least two kinds of reaction: uncritical adoption, where AI output is used
-where previously a person would have written an email,
-and skepticism, where messages bearing the appearance
-of AI involvement are seen as problematic, on the basis
-that a reader cannot tell whether it is the person sending the email
-or just the AI tool, or some mixture.
+AI language tools are now widely used in professional writing, including by
+some participants in standards development communities such as the IETF. This
+has produced at least two kinds of reaction: uncritical adoption, where AI
+output is used where previously a person would have written an email, and
+skepticism, where messages bearing the appearance of AI involvement are seen as
+problematic, on the basis that a reader cannot tell whether it is the person
+sending the email or just the AI tool, or some mixture.
 
-In order to explore these positions, it may be helpful to outline them in
-more detail, with the goal of better understanding what AI does well, what it
-does poorly, and where the boundary between them lies.
+In order to explore these positions, it may be helpful to outline them in more
+detail, with the goal of better understanding what AI does well, what it does
+poorly, and where the boundary between them lies.
 
 This document grew out of a specific exchange on an IETF mailing list. One
 author described using AI to help express ideas developed independently; a
@@ -83,6 +110,7 @@ But the exchange exposed a gap: the community lacks shared norms for how AI
 assistance should be used and disclosed in email discussions.  Rather than
 treat this as a local disagreement, the two parties decided to try think
 through it and to document that discussion.
+
 
 #  A Reader's Concerns
 
@@ -395,6 +423,128 @@ positive or negative were there to be no "tells" visible in
 messages emitted with the assistance of AI tooling. More discussion
 is needed on that:-)
 
+# Initial Discussions
+
+This draft was raised on the IETF "discuss" list with some discussion ensuing.
+{{ldref}} This section aims to record points raised in a way that may be more
+easily found than the list archive, as well as a few points raised off-list.
+Thus far, there has been no discussion solely on the github repo for this
+draft.
+
+## Possibly Relevant Policies Elsewhere
+
+Some other relevant policies and discussions were brought to the authors'
+attention and could feed into discussion of an IETF policy:
+
+- one from W3C {{w3cpol}}, which seems very relevant to this discussion, but
+  that also seems nearly as tentative as this draft
+
+- the EU AI act might contain some relevant clauses {{euaiact50}} that might
+  (or might not) call for disclosure of use of AI tooling in contexts such as
+standards-development
+
+- the Irish courts have a very recent policy on the use of LLMs in court
+  documents {{iecourt}}
+
+- the IRTF's RASPRG discussed related topics at IETF-126 {{rasprg}}
+
+## Other points
+
+- one poster expressed that using LLMs during discussions seemed less "honest"
+  to them, whereas using LLMs for Internet-draft text, tool development or
+testing/analysis seemed more acceptable
+
+- the IETF may have some "self-defense" mechansisms that help us avoid some of
+  the worst potential problems that could arise from using LLMs in discussions,
+e.g., physical (or online synchronous) meetings and slow progress making it
+easier to spot LLM usage over extended durations
+
+- another risk is that people using LLMs might deliberately manipulate LLM
+  tools to produce outputs that aren't really intended as part an IETF
+discussion, but rather to try to distort or disturb that discussion
+
+- attempts to ban the use of LLMs as described here won't work
+
+- any policy in this space won't be known to new participants who are therefore
+  more likely to not conform to that policy (while this could be argued
+generally about any policy, it's perhaps very relevant here, given current
+trends)
+
+- the IETF could encourage doing better in this space rather than simply
+  denounce such uses
+
+- there's a risk that if we don't try tackle this issue IETF mailing lists
+  might end up like {{moltbook}}
+
+- a sender's use of LLMs may make it harder for a reader to distinguish between
+  a sender that is less well informed but who will learn from discussion,
+versus a sender that is not actually willing to learn from a discussion (and
+who perhaps doesn't understand that the LLM output is gibberish)
+
+- over time, readers learn to expect and better interpret senders who use their
+  own "voice" - interposing an LLM risks changes to that in ways that remove a
+tool IETF discussants have used for decades, (and for senders, LLM version
+changes might totally change the "voice" that readers perceive)
+
+- some people just skip message they consider "vacuous and wordy" and believe
+many of those are LLM outputs
+
+- some consider the "voice" of known participants as helpful in evaluating
+their inputs
+
+- messages largely based on LLM outputs may be "boring"
+
+- LLMs might be helpfule in discussions about the history of draft and
+e.g. whether or not merging some drafts might be good or bad
+
+- "unfinished" LLM generated outputs seemingly describing something
+may waste the time of the (possibly many) readers of a message
+
+- some code-of-conduct for use of LLMs might be useful, along with
+bans for breaches
+
+- to the extent we assume "good faith" participation, use of LLMs
+may change our threat model for participation
+
+- assuming that IETF participants have the resources and/or
+time to engage with LLM tools could be yet another barrier to
+participation
+
+- IETF discussions should be for humans, and respect the amount of
+time readers have available to consider messages
+
+- one could use LLM tools to shorten the messages one sends
+
+- senders are 100% responsible for what they send - use any tooling
+(or send any message) at the risk of your reputation
+
+- we are capable of bikeshedding on the name of a mailing list for
+disucssion of this topic, but we should have such a list
+
+- perhaps the end result of this discussion should be a wiki page
+that evolves and not a policy expressed in an RFC
+
+- well-connected people, with good English language skiils, have
+had an easier time in the past, maybe these tools might change
+that
+
+- the IETF should actively take a position and declare requirements
+(for discussion) that suit our needs
+
+- requiring declaration of LLM tool use might be like cookie-banners
+and become so common as to not be useful
+
+- so far, someone's LLM output concluded "the discussion is constructive rather
+  than polarised" ;-)
+
+- LLM tools can help with translation, but increased acceleration
+(in terms of producing output) may inevitably correlate with a lack of
+understanding from the sender
+
+- LLM use may disrupt reader's evaluation of sender reputation over
+time
+
+
 # Recommendations
 
 These are extremely tentative recommendations, that may be wrong, but
@@ -453,4 +603,6 @@ The first author made no use of AI tooling.
 
 - This is based on email and github interactions between the authors.
 
+## Draft-01
 
+- Reflect points raised on the IETF "discuss" list.
