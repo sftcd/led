@@ -544,6 +544,11 @@ understanding from the sender
 - LLM use may disrupt reader's evaluation of sender reputation over
 time
 
+- one poster suggested publishing community-specific guidance that participants
+  could feed to their AI agents (e.g., bottom line up front, avoiding walls of
+jargon, double-checking assertions before posting) so that AI-assisted
+contributions start out closer to community norms
+
 
 # Recommendations
 
