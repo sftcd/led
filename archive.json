@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-08-02T00:49:08.407176+00:00",
+  "timestamp": "2026-08-09T02:05:15.496211+00:00",
   "repo": "sftcd/led",
   "labels": [
     {
@@ -330,6 +330,63 @@
           "body": "",
           "createdAt": "2026-07-31T00:16:59Z",
           "updatedAt": "2026-07-31T00:17:00Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "id": "PR_kwDOTk4Tfc77Wku5",
+      "title": "1st cut at -01 updates",
+      "url": "https://github.com/sftcd/led/pull/9",
+      "state": "MERGED",
+      "author": "sftcd",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "A fairly quick attempt to reflect list discussion so far for a -01 version. Hopefully this is just a synopsis of the list traffic and doesn't editorialise much.",
+      "createdAt": "2026-08-06T00:58:55Z",
+      "updatedAt": "2026-08-06T10:27:07Z",
+      "baseRepository": "sftcd/led",
+      "baseRefName": "main",
+      "baseRefOid": "e040fd019cd8708502753dbb779a279c13384ad3",
+      "headRepository": "sftcd/led",
+      "headRefName": "updates-for-01",
+      "headRefOid": "8f7e5e6d2999cdad6831284697154153c2e72af9",
+      "closedAt": "2026-08-06T10:27:07Z",
+      "mergedAt": "2026-08-06T10:27:07Z",
+      "mergedBy": "lllyfeng",
+      "mergeCommit": {
+        "oid": "54199824d145cf23345ac4a11285a54f9c5ef7b2"
+      },
+      "comments": [
+        {
+          "author": "lllyfeng",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Stephen\uff0c\r\nI find I missed this great discussion for not subscribing the list(ietf@ietf.org),:(. I try to look through the entire thread (myself, not AI ,:) , although AI have given me some summary.) \r\n\r\nThank you for doing a great job summarizing the points raised in these discussions; however, I have also found some constructive ideas that are worth adding to the list.  for instance\uff0clike below\uff1a\r\n\r\n- one poster encouraged the use of LLMs to check drafts for spelling mistakes, idnits, alignment of IANA considerations with the registration procedure, technical mistakes and inconsistencies, and noted that at least one Designated Expert already uses such tools\r\n- one poster suggested that the IETF could make an editorial AI review part of the draft submission process, based on their experience of having an AI comment on merge requests in a git workflow, which they described as an overall net positive\r\n- one poster suggested publishing community-specific guidance that participants could feed to their AI agents (e.g., bottom line up front, avoiding walls of jargon, double-checking assertions before posting) so that AI-assisted contributions start out closer to community norms\r\n- one poster suggested investing in reputation signals that are hard to forge, such as in-person meeting attendance or RFCs across multiple streams, so that both readers and AI agents can weigh contributions in the context of the wider community\r\n- one poster expressed support for guidelines, on the basis that naive use of AI is generally worse than thoughtful, contextually aware use of it\r\n- one poster described LLMs as augmenting their thinking and accelerating their writing, and noted that the trade-off between acceleration and understanding is something the user can control\r\n- one poster noted that a draft has already been published with an appendix that states the summarization was created by an LLM and may not be entirely accurate, as a concrete example of transparency working in practice\r\n- the IRTF's RASPRG has discussed AI-enabled participation at the IETF and voted to pursue an interim activity to continue that discussion.\r\n\r\nBy the way, from my experience, most of AI tools can regconize the poster, for example, AI told me you are expert in security domain,:) So AI maybe know what style should be used when communcating with someone. I also really dislike some AIs tend to output excessively long texts, they often need to be condensed. GPT is a prime example of this, and while the Claude series seemed better initially, but the latest versions have started to become somewhat verbose. Since the IETF is a serious community for academic discussion, it is indeed necessary to establish guidelines for AI usage to prevent abuse.\r\n",
+          "createdAt": "2026-08-06T08:20:26Z",
+          "updatedAt": "2026-08-06T08:20:26Z"
+        },
+        {
+          "author": "sftcd",
+          "authorAssociation": "OWNER",
+          "body": "> Stephen\uff0c I find I missed this great discussion for not subscribing the list([ietf@ietf.org](mailto:ietf@ietf.org)),:(. I try to look through the entire thread (myself, not AI ,:) , although AI have given me some summary.)\r\n> \r\n> Thank you for doing a great job summarizing the points raised in these discussions; however, I have also found some constructive ideas that are worth adding to the list. for instance\uff0clike below\uff1a\r\n> \r\n> * one poster encouraged the use of LLMs to check drafts for spelling mistakes, idnits, alignment of IANA considerations with the registration procedure, technical mistakes and inconsistencies, and noted that at least one Designated Expert already uses such tools\r\n> * one poster suggested that the IETF could make an editorial AI review part of the draft submission process, based on their experience of having an AI comment on merge requests in a git workflow, which they described as an overall net positive\r\n\r\nI figured the above are out of scope as they address I-D text and not discussions.\r\n\r\n> * one poster suggested publishing community-specific guidance that participants could feed to their AI agents (e.g., bottom line up front, avoiding walls of jargon, double-checking assertions before posting) so that AI-assisted contributions start out closer to community norms\r\n\r\nSure, I can add that.\r\n\r\n> * one poster suggested investing in reputation signals that are hard to forge, such as in-person meeting attendance or RFCs across multiple streams, so that both readers and AI agents can weigh contributions in the context of the wider community\r\n\r\nI included that. (See \"self-defense\")\r\n\r\n> * one poster expressed support for guidelines, on the basis that naive use of AI is generally worse than thoughtful, contextually aware use of it\r\n\r\nThat seemed a bit generic and you'd already said as much in your -00 text.\r\n\r\n> * one poster described LLMs as augmenting their thinking and accelerating their writing, and noted that the trade-off between acceleration and understanding is something the user can control\r\n\r\nThat's included. (See \"acceleration\")\r\n\r\n> * one poster noted that a draft has already been published with an appendix that states the summarization was created by an LLM and may not be entirely accurate, as a concrete example of transparency working in practice\r\n\r\nThat's out of scope (I-D text).\r\n\r\n> * the IRTF's RASPRG has discussed AI-enabled participation at the IETF and voted to pursue an interim activity to continue that discussion.\r\n\r\nThat's included in the -01 changes.\r\n\r\n> \r\n> By the way, from my experience, most of AI tools can regconize the poster, for example, AI told me you are expert in security domain,:) So AI maybe know what style should be used when communcating with someone. I also really dislike some AIs tend to output excessively long texts, they often need to be condensed. GPT is a prime example of this, and while the Claude series seemed better initially, but the latest versions have started to become somewhat verbose. Since the IETF is a serious community for academic discussion, it is indeed necessary to establish guidelines for AI usage to prevent abuse.\r\n\r\nVersion changes are indeed a serious problem for serious use of LLMs - if using those tools, you're putting a lot of your eggs in the LLM operator's basket.\r\n\r\nI'll push a commit with the one above that was missed.\r\n",
+          "createdAt": "2026-08-06T10:20:29Z",
+          "updatedAt": "2026-08-06T10:20:29Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOTk4Tfc8AAAABIn2l9Q",
+          "commit": {
+            "abbreviatedOid": "8f7e5e6"
+          },
+          "author": "lllyfeng",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-08-06T10:26:25Z",
+          "updatedAt": "2026-08-06T10:26:25Z",
           "comments": []
         }
       ]
